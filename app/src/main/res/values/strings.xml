@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Learn JetpackCompose</string>
+    <string name="title_activity_first_app">First App</string>
+    <string name="title_activity_resource_access">Resource Access</string>
 </resources>

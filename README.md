@@ -38,6 +38,7 @@
 - Resource Access
     - String Resource
     - Color Resource
+    - Drawable Resource
 
 ---
 

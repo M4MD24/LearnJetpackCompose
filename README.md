@@ -36,6 +36,8 @@
 
 - First App
 - Resource Access
+    - String Resource
+    - Color Resource
 
 ---
 

@@ -35,6 +35,7 @@
 ### 1. [<span style="color: #4285f4;">Fundamental Concepts</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/concepts/fundamental_concepts)
 
 - First App
+- Resource Access
 
 ---
 

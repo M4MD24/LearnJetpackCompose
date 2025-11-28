@@ -11,6 +11,11 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.LearnJetpackCompose">
         <activity
+                android:name=".concepts.fundamental_concepts.resource_access.ResourceAccess"
+                android:exported="false"
+                android:label="@string/title_activity_resource_access"
+                android:theme="@style/Theme.LearnJetpackCompose"/>
+        <activity
                 android:name=".concepts.fundamental_concepts.first_app.FirstApp"
                 android:exported="false"
                 android:label="@string/title_activity_first_app"

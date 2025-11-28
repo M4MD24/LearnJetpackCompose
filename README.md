@@ -28,11 +28,14 @@
 
 ---
 
-## 1. [<span style="color: #4285f4;">Learn</span>](src/_1_learn)
+## 1. [<span style="color: #4285f4;">Learn</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/concepts)
 
 - <u style="text-decoration-color: #4285f4;">Learn Examples of Concepts</u><span style="color: #4285f4;">.</span>
 
 ### 1. [<span style="color: #4285f4;">?</span>](?)
+### 1. [<span style="color: #4285f4;">Fundamental Concepts</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/concepts/fundamental_concepts/first)
+
+- First App
 
 ---
 

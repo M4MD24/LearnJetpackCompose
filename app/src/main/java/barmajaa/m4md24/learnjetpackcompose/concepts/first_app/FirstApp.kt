@@ -1,4 +1,4 @@
-package barmajaa.m4md24.learnjetpackcompose.concepts.fundamental_concepts.first_app
+package barmajaa.m4md24.learnjetpackcompose.concepts.first_app
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

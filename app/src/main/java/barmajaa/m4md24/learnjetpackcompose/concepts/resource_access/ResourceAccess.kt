@@ -1,4 +1,4 @@
-package barmajaa.m4md24.learnjetpackcompose.concepts.fundamental_concepts.resource_access
+package barmajaa.m4md24.learnjetpackcompose.concepts.resource_access
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -15,7 +15,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextDecoration
 import barmajaa.m4md24.learnjetpackcompose.R
-import barmajaa.m4md24.learnjetpackcompose.concepts.fundamental_concepts.resource_access.ui.PreviewUI
+import barmajaa.m4md24.learnjetpackcompose.concepts.resource_access.ui.PreviewUI
 
 val textID = R.string.title_activity_resource_access
 val colorID = R.color.yellow

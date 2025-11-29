@@ -44,6 +44,7 @@
 
 - Simple Text
 - Colorful Text
+- Scrollable Text
 
 ---
 

@@ -40,6 +40,10 @@
 - Color Resource
 - Drawable Resource
 
+### 3. [<span style="color: #4285f4;">Text and Typography</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/concepts/text_and_typography)
+
+- Simple Text
+
 ---
 
 ## 2. <span style="color: #4285f4;">Develop (0 Projects)</span>

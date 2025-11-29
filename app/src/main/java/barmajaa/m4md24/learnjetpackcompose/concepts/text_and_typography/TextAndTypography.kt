@@ -61,3 +61,34 @@ fun SimpleText(
         )
     }
 }
+@Composable
+fun ColorfulText(
+    text : String = "",
+    colors : List<Color>
+) {
+    Box(
+        modifier = Modifier.fillMaxSize(),
+        contentAlignment = Alignment.Center
+    ) {
+        Text(
+            modifier = Modifier.wrapContentHeight(),
+            text = buildAnnotatedString {
+                append(text + '\n')
+                withStyle(
+                    style = SpanStyle(
+                        brush = Brush.linearGradient(
+                            colors = colors
+                        ),
+                        shadow = Shadow(
+                            blurRadius = 15f
+                        )
+                    )
+                ) {
+                    append(text)
+                }
+            },
+            style = Colorful.bodyMedium,
+            color = Color.DarkGray
+        )
+    }
+}

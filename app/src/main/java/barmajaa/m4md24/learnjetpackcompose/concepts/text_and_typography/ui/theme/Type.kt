@@ -22,3 +22,17 @@ val SimpleText = Typography(
         )
     )
 )
+
+val Colorful = Typography(
+    bodyMedium = TextStyle(
+        fontFamily = FontFamily.Monospace,
+        fontWeight = FontWeight.Bold,
+        fontSize = 24.sp,
+        fontStyle = FontStyle.Italic,
+        letterSpacing = 0.2.sp,
+        shadow = Shadow(
+            color = Color.Red,
+            blurRadius = 25f
+        )
+    )
+)

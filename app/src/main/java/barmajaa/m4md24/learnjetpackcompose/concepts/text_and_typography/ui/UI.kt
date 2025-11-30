@@ -13,11 +13,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import barmajaa.m4md24.learnjetpackcompose.concepts.text_and_typography.ColorfulText
+import barmajaa.m4md24.learnjetpackcompose.concepts.text_and_typography.EllipsisText
 import barmajaa.m4md24.learnjetpackcompose.concepts.text_and_typography.GetTextColors
-import barmajaa.m4md24.learnjetpackcompose.concepts.text_and_typography.SCROLLABLE_TEXT
+import barmajaa.m4md24.learnjetpackcompose.concepts.text_and_typography.LONG_TEXT
 import barmajaa.m4md24.learnjetpackcompose.concepts.text_and_typography.ScrollableText
 import barmajaa.m4md24.learnjetpackcompose.concepts.text_and_typography.SimpleText
-import barmajaa.m4md24.learnjetpackcompose.concepts.text_and_typography.TEXT
+import barmajaa.m4md24.learnjetpackcompose.concepts.text_and_typography.NORMAL_TEXT
 import barmajaa.m4md24.learnjetpackcompose.concepts.text_and_typography.textColor
 
 @Composable
@@ -34,21 +35,28 @@ fun PreviewUI() {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             SimpleText(
-                TEXT,
+                NORMAL_TEXT,
                 textColor
             )
 
             Spacer(modifier = Modifier.height(10.dp))
 
             ColorfulText(
-                TEXT,
+                NORMAL_TEXT,
                 GetTextColors()
             )
 
             Spacer(modifier = Modifier.height(10.dp))
 
             ScrollableText(
-                SCROLLABLE_TEXT,
+                LONG_TEXT,
+                textColor
+            )
+
+            Spacer(modifier = Modifier.height(10.dp))
+
+            EllipsisText(
+                LONG_TEXT,
                 textColor
             )
         }

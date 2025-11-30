@@ -45,6 +45,7 @@
 - Simple Text
 - Colorful Text
 - Scrollable Text
+- Ellipsis Text
 
 ---
 

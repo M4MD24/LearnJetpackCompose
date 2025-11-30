@@ -5,7 +5,12 @@
     <color name="brown">#FF964B00</color>
     <color name="deep_sky_blue">#FF00BFFF</color>
     <color name="orange">#FFFF7F00</color>
+    <color name="dark_red">#FF8B0000</color>
+    <color name="firebrick">#FFB22222</color>
+    <color name="crimson">#FFDC143C</color>
     <color name="red">#FFFF0000</color>
+    <color name="coral_red">#FFFF6B6B</color>
+    <color name="light_pink_red">#FFFFB3B3</color>
     <color name="blue">#FF0000FF</color>
     <color name="gray">#FF808080</color>
     <color name="purple">#FFA020F0</color>

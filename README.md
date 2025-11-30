@@ -42,10 +42,10 @@
 
 ### 3. [<span style="color: #4285f4;">Text and Typography</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/concepts/text_and_typography)
 
-- Simple Text
-- Colorful Text
-- Scrollable Text
-- Ellipsis Text
+- Simple
+- Colorful
+- Scrollable
+- Ellipsis
 
 ---
 

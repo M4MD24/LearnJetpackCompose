@@ -21,12 +21,12 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.text.withStyle
 import barmajaa.m4md24.learnjetpackcompose.R
 import barmajaa.m4md24.learnjetpackcompose.concepts.text_and_typography.ui.PreviewUI
-import barmajaa.m4md24.learnjetpackcompose.concepts.text_and_typography.ui.theme.Colorful
 import barmajaa.m4md24.learnjetpackcompose.concepts.text_and_typography.ui.theme.SimpleText
 
 const val NORMAL_TEXT = "Android Apps Developer"
 const val LONG_TEXT = "I'm Android Apps Developer by Jetpack Compose!"
 val textColor = Color.White
+val secondTextColor = Color.DarkGray
 @Composable
 fun GetTextColors() = listOf(
     colorResource(R.color.dark_red),
@@ -87,8 +87,8 @@ fun ColorfulText(
             }
             append(text)
         },
-        style = Colorful.bodyMedium,
-        color = Color.DarkGray
+        style = SimpleText.bodyMedium,
+        color = secondTextColor
     )
 }
 @Composable

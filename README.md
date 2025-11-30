@@ -46,6 +46,10 @@
 - Colorful Text
 - Scrollable Text
 - Ellipsis Text
+- Simple
+- Colorful
+- Scrollable
+- Ellipsis
 
 ---
 

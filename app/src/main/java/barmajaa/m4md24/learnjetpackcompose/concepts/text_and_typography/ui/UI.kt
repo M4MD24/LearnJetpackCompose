@@ -34,26 +34,28 @@ fun PreviewUI() {
                 .padding(16.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
+            val height = 40.dp
+
             SimpleText(
                 NORMAL_TEXT,
                 textColor
             )
 
-            Spacer(modifier = Modifier.height(10.dp))
+            Spacer(modifier = Modifier.height(height))
 
             ColorfulText(
                 NORMAL_TEXT,
                 GetTextColors()
             )
 
-            Spacer(modifier = Modifier.height(10.dp))
+            Spacer(modifier = Modifier.height(height))
 
             ScrollableText(
                 LONG_TEXT,
                 textColor
             )
 
-            Spacer(modifier = Modifier.height(10.dp))
+            Spacer(modifier = Modifier.height(height))
 
             EllipsisText(
                 LONG_TEXT,

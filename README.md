@@ -36,9 +36,9 @@
 
 ### 2. [<span style="color: #4285f4;">Resource Access</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/concepts/resource_access)
 
-- String Resource
-- Color Resource
-- Drawable Resource
+- String
+- Color
+- Drawable
 
 ### 3. [<span style="color: #4285f4;">Text and Typography</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/concepts/text_and_typography)
 

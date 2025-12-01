@@ -3,4 +3,5 @@
     <string name="title_activity_first_app">First App</string>
     <string name="title_activity_resource_access">Resource Access</string>
     <string name="title_activity_text_and_typography">TextAndTypography</string>
+    <string name="title_activity_outlined_text_field">OutlinedTextField</string>
 </resources>

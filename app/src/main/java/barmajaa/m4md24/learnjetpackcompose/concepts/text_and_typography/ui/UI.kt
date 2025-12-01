@@ -31,7 +31,7 @@ fun PreviewUI() {
         Column(
             modifier = Modifier
                 .wrapContentSize()
-                .padding(16.dp),
+                .padding(20.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             val height = 40.dp

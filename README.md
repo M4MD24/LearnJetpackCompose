@@ -47,9 +47,10 @@
 - Scrollable
 - Ellipsis
 
-### 4. [<span style="color: #4285f4;">Outlined Text Field</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/concepts/outlined_text_field)
+### 4. [<span style="color: #4285f4;">Field</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/concepts/field)
 
-- Remember
+- OutlinedTextField
+- TextField
 
 ---
 

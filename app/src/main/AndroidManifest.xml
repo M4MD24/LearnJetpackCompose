@@ -11,9 +11,9 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.LearnJetpackCompose">
         <activity
-                android:name=".concepts.outlined_text_field.OutlinedTextField"
+                android:name=".concepts.field.Field"
                 android:exported="false"
-                android:label="@string/title_activity_outlined_text_field"
+                android:label="@string/title_activity_field"
                 android:theme="@style/Theme.LearnJetpackCompose"/>
         <activity
                 android:name=".concepts.text_and_typography.TextAndTypography"

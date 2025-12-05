@@ -1,4 +1,4 @@
-package barmajaa.m4md24.learnjetpackcompose.concepts.field.ui
+package barmajaa.m4md24.learnjetpackcompose.concepts.fields.ui
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.Composable
@@ -6,8 +6,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import barmajaa.m4md24.learnjetpackcompose.concepts.field.OutlinedTextField
-import barmajaa.m4md24.learnjetpackcompose.concepts.field.TextField
+import barmajaa.m4md24.learnjetpackcompose.concepts.fields.OutlinedTextField
+import barmajaa.m4md24.learnjetpackcompose.concepts.fields.TextField
 
 @Composable
 @Preview(showSystemUi = true)

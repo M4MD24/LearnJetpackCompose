@@ -1,4 +1,4 @@
-package barmajaa.m4md24.learnjetpackcompose.concepts.field
+package barmajaa.m4md24.learnjetpackcompose.concepts.fields
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -18,7 +18,7 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
-import barmajaa.m4md24.learnjetpackcompose.concepts.field.ui.PreviewUI
+import barmajaa.m4md24.learnjetpackcompose.concepts.fields.ui.PreviewUI
 import barmajaa.m4md24.learnjetpackcompose.R
 
 @Composable

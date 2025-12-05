@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
@@ -50,6 +51,7 @@ fun OutlinedTextField() {
         contentAlignment = Alignment.Center
     ) {
         OutlinedTextField(
+            modifier = Modifier.fillMaxWidth(),
             value = text,
             onValueChange = { text = it },
             label = {
@@ -74,6 +76,7 @@ fun TextField() {
         contentAlignment = Alignment.Center
     ) {
         TextField(
+            modifier = Modifier.fillMaxWidth(),
             value = text,
             onValueChange = {
                 text = it

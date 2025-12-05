@@ -12,9 +12,17 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalUriHandler
+import androidx.compose.ui.text.LinkAnnotation
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.TextLinkStyles
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.withLink
 import barmajaa.m4md24.learnjetpackcompose.concepts.texts.ui.PreviewUI
 
-const val TEXT = "I'm Android Apps Developer"
+const val NAME = "Mohamed Sadawy"
+const val TEXT = "Android Apps Developer"
 
 class Texts : ComponentActivity() {
     override fun onCreate(savedInstanceState : Bundle?) {
@@ -26,27 +34,61 @@ class Texts : ComponentActivity() {
     }
 }
 @Composable
-fun Normal() {
-    Box(
-        modifier = Modifier,
-        contentAlignment = Alignment.Center
-    ) {
-        Text(text = TEXT)
+fun Normal() = Box(
+    modifier = Modifier,
+    contentAlignment = Alignment.Center
+) {
+    Text(text = TEXT)
+}
+@Composable
+fun SelectionContainer() = Box(
+    modifier = Modifier,
+    contentAlignment = Alignment.Center
+) {
+    SelectionContainer {
+        Column {
+            Text(text = TEXT)
+            DisableSelection {
+                Text(text = TEXT)
+            }
+        }
     }
 }
 @Composable
-fun SelectionContainer() {
+fun AnnotatedString() {
+    val uriHandler = LocalUriHandler.current
+
     Box(
         modifier = Modifier,
         contentAlignment = Alignment.Center
     ) {
-        SelectionContainer {
-            Column {
-                Text(text = TEXT)
-                DisableSelection {
-                    Text(text = TEXT)
+        Text(
+            text = buildAnnotatedString {
+                val urlText = "https://t.me/m4md24"
+                val link = LinkAnnotation.Url(
+                    urlText,
+                    TextLinkStyles(
+                        SpanStyle(
+                            color = Color.Red
+                        )
+                    )
+                ) {
+                    val url = (it as LinkAnnotation.Url).url
+                    uriHandler.openUri(
+                        uri = url
+                    )
                 }
+
+                withLink(link) {
+                    append(
+                        text = NAME
+                    )
+                }
+
+                append(
+                    text = " is $TEXT"
+                )
             }
-        }
+        )
     }
 }

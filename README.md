@@ -56,6 +56,7 @@
 
 - Normal
 - SelectionContainer
+- AnnotatedString
 
 ---
 

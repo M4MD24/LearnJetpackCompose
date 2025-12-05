@@ -6,6 +6,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import barmajaa.m4md24.learnjetpackcompose.concepts.texts.AnnotatedString
 import barmajaa.m4md24.learnjetpackcompose.concepts.texts.Normal
 import barmajaa.m4md24.learnjetpackcompose.concepts.texts.SelectionContainer
 
@@ -31,6 +32,8 @@ fun PreviewUI() {
             SelectionContainer()
 
             Spacer(modifier = Modifier.height(height))
+
+            AnnotatedString()
         }
     }
 }

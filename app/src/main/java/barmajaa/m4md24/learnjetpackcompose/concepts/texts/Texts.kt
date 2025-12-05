@@ -5,6 +5,9 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.text.selection.DisableSelection
+import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -29,5 +32,21 @@ fun Normal() {
         contentAlignment = Alignment.Center
     ) {
         Text(text = TEXT)
+    }
+}
+@Composable
+fun SelectionContainer() {
+    Box(
+        modifier = Modifier,
+        contentAlignment = Alignment.Center
+    ) {
+        SelectionContainer {
+            Column {
+                Text(text = TEXT)
+                DisableSelection {
+                    Text(text = TEXT)
+                }
+            }
+        }
     }
 }

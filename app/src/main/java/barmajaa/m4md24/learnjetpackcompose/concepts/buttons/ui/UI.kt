@@ -8,6 +8,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import barmajaa.m4md24.learnjetpackcompose.concepts.buttons.Filled
 import barmajaa.m4md24.learnjetpackcompose.concepts.buttons.FilledTonal
+import barmajaa.m4md24.learnjetpackcompose.concepts.buttons.Outlined
 
 @Composable
 @Preview(showSystemUi = true)
@@ -29,6 +30,10 @@ fun PreviewUI() {
             Spacer(modifier = Modifier.height(height))
 
             FilledTonal()
+
+            Spacer(modifier = Modifier.height(height))
+
+            Outlined()
         }
     }
 }

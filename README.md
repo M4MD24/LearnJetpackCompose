@@ -58,6 +58,14 @@
 - SelectionContainer
 - AnnotatedString
 
+### 6. [<span style="color: #4285f4;">Buttons</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/concepts/buttons)
+
+- Filled
+- FilledTonal
+- Outlined
+- Elevated
+- Text
+
 ---
 
 ## 2. <span style="color: #4285f4;">Develop (0 Projects)</span>

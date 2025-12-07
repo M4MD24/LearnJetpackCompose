@@ -11,6 +11,11 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.LearnJetpackCompose">
         <activity
+                android:name=".concepts.buttons.Buttons"
+                android:exported="false"
+                android:label="@string/title_activity_buttons"
+                android:theme="@style/Theme.LearnJetpackCompose"/>
+        <activity
                 android:name=".concepts.texts.Texts"
                 android:exported="false"
                 android:label="@string/title_activity_texts"

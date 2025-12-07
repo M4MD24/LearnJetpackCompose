@@ -22,6 +22,8 @@ class Buttons : ComponentActivity() {
         }
     }
 }
+
+const val DURATION_TOAST = Toast.LENGTH_SHORT
 @Composable
 fun Filled() {
     val context = LocalContext.current
@@ -31,11 +33,11 @@ fun Filled() {
             Toast.makeText(
                 context,
                 name,
-                Toast.LENGTH_SHORT
+                DURATION_TOAST
             ).show()
         }
     ) {
-        Text("Filled")
+        Text(name)
     }
 }
 @Composable
@@ -47,11 +49,11 @@ fun FilledTonal() {
             Toast.makeText(
                 context,
                 name,
-                Toast.LENGTH_SHORT
+                DURATION_TOAST
             ).show()
         }
     ) {
-        Text("FilledTonal")
+        Text(name)
     }
 }
 @Composable
@@ -63,10 +65,10 @@ fun Outlined() {
             Toast.makeText(
                 context,
                 name,
-                Toast.LENGTH_SHORT
+                DURATION_TOAST
             ).show()
         }
     ) {
-        Text("Outlined")
+        Text(name)
     }
 }

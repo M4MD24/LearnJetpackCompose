@@ -6,6 +6,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.material3.Button
+import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
@@ -34,5 +35,21 @@ fun Filled() {
         }
     ) {
         Text("Filled")
+    }
+}
+@Composable
+fun FilledTonal() {
+    val context = LocalContext.current
+    val name = "FilledTonal"
+    FilledTonalButton(
+        onClick = {
+            Toast.makeText(
+                context,
+                name,
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+    ) {
+        Text("FilledTonal")
     }
 }

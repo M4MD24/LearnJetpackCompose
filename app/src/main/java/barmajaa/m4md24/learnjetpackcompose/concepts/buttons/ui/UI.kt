@@ -10,6 +10,7 @@ import barmajaa.m4md24.learnjetpackcompose.concepts.buttons.Elevated
 import barmajaa.m4md24.learnjetpackcompose.concepts.buttons.Filled
 import barmajaa.m4md24.learnjetpackcompose.concepts.buttons.FilledTonal
 import barmajaa.m4md24.learnjetpackcompose.concepts.buttons.Outlined
+import barmajaa.m4md24.learnjetpackcompose.concepts.buttons.Text
 
 @Composable
 @Preview(showSystemUi = true)
@@ -39,6 +40,10 @@ fun PreviewUI() {
             Spacer(modifier = Modifier.height(height))
 
             Elevated()
+
+            Spacer(modifier = Modifier.height(height))
+
+            Text()
         }
     }
 }

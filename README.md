@@ -64,6 +64,7 @@
 - FilledTonal
 - Outlined
 - Elevated
+- Text
 
 ---
 

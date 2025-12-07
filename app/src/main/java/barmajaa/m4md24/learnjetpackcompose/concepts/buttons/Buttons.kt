@@ -85,3 +85,19 @@ fun Elevated() {
         Text(name)
     }
 }
+@Composable
+fun Text() {
+    val context = LocalContext.current
+    val name = "Text"
+    TextButton(
+        onClick = {
+            Toast.makeText(
+                context,
+                name,
+                DURATION_TOAST
+            ).show()
+        }
+    ) {
+        Text(name)
+    }
+}

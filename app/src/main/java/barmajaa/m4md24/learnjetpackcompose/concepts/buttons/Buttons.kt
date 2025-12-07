@@ -5,10 +5,7 @@ import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.material3.Button
-import androidx.compose.material3.FilledTonalButton
-import androidx.compose.material3.OutlinedButton
-import androidx.compose.material3.Text
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 import barmajaa.m4md24.learnjetpackcompose.concepts.buttons.ui.PreviewUI
@@ -61,6 +58,22 @@ fun Outlined() {
     val context = LocalContext.current
     val name = "Outlined"
     OutlinedButton(
+        onClick = {
+            Toast.makeText(
+                context,
+                name,
+                DURATION_TOAST
+            ).show()
+        }
+    ) {
+        Text(name)
+    }
+}
+@Composable
+fun Elevated() {
+    val context = LocalContext.current
+    val name = "Elevated"
+    ElevatedButton(
         onClick = {
             Toast.makeText(
                 context,

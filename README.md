@@ -63,6 +63,7 @@
 - Filled
 - FilledTonal
 - Outlined
+- Elevated
 
 ---
 

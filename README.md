@@ -66,6 +66,8 @@
 - Elevated
 - Text
 
+### 7. [<span style="color: #4285f4;">Images</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/concepts/images)
+
 ---
 
 ## 2. <span style="color: #4285f4;">Develop (0 Projects)</span>

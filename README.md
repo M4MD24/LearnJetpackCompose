@@ -68,6 +68,10 @@
 
 ### 7. [<span style="color: #4285f4;">Images</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/concepts/images)
 
+### 8. [<span style="color: #4285f4;">Layouts</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/concepts/layouts)
+
+- Column
+
 ---
 
 ## 2. <span style="color: #4285f4;">Develop (0 Projects)</span>

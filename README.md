@@ -23,6 +23,7 @@
 
 - **Recommended using** `Intellij IDEA (Community / Ultimate / EAP)`
 - **Currently Used** `Intellij Idea Community`
+- **Jetpack Compose Version** `2.2.21`
 - **Kotlin Version** `2.1`
 - **Java Version** `JetBrains Runtime 21.0.9` - `21`
 

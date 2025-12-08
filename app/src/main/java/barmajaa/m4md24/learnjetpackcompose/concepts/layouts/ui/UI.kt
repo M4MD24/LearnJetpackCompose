@@ -7,6 +7,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import barmajaa.m4md24.learnjetpackcompose.concepts.layouts.Column
+import barmajaa.m4md24.learnjetpackcompose.concepts.layouts.Row
 
 @Composable
 @Preview(showSystemUi = true)
@@ -21,11 +22,8 @@ fun PreviewUI() {
                 .padding(20.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            val height = 40.dp
-
             Column()
-
-            Spacer(modifier = Modifier.height(height))
+            Row()
         }
     }
 }

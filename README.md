@@ -71,6 +71,7 @@
 ### 8. [<span style="color: #4285f4;">Layouts</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/concepts/layouts)
 
 - Column
+- Row
 
 ---
 

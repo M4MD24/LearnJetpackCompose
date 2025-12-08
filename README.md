@@ -72,6 +72,7 @@
 
 - Column
 - Row
+- Box
 
 ---
 

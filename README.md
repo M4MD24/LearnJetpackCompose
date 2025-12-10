@@ -76,6 +76,10 @@
 - Box
 - ConstraintLayout
 
+### 9. [<span style="color: #4285f4;">Column and Rows Types</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/concepts/column_and_rows_types)
+
+- Lazy
+
 ---
 
 ## 2. <span style="color: #4285f4;">Develop (0 Projects)</span>

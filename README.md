@@ -23,6 +23,7 @@
 
 - **Recommended using** `Intellij IDEA (Community / Ultimate / EAP)`
 - **Currently Used** `Intellij Idea Community`
+- **Jetpack Compose Version** `2.2.21`
 - **Kotlin Version** `2.1`
 - **Java Version** `JetBrains Runtime 21.0.9` - `21`
 
@@ -67,6 +68,13 @@
 - Text
 
 ### 7. [<span style="color: #4285f4;">Images</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/concepts/images)
+
+### 8. [<span style="color: #4285f4;">Layouts</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/concepts/layouts)
+
+- Column
+- Row
+- Box
+- ConstraintLayout
 
 ---
 

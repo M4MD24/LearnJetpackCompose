@@ -7,6 +7,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import barmajaa.m4md24.learnjetpackcompose.concepts.column_and_rows_types.lazy.LazyColumn
+import barmajaa.m4md24.learnjetpackcompose.concepts.column_and_rows_types.lazy.LazyRow
 
 @Composable
 @Preview(showSystemUi = true)
@@ -23,9 +24,25 @@ fun PreviewUI() {
         ) {
             val height = 40.dp
 
-            LazyColumn()
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .weight(1f),
+                contentAlignment = Alignment.TopCenter
+            ) {
+                LazyColumn()
+            }
 
             Spacer(modifier = Modifier.height(height))
+
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .weight(1f),
+                contentAlignment = Alignment.TopCenter
+            ) {
+                LazyRow()
+            }
         }
     }
 }

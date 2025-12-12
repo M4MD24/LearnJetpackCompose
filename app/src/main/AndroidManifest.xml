@@ -11,6 +11,11 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.LearnJetpackCompose">
         <activity
+                android:name=".concepts.cards.Cards"
+                android:exported="false"
+                android:label="@string/title_activity_cards"
+                android:theme="@style/Theme.LearnJetpackCompose"/>
+        <activity
                 android:name=".concepts.modal_bottom_sheets.ModalBottomSheets"
                 android:exported="false"
                 android:label="@string/title_activity_modal_bottom_sheets"

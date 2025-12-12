@@ -80,6 +80,8 @@
 
 - Lazy
 
+### 10. [<span style="color: #4285f4;">Modal Bottom Sheets</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/concepts/modal_bottom_sheets)
+
 ---
 
 ## 2. <span style="color: #4285f4;">Develop (0 Projects)</span>

@@ -25,7 +25,7 @@ class Checkboxes : ComponentActivity() {
     }
 }
 @Composable
-fun CheckBox() {
+fun Checkbox() {
     var childCheckedStates by remember {
         mutableStateOf(listOf(false, false, false))
     }

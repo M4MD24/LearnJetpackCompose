@@ -1,4 +1,4 @@
-package barmajaa.m4md24.learnjetpackcompose.concepts.check_boxes.ui
+package barmajaa.m4md24.learnjetpackcompose.concepts.checkboxes.ui
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.Composable
@@ -6,7 +6,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import barmajaa.m4md24.learnjetpackcompose.concepts.check_boxes.Checkbox
+import barmajaa.m4md24.learnjetpackcompose.concepts.checkboxes.Checkbox
 
 @Composable
 @Preview(showSystemUi = true)

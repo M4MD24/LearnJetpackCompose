@@ -92,7 +92,7 @@
 - Normal
 - Elevated
 
-### 12. [<span style="color: #4285f4;">Checkboxes</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/concepts/check_boxes)
+### 12. [<span style="color: #4285f4;">Checkboxes</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/concepts/checkboxes)
 
 - TriStateCheckbox
 - Checkbox

@@ -1,4 +1,4 @@
-package barmajaa.m4md24.learnjetpackcompose.concepts.check_boxes
+package barmajaa.m4md24.learnjetpackcompose.concepts.checkboxes
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -13,7 +13,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.state.ToggleableState
 import androidx.compose.ui.unit.dp
-import barmajaa.m4md24.learnjetpackcompose.concepts.check_boxes.ui.PreviewUI
+import barmajaa.m4md24.learnjetpackcompose.concepts.checkboxes.ui.PreviewUI
 
 class Checkboxes : ComponentActivity() {
     override fun onCreate(savedInstanceState : Bundle?) {

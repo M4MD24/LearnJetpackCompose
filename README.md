@@ -69,6 +69,8 @@
 
 ### 7. [<span style="color: #4285f4;">Images</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/concepts/images)
 
+- Normal
+
 ### 8. [<span style="color: #4285f4;">Layouts</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/concepts/layouts)
 
 - Column
@@ -82,8 +84,11 @@
 
 ### 10. [<span style="color: #4285f4;">Modal Bottom Sheets</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/concepts/modal_bottom_sheets)
 
+- Normal
+
 ### 11. [<span style="color: #4285f4;">Cards</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/concepts/cards)
 
+- ~~Normal~~
 - Elevated
 
 ### 12. [<span style="color: #4285f4;">Checkboxes</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/concepts/check_boxes)
@@ -92,6 +97,8 @@
 - Checkbox
 
 ### 13. [<span style="color: #4285f4;">InputChips</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/concepts/input_chips)
+
+- Normal
 
 ---
 

@@ -5,15 +5,11 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
@@ -32,35 +28,12 @@ class Layouts : ComponentActivity() {
 
 val margin = 5.dp
 val padding = 40.dp
-val spaceBetween = 10.dp
 val edgeDistance = 20.dp
 @Composable
 private fun Texts() {
     Text("First")
     Text("Second")
     Text("Third")
-}
-@Composable
-fun Column() = Column(
-    modifier = Modifier
-        .padding(margin)/*padding*/
-        .background(Color.Red)
-        .padding(padding)/*margin*/,
-    horizontalAlignment = Alignment.CenterHorizontally,
-    verticalArrangement = Arrangement.spacedBy(spaceBetween)
-) {
-    Texts()
-}
-@Composable
-fun Row() = Row(
-    modifier = Modifier
-        .padding(margin)/*padding*/
-        .background(Color.Green)
-        .padding(padding)/*margin*/,
-    horizontalArrangement = Arrangement.spacedBy(spaceBetween),
-    verticalAlignment = Alignment.CenterVertically
-) {
-    Texts()
 }
 @Composable
 fun Box() = Box(

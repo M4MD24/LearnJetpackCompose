@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">LearnJetpackCompose</string>
-    <string name="title_activity_first_app">FirstApp</string>
-    <string name="title_activity_resource_access">ResourceAccess</string>
-    <string name="title_activity_text_and_typography">TextAndTypography</string>
+    <string name="app_name">Learn Jetpack Compose</string>
+    <string name="title_activity_first_app">First App</string>
+    <string name="title_activity_resource_access">Resource Access</string>
+    <string name="title_activity_text_and_typography">Text and Typography</string>
     <string name="title_activity_fields">Fields</string>
     <string name="title_activity_texts">Texts</string>
     <string name="title_activity_buttons">Buttons</string>
@@ -11,6 +11,5 @@
     <string name="title_activity_lazy">Lazy</string>
     <string name="title_activity_modal_bottom_sheets">ModalBottomSheets</string>
     <string name="title_activity_cards">Cards</string>
-    <string name="title_activity_check_boxes">CheckBoxes</string>
-    <string name="title_activity_input_chips">InputChips</string>
+    <string name="title_activity_check_boxes">Checkboxes</string>
 </resources>

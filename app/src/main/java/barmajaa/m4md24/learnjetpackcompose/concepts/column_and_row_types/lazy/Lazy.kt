@@ -1,4 +1,4 @@
-package barmajaa.m4md24.learnjetpackcompose.concepts.column_and_rows_types.lazy
+package barmajaa.m4md24.learnjetpackcompose.concepts.column_and_row_types.lazy
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -15,7 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import barmajaa.m4md24.learnjetpackcompose.concepts.column_and_rows_types.lazy.ui.PreviewUI
+import barmajaa.m4md24.learnjetpackcompose.concepts.column_and_row_types.lazy.ui.PreviewUI
 
 class Lazy : ComponentActivity() {
     override fun onCreate(savedInstanceState : Bundle?) {

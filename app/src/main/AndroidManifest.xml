@@ -11,6 +11,11 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.LearnJetpackCompose">
         <activity
+                android:name=".concepts.column_and_row_types.normal.Normal"
+                android:exported="false"
+                android:label="@string/title_activity_normal"
+                android:theme="@style/Theme.LearnJetpackCompose"/>
+        <activity
                 android:name=".concepts.input_chips.InputChips"
                 android:exported="false"
                 android:label="@string/title_activity_input_chips"
@@ -31,7 +36,7 @@
                 android:label="@string/title_activity_modal_bottom_sheets"
                 android:theme="@style/Theme.LearnJetpackCompose"/>
         <activity
-                android:name=".concepts.column_and_rows_types.lazy.Lazy"
+                android:name=".concepts.column_and_row_types.lazy.Lazy"
                 android:exported="false"
                 android:label="@string/title_activity_lazy"
                 android:theme="@style/Theme.LearnJetpackCompose"/>

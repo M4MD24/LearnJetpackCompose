@@ -1,4 +1,4 @@
-package barmajaa.m4md24.learnjetpackcompose.concepts.column_and_rows_types.lazy.ui
+package barmajaa.m4md24.learnjetpackcompose.concepts.column_and_row_types.normal.ui
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.Composable
@@ -6,8 +6,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import barmajaa.m4md24.learnjetpackcompose.concepts.column_and_rows_types.lazy.LazyColumn
-import barmajaa.m4md24.learnjetpackcompose.concepts.column_and_rows_types.lazy.LazyRow
+import barmajaa.m4md24.learnjetpackcompose.concepts.column_and_row_types.normal.NormalColumn
+import barmajaa.m4md24.learnjetpackcompose.concepts.column_and_row_types.normal.NormalRow
 
 @Composable
 @Preview(showSystemUi = true)
@@ -28,9 +28,9 @@ fun PreviewUI() {
                 modifier = Modifier
                     .fillMaxWidth()
                     .weight(1f),
-                contentAlignment = Alignment.TopCenter
+                contentAlignment = Alignment.Center
             ) {
-                LazyColumn()
+                NormalColumn()
             }
 
             Spacer(modifier = Modifier.height(height))
@@ -39,9 +39,9 @@ fun PreviewUI() {
                 modifier = Modifier
                     .fillMaxWidth()
                     .weight(1f),
-                contentAlignment = Alignment.TopCenter
+                contentAlignment = Alignment.Center
             ) {
-                LazyRow()
+                NormalRow()
             }
         }
     }

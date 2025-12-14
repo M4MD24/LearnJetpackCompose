@@ -7,6 +7,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import barmajaa.m4md24.learnjetpackcompose.concepts.cards.Elevated
+import barmajaa.m4md24.learnjetpackcompose.concepts.cards.Normal
 
 @Composable
 @Preview(showSystemUi = true)
@@ -21,6 +22,12 @@ fun PreviewUI() {
                 .padding(20.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
+            val height = 40.dp
+
+            Normal()
+
+            Spacer(modifier = Modifier.height(height))
+
             Elevated()
         }
     }

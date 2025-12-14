@@ -13,4 +13,5 @@
     <string name="title_activity_cards">Cards</string>
     <string name="title_activity_check_boxes">Checkboxes</string>
     <string name="title_activity_input_chips">InputChips</string>
+    <string name="title_activity_normal">Normal</string>
 </resources>

@@ -40,7 +40,7 @@ class Images : ComponentActivity() {
     }
 }
 @Composable
-fun Image() {
+fun Normal() {
     val borderWidth = 4.dp
     val colors = GetColors()
     val borderColors = remember {

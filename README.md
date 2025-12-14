@@ -91,6 +91,8 @@
 - TriStateCheckbox
 - Checkbox
 
+### 13. [<span style="color: #4285f4;">InputChips</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/concepts/input_chips)
+
 ---
 
 ## 2. <span style="color: #4285f4;">Develop (0 Projects)</span>

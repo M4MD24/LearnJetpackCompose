@@ -11,4 +11,5 @@
     <string name="title_activity_lazy">Lazy</string>
     <string name="title_activity_modal_bottom_sheets">ModalBottomSheets</string>
     <string name="title_activity_cards">Cards</string>
+    <string name="title_activity_check_boxes">CheckBoxes</string>
 </resources>

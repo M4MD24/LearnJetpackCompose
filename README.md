@@ -86,6 +86,11 @@
 
 - Elevated
 
+### 12. [<span style="color: #4285f4;">Checkboxes</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/concepts/check_boxes)
+
+- TriStateCheckbox
+- Checkbox
+
 ---
 
 ## 2. <span style="color: #4285f4;">Develop (0 Projects)</span>

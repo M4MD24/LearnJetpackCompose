@@ -11,6 +11,11 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.LearnJetpackCompose">
         <activity
+                android:name=".concepts.check_boxes.Checkboxes"
+                android:exported="false"
+                android:label="@string/title_activity_check_boxes"
+                android:theme="@style/Theme.LearnJetpackCompose"/>
+        <activity
                 android:name=".concepts.cards.Cards"
                 android:exported="false"
                 android:label="@string/title_activity_cards"

@@ -25,7 +25,7 @@ class InputChips : ComponentActivity() {
     }
 }
 @Composable
-fun InputChip() {
+fun Normal() {
     var enable by remember {
         mutableStateOf(false)
     }

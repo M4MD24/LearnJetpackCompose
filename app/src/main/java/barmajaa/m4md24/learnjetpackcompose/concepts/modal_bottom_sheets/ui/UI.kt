@@ -6,7 +6,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import barmajaa.m4md24.learnjetpackcompose.concepts.modal_bottom_sheets.ModalBottomSheet
+import barmajaa.m4md24.learnjetpackcompose.concepts.modal_bottom_sheets.Normal
 
 @Composable
 @Preview(showSystemUi = true)
@@ -21,7 +21,7 @@ fun PreviewUI() {
                 .padding(20.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            ModalBottomSheet()
+            Normal()
         }
     }
 }

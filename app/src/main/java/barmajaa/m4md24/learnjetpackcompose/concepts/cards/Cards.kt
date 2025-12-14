@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.Text
@@ -26,6 +27,19 @@ class Cards : ComponentActivity() {
 }
 
 val width = 200.dp
+@Composable
+fun Normal() = Card(
+    modifier = Modifier
+        .width(width = width)
+) {
+    Text(
+        modifier = Modifier
+            .width(width = width)
+            .padding(10.dp),
+        textAlign = TextAlign.Center,
+        text = "Hello"
+    )
+}
 @Composable
 fun Elevated() = ElevatedCard(
     modifier = Modifier

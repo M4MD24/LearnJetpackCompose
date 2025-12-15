@@ -11,6 +11,11 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.LearnJetpackCompose">
         <activity
+                android:name=".concepts.dialogs.Dialogs"
+                android:exported="false"
+                android:label="@string/title_activity_dialogs"
+                android:theme="@style/Theme.LearnJetpackCompose"/>
+        <activity
                 android:name=".concepts.column_and_row_types.normal.Normal"
                 android:exported="false"
                 android:label="@string/title_activity_normal"

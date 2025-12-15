@@ -73,15 +73,14 @@
 
 ### 8. [<span style="color: #4285f4;">Layouts</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/concepts/layouts)
 
-- Column
-- Row
 - Box
 - ConstraintLayout
 
 ### 9. [<span style="color: #4285f4;">Column and Row Types</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/concepts/column_and_row_types)
 
-- Normal
-- Lazy
+#### 9.1. [<span style="color: #4285f4;">Normal</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/concepts/column_and_row_types/normal)
+
+#### 9.2. [<span style="color: #4285f4;">Lazy</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/concepts/column_and_row_types/lazy)
 
 ### 10. [<span style="color: #4285f4;">Modal Bottom Sheets</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/concepts/modal_bottom_sheets)
 

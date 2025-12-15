@@ -1,4 +1,4 @@
-package barmajaa.m4md24.learnjetpackcompose.concepts.input_chips
+package barmajaa.m4md24.learnjetpackcompose.concepts.chips
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -16,7 +16,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 
-class InputChips : ComponentActivity() {
+class Chips : ComponentActivity() {
     override fun onCreate(savedInstanceState : Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -25,7 +25,7 @@ class InputChips : ComponentActivity() {
     }
 }
 @Composable
-fun Normal() {
+fun Input() {
     var enable by remember {
         mutableStateOf(false)
     }

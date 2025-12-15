@@ -21,9 +21,9 @@
                 android:label="@string/title_activity_normal"
                 android:theme="@style/Theme.LearnJetpackCompose"/>
         <activity
-                android:name=".concepts.input_chips.InputChips"
+                android:name=".concepts.chips.Chips"
                 android:exported="false"
-                android:label="@string/title_activity_input_chips"
+                android:label="@string/title_activity_chips"
                 android:theme="@style/Theme.LearnJetpackCompose"/>
         <activity
                 android:name=".concepts.checkboxes.Checkboxes"

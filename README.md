@@ -101,6 +101,10 @@
 
 - Normal
 
+### 14. [<span style="color: #4285f4;">Dialogs</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/concepts/dialogs)
+
+- Normal
+
 ---
 
 ## 2. <span style="color: #4285f4;">Develop (0 Projects)</span>

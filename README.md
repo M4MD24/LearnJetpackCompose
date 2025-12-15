@@ -96,9 +96,12 @@
 - TriStateCheckbox
 - Checkbox
 
-### 13. [<span style="color: #4285f4;">InputChips</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/concepts/input_chips)
+### 13. [<span style="color: #4285f4;">Chips</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/concepts/chips)
 
-- Normal
+- ~~Assist~~
+- ~~Filter~~
+- Input
+- ~~Suggestion~~
 
 ### 14. [<span style="color: #4285f4;">Dialogs</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/concepts/dialogs)
 
@@ -139,7 +142,10 @@
 <ul>
 <li><a style="color: #4285f4;" href="https://kotlinlang.org/docs/home.html">Kotlin Documentation</a></li>
 <li><a style="color: #4285f4;" href="https://www.youtube.com">Youtube</a></li>
-    - Shivam Sharma
+
+- Shivam Sharma
+
+<li><a style="color: #4285f4;" href="https://developer.android.com/develop/ui/compose/documentation">Jetpack Compose Documentation</a></li>
 </ul>
 
 ### <span style="color: #4285f4;">Developing</span>

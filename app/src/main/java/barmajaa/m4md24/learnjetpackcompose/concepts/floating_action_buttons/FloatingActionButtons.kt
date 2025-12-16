@@ -44,3 +44,21 @@ fun Small() {
         )
     }
 }
+@Composable
+fun Normal() {
+    val context = LocalContext.current
+    FloatingActionButton(
+        onClick = {
+            Toast.makeText(
+                context,
+                "Email",
+                DURATION_TOAST
+            ).show()
+        }
+    ) {
+        Icon(
+            imageVector = Icons.Filled.Email,
+            contentDescription = "Selected Check"
+        )
+    }
+}

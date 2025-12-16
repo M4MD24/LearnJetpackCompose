@@ -109,7 +109,10 @@
 
 ### 15. [<span style="color: #4285f4;">FABs (FloatingActionButtons)</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/concepts/floating_action_buttons)
 
+- Small
 - Normal
+- Large
+- Extended
 
 ---
 

@@ -80,3 +80,25 @@ fun Large() {
         )
     }
 }
+@Composable
+fun Extended() {
+    val context = LocalContext.current
+    ExtendedFloatingActionButton(
+        onClick = {
+            Toast.makeText(
+                context,
+                "Email",
+                DURATION_TOAST
+            ).show()
+        }
+    ) {
+        Text(
+            text = "Email"
+        )
+        Spacer(modifier = Modifier.width(width = 30.dp))
+        Icon(
+            imageVector = Icons.Filled.Email,
+            contentDescription = "Selected Check"
+        )
+    }
+}

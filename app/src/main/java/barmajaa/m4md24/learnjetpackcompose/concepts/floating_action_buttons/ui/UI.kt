@@ -9,6 +9,7 @@ import androidx.compose.ui.unit.dp
 import barmajaa.m4md24.learnjetpackcompose.concepts.floating_action_buttons.Small
 import barmajaa.m4md24.learnjetpackcompose.concepts.floating_action_buttons.Normal
 import barmajaa.m4md24.learnjetpackcompose.concepts.floating_action_buttons.Large
+import barmajaa.m4md24.learnjetpackcompose.concepts.floating_action_buttons.Extended
 
 @Composable
 @Preview(showSystemUi = true)
@@ -35,6 +36,10 @@ fun PreviewUI() {
             Spacer(modifier = Modifier.height(height))
 
             Large()
+
+            Spacer(modifier = Modifier.height(height))
+
+            Extended()
         }
     }
 }

@@ -15,4 +15,5 @@
     <string name="title_activity_chips">Chips</string>
     <string name="title_activity_normal">Normal</string>
     <string name="title_activity_dialogs">Dialogs</string>
+    <string name="title_activity_floating_action_buttons">FloatingActionButtons</string>
 </resources>

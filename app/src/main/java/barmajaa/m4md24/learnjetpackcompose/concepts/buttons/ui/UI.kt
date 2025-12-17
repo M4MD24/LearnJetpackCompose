@@ -9,6 +9,7 @@ import androidx.compose.ui.unit.dp
 import barmajaa.m4md24.learnjetpackcompose.concepts.buttons.Elevated
 import barmajaa.m4md24.learnjetpackcompose.concepts.buttons.Filled
 import barmajaa.m4md24.learnjetpackcompose.concepts.buttons.FilledTonal
+import barmajaa.m4md24.learnjetpackcompose.concepts.buttons.Icon
 import barmajaa.m4md24.learnjetpackcompose.concepts.buttons.Outlined
 import barmajaa.m4md24.learnjetpackcompose.concepts.buttons.Text
 
@@ -44,6 +45,10 @@ fun PreviewUI() {
             Spacer(modifier = Modifier.height(height))
 
             Text()
+
+            Spacer(modifier = Modifier.height(height))
+
+            Icon()
         }
     }
 }

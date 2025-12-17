@@ -115,6 +115,10 @@
 - Large
 - Extended
 
+### 16. [<span style="color: #4285f4;">Menus</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/concepts/menus)
+
+- Normal
+
 ---
 
 ## 2. <span style="color: #4285f4;">Develop (0 Projects)</span>

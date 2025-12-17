@@ -66,6 +66,7 @@
 - Outlined
 - Elevated
 - Text
+- Icon
 
 ### 7. [<span style="color: #4285f4;">Images</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/concepts/images)
 
@@ -113,6 +114,10 @@
 - Normal
 - Large
 - Extended
+
+### 16. [<span style="color: #4285f4;">Menus</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/concepts/menus)
+
+- Normal
 
 ---
 

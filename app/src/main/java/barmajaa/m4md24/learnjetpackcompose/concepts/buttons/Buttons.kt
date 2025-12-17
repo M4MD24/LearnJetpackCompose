@@ -5,6 +5,8 @@ import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Image
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
@@ -99,5 +101,24 @@ fun Text() {
         }
     ) {
         Text(name)
+    }
+}
+@Composable
+fun Icon() {
+    val name = "Icon"
+    val context = LocalContext.current
+    IconButton(
+        onClick = {
+            Toast.makeText(
+                context,
+                name,
+                DURATION_TOAST
+            ).show()
+        }
+    ) {
+        Icon(
+            Icons.Default.Image,
+            contentDescription = name
+        )
     }
 }

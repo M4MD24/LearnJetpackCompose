@@ -17,4 +17,5 @@
     <string name="title_activity_dialogs">Dialogs</string>
     <string name="title_activity_floating_action_buttons">FloatingActionButtons</string>
     <string name="title_activity_menus">Menus</string>
+    <string name="title_activity_scaffolds">Scaffolds</string>
 </resources>

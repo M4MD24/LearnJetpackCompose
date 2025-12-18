@@ -11,6 +11,11 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.LearnJetpackCompose">
         <activity
+                android:name=".concepts.scaffolds.Scaffolds"
+                android:exported="false"
+                android:label="@string/title_activity_scaffolds"
+                android:theme="@style/Theme.LearnJetpackCompose"/>
+        <activity
                 android:name=".concepts.menus.Menus"
                 android:exported="false"
                 android:label="@string/title_activity_menus"

@@ -11,7 +11,12 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.LearnJetpackCompose">
         <activity
-                android:name=".concepts.navigation_drawers.NavigationDrawers"
+                android:name=".concepts.progress_indicators.ProgressIndicators"
+                android:exported="false"
+                android:label="@string/title_activity_progress_indicators"
+                android:theme="@style/Theme.LearnJetpackCompose"/>
+        <activity
+                android:name=".concepts.progress_indicators.NavigationDrawers"
                 android:exported="false"
                 android:label="@string/title_activity_navigation_drawers"
                 android:theme="@style/Theme.LearnJetpackCompose"/>

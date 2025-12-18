@@ -19,4 +19,5 @@
     <string name="title_activity_menus">Menus</string>
     <string name="title_activity_scaffolds">Scaffolds</string>
     <string name="title_activity_navigation_drawers">NavigationDrawers</string>
+    <string name="title_activity_progress_indicators">ProgressIndicators</string>
 </resources>

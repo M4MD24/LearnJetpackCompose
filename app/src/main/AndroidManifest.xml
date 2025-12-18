@@ -11,6 +11,11 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.LearnJetpackCompose">
         <activity
+                android:name=".concepts.pull_to_refresh_boxes.PullToRefreshBoxes"
+                android:exported="false"
+                android:label="@string/title_activity_pull_to_refresh_boxes"
+                android:theme="@style/Theme.LearnJetpackCompose"/>
+        <activity
                 android:name=".concepts.progress_indicators.ProgressIndicators"
                 android:exported="false"
                 android:label="@string/title_activity_progress_indicators"

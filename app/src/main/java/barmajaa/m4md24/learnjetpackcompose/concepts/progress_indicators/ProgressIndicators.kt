@@ -4,6 +4,8 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.runtime.Composable
 import barmajaa.m4md24.learnjetpackcompose.concepts.navigation_drawers.ui.PreviewUI
 
 class NavigationDrawers : ComponentActivity() {
@@ -15,3 +17,5 @@ class NavigationDrawers : ComponentActivity() {
         }
     }
 }
+@Composable
+fun CircularIndeterminate() = CircularProgressIndicator()

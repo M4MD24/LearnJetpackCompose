@@ -49,3 +49,26 @@ fun CircularDeterminate() {
 }
 @Composable
 fun LinearIndeterminate() = LinearProgressIndicator(modifier = Modifier.fillMaxWidth())
+@Composable
+fun LinearDeterminate() {
+    var progress by remember {
+        mutableFloatStateOf(0f)
+    }
+
+    LaunchedEffect(Unit) {
+        while (true) {
+            delay(50)
+            progress = (progress + 0.01f).coerceAtMost(1f)
+            if (progress >= 1f) progress = 0f
+        }
+    }
+
+    LinearProgressIndicator(
+        progress = { progress },
+        modifier = Modifier.fillMaxWidth(),
+        color = ProgressIndicatorDefaults.linearColor,
+        trackColor = ProgressIndicatorDefaults.linearTrackColor,
+        strokeCap = ProgressIndicatorDefaults.LinearStrokeCap,
+    )
+    Text("${(progress * 100).toInt()}%")
+}

@@ -21,8 +21,7 @@ fun PreviewUI() {
     ) {
         Column(
             modifier = Modifier
-                .wrapContentSize()
-                .background(Color.Gray),
+                .wrapContentSize(),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Normal()

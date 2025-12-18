@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import barmajaa.m4md24.learnjetpackcompose.concepts.progress_indicators.CircularDeterminate
 import barmajaa.m4md24.learnjetpackcompose.concepts.progress_indicators.CircularIndeterminate
 
 @Composable
@@ -34,6 +35,10 @@ fun PreviewUI() {
             val height = 40.dp
 
             Section(title = "Circular Indeterminate") { CircularIndeterminate() }
+
+            Spacer(modifier = Modifier.height(height))
+
+            Section(title = "Circular Determinate") { CircularDeterminate() }
         }
     }
 }

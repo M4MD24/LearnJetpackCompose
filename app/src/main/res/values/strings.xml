@@ -18,4 +18,5 @@
     <string name="title_activity_floating_action_buttons">FloatingActionButtons</string>
     <string name="title_activity_menus">Menus</string>
     <string name="title_activity_scaffolds">Scaffolds</string>
+    <string name="title_activity_navigation_drawers">NavigationDrawers</string>
 </resources>

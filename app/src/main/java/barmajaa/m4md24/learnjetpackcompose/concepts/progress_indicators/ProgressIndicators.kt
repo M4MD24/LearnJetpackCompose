@@ -4,7 +4,9 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.ProgressIndicatorDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
@@ -45,3 +47,5 @@ fun CircularDeterminate() {
     )
     Text("${(progress * 100).toInt()}%")
 }
+@Composable
+fun LinearIndeterminate() = LinearProgressIndicator(modifier = Modifier.fillMaxWidth())

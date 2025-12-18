@@ -14,7 +14,7 @@ import androidx.compose.ui.Modifier
 import barmajaa.m4md24.learnjetpackcompose.concepts.navigation_drawers.ui.PreviewUI
 import kotlinx.coroutines.delay
 
-class NavigationDrawers : ComponentActivity() {
+class ProgressIndicators : ComponentActivity() {
     override fun onCreate(savedInstanceState : Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()

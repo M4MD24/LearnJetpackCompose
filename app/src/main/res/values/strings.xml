@@ -20,4 +20,5 @@
     <string name="title_activity_scaffolds">Scaffolds</string>
     <string name="title_activity_navigation_drawers">NavigationDrawers</string>
     <string name="title_activity_progress_indicators">ProgressIndicators</string>
+    <string name="title_activity_pull_to_refresh_boxes">PullToRefreshBoxes</string>
 </resources>

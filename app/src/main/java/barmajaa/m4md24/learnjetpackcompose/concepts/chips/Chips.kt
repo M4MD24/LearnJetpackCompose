@@ -15,12 +15,14 @@ import androidx.compose.material3.InputChipDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import barmajaa.m4md24.learnjetpackcompose.concepts.chips.ui.PreviewUI
 
 class Chips : ComponentActivity() {
     override fun onCreate(savedInstanceState : Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
+            PreviewUI()
         }
     }
 }

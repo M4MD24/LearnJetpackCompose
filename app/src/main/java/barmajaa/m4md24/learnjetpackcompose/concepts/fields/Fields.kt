@@ -32,7 +32,7 @@ fun GetTextColors() = listOf(
     colorResource(R.color.light_pink_red)
 )
 
-class Field : ComponentActivity() {
+class Fields : ComponentActivity() {
     override fun onCreate(savedInstanceState : Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()

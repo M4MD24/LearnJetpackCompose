@@ -11,7 +11,7 @@ import androidx.compose.material3.ProgressIndicatorDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
-import barmajaa.m4md24.learnjetpackcompose.concepts.navigation_drawers.ui.PreviewUI
+import barmajaa.m4md24.learnjetpackcompose.concepts.progress_indicators.ui.PreviewUI
 import kotlinx.coroutines.delay
 
 class ProgressIndicators : ComponentActivity() {

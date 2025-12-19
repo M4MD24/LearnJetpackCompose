@@ -58,7 +58,7 @@
         <activity
                 android:name=".concepts.checkboxes.Checkboxes"
                 android:exported="false"
-                android:label="@string/title_activity_check_boxes"
+                android:label="@string/title_activity_checkboxes"
                 android:theme="@style/Theme.LearnJetpackCompose"/>
         <activity
                 android:name=".concepts.cards.Cards"
@@ -96,7 +96,7 @@
                 android:label="@string/title_activity_texts"
                 android:theme="@style/Theme.LearnJetpackCompose"/>
         <activity
-                android:name=".concepts.fields.Field"
+                android:name=".concepts.fields.Fields"
                 android:exported="false"
                 android:label="@string/title_activity_fields"
                 android:theme="@style/Theme.LearnJetpackCompose"/>

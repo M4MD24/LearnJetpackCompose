@@ -20,6 +20,7 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import barmajaa.m4md24.learnjetpackcompose.R
+import barmajaa.m4md24.learnjetpackcompose.concepts.images.ui.PreviewUI
 
 @Composable
 fun GetColors() = listOf(
@@ -36,6 +37,7 @@ class Images : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
+            PreviewUI()
         }
     }
 }
@@ -52,12 +54,14 @@ fun Normal() {
         painter = painterResource(R.drawable.coffee),
         contentDescription = "Coffee",
         contentScale = ContentScale.Fit,
-        modifier = Modifier.size(400.dp).border(
-            BorderStroke(
-                width = borderWidth,
-                brush = borderColors
-            )
-        ),
+        modifier = Modifier
+            .size(400.dp)
+            .border(
+                BorderStroke(
+                    width = borderWidth,
+                    brush = borderColors
+                )
+            ),
         alignment = Alignment.Center,
         colorFilter = ColorFilter.colorMatrix(
             ColorMatrix().apply {

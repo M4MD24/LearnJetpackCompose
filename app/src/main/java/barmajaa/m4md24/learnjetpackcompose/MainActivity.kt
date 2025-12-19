@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import barmajaa.m4md24.learnjetpackcompose.ui.PreviewUI
 import barmajaa.m4md24.learnjetpackcompose.ui.theme.LearnJetpackComposeTheme
 
 class MainActivity : ComponentActivity() {
@@ -11,7 +12,9 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            LearnJetpackComposeTheme {}
+            LearnJetpackComposeTheme {
+                PreviewUI()
+            }
         }
     }
 }

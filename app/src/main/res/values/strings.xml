@@ -22,4 +22,5 @@
     <string name="title_activity_progress_indicators">ProgressIndicators</string>
     <string name="title_activity_pull_to_refresh_boxes">PullToRefreshBoxes</string>
     <string name="title_concept_column_and_row_types">ColumnAndRowTypes</string>
+    <string name="title_concept_learn">Learn</string>
 </resources>

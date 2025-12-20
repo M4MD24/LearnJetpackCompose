@@ -11,107 +11,107 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.LearnJetpackCompose">
         <activity
-                android:name=".concepts.pull_to_refresh_boxes.PullToRefreshBoxes"
+                android:name=".learn.components.pull_to_refresh_boxes.PullToRefreshBoxes"
                 android:exported="false"
                 android:label="@string/title_activity_pull_to_refresh_boxes"
                 android:theme="@style/Theme.LearnJetpackCompose"/>
         <activity
-                android:name=".concepts.progress_indicators.ProgressIndicators"
+                android:name=".learn.components.progress_indicators.ProgressIndicators"
                 android:exported="false"
                 android:label="@string/title_activity_progress_indicators"
                 android:theme="@style/Theme.LearnJetpackCompose"/>
         <activity
-                android:name=".concepts.navigation_drawers.NavigationDrawers"
+                android:name=".learn.components.navigation_drawers.NavigationDrawers"
                 android:exported="false"
                 android:label="@string/title_activity_navigation_drawers"
                 android:theme="@style/Theme.LearnJetpackCompose"/>
         <activity
-                android:name=".concepts.scaffolds.Scaffolds"
+                android:name=".learn.components.scaffolds.Scaffolds"
                 android:exported="false"
                 android:label="@string/title_activity_scaffolds"
                 android:theme="@style/Theme.LearnJetpackCompose"/>
         <activity
-                android:name=".concepts.menus.Menus"
+                android:name=".learn.components.menus.Menus"
                 android:exported="false"
                 android:label="@string/title_activity_menus"
                 android:theme="@style/Theme.LearnJetpackCompose"/>
         <activity
-                android:name=".concepts.floating_action_buttons.FloatingActionButtons"
+                android:name=".learn.components.floating_action_buttons.FloatingActionButtons"
                 android:exported="false"
                 android:label="@string/title_activity_floating_action_buttons"
                 android:theme="@style/Theme.LearnJetpackCompose"/>
         <activity
-                android:name=".concepts.dialogs.Dialogs"
+                android:name=".learn.components.dialogs.Dialogs"
                 android:exported="false"
                 android:label="@string/title_activity_dialogs"
                 android:theme="@style/Theme.LearnJetpackCompose"/>
         <activity
-                android:name=".concepts.column_and_row_types.normal.Normal"
+                android:name=".learn.components.column_and_row_types.normal.Normal"
                 android:exported="false"
                 android:label="@string/title_activity_normal"
                 android:theme="@style/Theme.LearnJetpackCompose"/>
         <activity
-                android:name=".concepts.chips.Chips"
+                android:name=".learn.components.chips.Chips"
                 android:exported="false"
                 android:label="@string/title_activity_chips"
                 android:theme="@style/Theme.LearnJetpackCompose"/>
         <activity
-                android:name=".concepts.checkboxes.Checkboxes"
+                android:name=".learn.components.checkboxes.Checkboxes"
                 android:exported="false"
                 android:label="@string/title_activity_checkboxes"
                 android:theme="@style/Theme.LearnJetpackCompose"/>
         <activity
-                android:name=".concepts.cards.Cards"
+                android:name=".learn.components.cards.Cards"
                 android:exported="false"
                 android:label="@string/title_activity_cards"
                 android:theme="@style/Theme.LearnJetpackCompose"/>
         <activity
-                android:name=".concepts.modal_bottom_sheets.ModalBottomSheets"
+                android:name=".learn.components.modal_bottom_sheets.ModalBottomSheets"
                 android:exported="false"
                 android:label="@string/title_activity_modal_bottom_sheets"
                 android:theme="@style/Theme.LearnJetpackCompose"/>
         <activity
-                android:name=".concepts.column_and_row_types.lazy.Lazy"
+                android:name=".learn.components.column_and_row_types.lazy.Lazy"
                 android:exported="false"
                 android:label="@string/title_activity_lazy"
                 android:theme="@style/Theme.LearnJetpackCompose"/>
         <activity
-                android:name=".concepts.layouts.Layouts"
+                android:name=".learn.components.layouts.Layouts"
                 android:exported="false"
                 android:label="@string/title_activity_layouts"
                 android:theme="@style/Theme.LearnJetpackCompose"/>
         <activity
-                android:name=".concepts.images.Images"
+                android:name=".learn.components.images.Images"
                 android:exported="false"
                 android:label="@string/title_activity_images"
                 android:theme="@style/Theme.LearnJetpackCompose"/>
         <activity
-                android:name=".concepts.buttons.Buttons"
+                android:name=".learn.components.buttons.Buttons"
                 android:exported="false"
                 android:label="@string/title_activity_buttons"
                 android:theme="@style/Theme.LearnJetpackCompose"/>
         <activity
-                android:name=".concepts.texts.Texts"
+                android:name=".learn.components.texts.Texts"
                 android:exported="false"
                 android:label="@string/title_activity_texts"
                 android:theme="@style/Theme.LearnJetpackCompose"/>
         <activity
-                android:name=".concepts.fields.Fields"
+                android:name=".learn.components.fields.Fields"
                 android:exported="false"
                 android:label="@string/title_activity_fields"
                 android:theme="@style/Theme.LearnJetpackCompose"/>
         <activity
-                android:name=".concepts.text_and_typography.TextAndTypography"
+                android:name=".learn.components.text_and_typography.TextAndTypography"
                 android:exported="false"
                 android:label="@string/title_activity_text_and_typography"
                 android:theme="@style/Theme.LearnJetpackCompose"/>
         <activity
-                android:name=".concepts.resource_access.ResourceAccess"
+                android:name=".learn.components.resource_access.ResourceAccess"
                 android:exported="false"
                 android:label="@string/title_activity_resource_access"
                 android:theme="@style/Theme.LearnJetpackCompose"/>
         <activity
-                android:name=".concepts.first_app.FirstApp"
+                android:name=".learn.components.first_app.FirstApp"
                 android:exported="false"
                 android:label="@string/title_activity_first_app"
                 android:theme="@style/Theme.LearnJetpackCompose"/>

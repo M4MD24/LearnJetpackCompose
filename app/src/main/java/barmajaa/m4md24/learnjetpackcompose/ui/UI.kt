@@ -26,27 +26,27 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import barmajaa.m4md24.learnjetpackcompose.R
-import barmajaa.m4md24.learnjetpackcompose.concepts.buttons.Buttons
-import barmajaa.m4md24.learnjetpackcompose.concepts.cards.Cards
-import barmajaa.m4md24.learnjetpackcompose.concepts.checkboxes.Checkboxes
-import barmajaa.m4md24.learnjetpackcompose.concepts.chips.Chips
-import barmajaa.m4md24.learnjetpackcompose.concepts.column_and_row_types.lazy.Lazy
-import barmajaa.m4md24.learnjetpackcompose.concepts.column_and_row_types.normal.Normal
-import barmajaa.m4md24.learnjetpackcompose.concepts.dialogs.Dialogs
-import barmajaa.m4md24.learnjetpackcompose.concepts.fields.Fields
-import barmajaa.m4md24.learnjetpackcompose.concepts.first_app.FirstApp
-import barmajaa.m4md24.learnjetpackcompose.concepts.floating_action_buttons.FloatingActionButtons
-import barmajaa.m4md24.learnjetpackcompose.concepts.images.Images
-import barmajaa.m4md24.learnjetpackcompose.concepts.layouts.Layouts
-import barmajaa.m4md24.learnjetpackcompose.concepts.menus.Menus
-import barmajaa.m4md24.learnjetpackcompose.concepts.modal_bottom_sheets.ModalBottomSheets
-import barmajaa.m4md24.learnjetpackcompose.concepts.navigation_drawers.NavigationDrawers
-import barmajaa.m4md24.learnjetpackcompose.concepts.progress_indicators.ProgressIndicators
-import barmajaa.m4md24.learnjetpackcompose.concepts.pull_to_refresh_boxes.PullToRefreshBoxes
-import barmajaa.m4md24.learnjetpackcompose.concepts.resource_access.ResourceAccess
-import barmajaa.m4md24.learnjetpackcompose.concepts.scaffolds.Scaffolds
-import barmajaa.m4md24.learnjetpackcompose.concepts.text_and_typography.TextAndTypography
-import barmajaa.m4md24.learnjetpackcompose.concepts.texts.Texts
+import barmajaa.m4md24.learnjetpackcompose.learn.components.buttons.Buttons
+import barmajaa.m4md24.learnjetpackcompose.learn.components.cards.Cards
+import barmajaa.m4md24.learnjetpackcompose.learn.components.checkboxes.Checkboxes
+import barmajaa.m4md24.learnjetpackcompose.learn.components.chips.Chips
+import barmajaa.m4md24.learnjetpackcompose.learn.components.column_and_row_types.lazy.Lazy
+import barmajaa.m4md24.learnjetpackcompose.learn.components.column_and_row_types.normal.Normal
+import barmajaa.m4md24.learnjetpackcompose.learn.components.dialogs.Dialogs
+import barmajaa.m4md24.learnjetpackcompose.learn.components.fields.Fields
+import barmajaa.m4md24.learnjetpackcompose.learn.components.first_app.FirstApp
+import barmajaa.m4md24.learnjetpackcompose.learn.components.floating_action_buttons.FloatingActionButtons
+import barmajaa.m4md24.learnjetpackcompose.learn.components.images.Images
+import barmajaa.m4md24.learnjetpackcompose.learn.components.layouts.Layouts
+import barmajaa.m4md24.learnjetpackcompose.learn.components.menus.Menus
+import barmajaa.m4md24.learnjetpackcompose.learn.components.modal_bottom_sheets.ModalBottomSheets
+import barmajaa.m4md24.learnjetpackcompose.learn.components.navigation_drawers.NavigationDrawers
+import barmajaa.m4md24.learnjetpackcompose.learn.components.progress_indicators.ProgressIndicators
+import barmajaa.m4md24.learnjetpackcompose.learn.components.pull_to_refresh_boxes.PullToRefreshBoxes
+import barmajaa.m4md24.learnjetpackcompose.learn.components.resource_access.ResourceAccess
+import barmajaa.m4md24.learnjetpackcompose.learn.components.scaffolds.Scaffolds
+import barmajaa.m4md24.learnjetpackcompose.learn.components.text_and_typography.TextAndTypography
+import barmajaa.m4md24.learnjetpackcompose.learn.components.texts.Texts
 
 sealed class ConceptItem {
     data class Single(
@@ -59,6 +59,12 @@ sealed class ConceptItem {
         val nameID : Int,
         val icon : ImageVector,
         val items : List<Single>
+    ) : ConceptItem()
+
+    data class GroupGroup(
+        val nameID : Int,
+        val icon : ImageVector,
+        val items : List<ConceptItem>
     ) : ConceptItem()
 }
 @Composable
@@ -88,7 +94,7 @@ sealed class ConceptItem {
     uiMode = Configuration.UI_MODE_NIGHT_NO, device = "spec:width=7680px,height=4320px,dpi=1760,orientation=landscape"
 )
 fun PreviewUI() {
-    val conceptItems = listOf(
+    val subConceptItems = listOf(
         ConceptItem.Single(R.string.title_activity_first_app, Icons.Default.Home, FirstApp::class.java),
         ConceptItem.Single(R.string.title_activity_resource_access, Icons.Default.Folder, ResourceAccess::class.java),
         ConceptItem.Single(R.string.title_activity_text_and_typography, Icons.Default.TextFields, TextAndTypography::class.java),
@@ -117,8 +123,14 @@ fun PreviewUI() {
         ConceptItem.Single(R.string.title_activity_progress_indicators, Icons.Default.Refresh, ProgressIndicators::class.java),
         ConceptItem.Single(R.string.title_activity_pull_to_refresh_boxes, Icons.Default.ArrowDownward, PullToRefreshBoxes::class.java)
     )
+    val conceptItems = listOf(
+        ConceptItem.GroupGroup(
+            nameID = R.string.title_concept_learn,
+            icon = Icons.Default.Biotech,
+            items = subConceptItems
+        )
+    )
     val context = LocalContext.current
-
     MaterialTheme(
         colorScheme = if (isSystemInDarkTheme())
             darkColorScheme()
@@ -137,21 +149,68 @@ fun PreviewUI() {
                 horizontalAlignment = Alignment.CenterHorizontally,
                 contentPadding = PaddingValues(vertical = 20.dp)
             ) {
-                val elevation = 10.dp
                 items(conceptItems) { item ->
-                    when (item) {
-                        is ConceptItem.Single -> CardButton(
-                            context,
-                            item,
-                            elevation
-                        )
+                    CardGroupGroup(
+                        context,
+                        item,
+                        10.dp
+                    )
+                }
+            }
+        }
+    }
+}
+@Composable
+private fun CardGroupGroup(
+    context : Context,
+    item : ConceptItem.GroupGroup,
+    elevation : Dp
+) {
+    ElevatedCard(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 20.dp),
+        elevation = CardDefaults.elevatedCardElevation(elevation)
+    ) {
+        Column(
+            modifier = Modifier.padding(20.dp),
+            verticalArrangement = Arrangement.spacedBy(16.dp)
+        ) {
+            Row(
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Icon(
+                    imageVector = item.icon,
+                    contentDescription = item.icon.name
+                )
+                Spacer(modifier = Modifier.width(12.dp))
+                Text(
+                    text = stringResource(item.nameID),
+                    style = MaterialTheme.typography.titleLarge
+                )
+            }
 
-                        is ConceptItem.Group  -> CardGroup(
-                            context,
-                            item,
-                            elevation
-                        )
-                    }
+            HorizontalDivider()
+
+            item.items.forEach { subItem ->
+                when (subItem) {
+                    is ConceptItem.Single     -> CardButton(
+                        context,
+                        subItem,
+                        elevation - 2.dp
+                    )
+
+                    is ConceptItem.Group      -> CardGroup(
+                        context,
+                        subItem,
+                        elevation - 2.dp
+                    )
+
+                    is ConceptItem.GroupGroup -> CardGroupGroup(
+                        context,
+                        subItem,
+                        elevation - 2.dp
+                    )
                 }
             }
         }
@@ -162,38 +221,40 @@ private fun CardGroup(
     context : Context,
     item : ConceptItem.Group,
     elevation : Dp
-) = ElevatedCard(
-    modifier = Modifier
-        .fillMaxWidth()
-        .padding(horizontal = 20.dp),
-    elevation = CardDefaults.elevatedCardElevation(elevation)
 ) {
-    Column(
-        modifier = Modifier.padding(20.dp),
-        verticalArrangement = Arrangement.spacedBy(16.dp)
+    ElevatedCard(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 8.dp),
+        elevation = CardDefaults.elevatedCardElevation(elevation)
     ) {
-        Row(
-            verticalAlignment = Alignment.CenterVertically
+        Column(
+            modifier = Modifier.padding(16.dp),
+            verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
-            Icon(
-                imageVector = item.icon,
-                contentDescription = item.icon.name
-            )
-            Spacer(modifier = Modifier.width(12.dp))
-            Text(
-                text = stringResource(item.nameID),
-                style = MaterialTheme.typography.titleMedium
-            )
-        }
+            Row(
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Icon(
+                    imageVector = item.icon,
+                    contentDescription = item.icon.name
+                )
+                Spacer(modifier = Modifier.width(12.dp))
+                Text(
+                    text = stringResource(item.nameID),
+                    style = MaterialTheme.typography.titleMedium
+                )
+            }
 
-        HorizontalDivider()
+            HorizontalDivider()
 
-        item.items.forEach { subItem ->
-            CardButton(
-                context,
-                subItem,
-                elevation
-            )
+            item.items.forEach { subItem ->
+                CardButton(
+                    context,
+                    subItem,
+                    elevation - 2.dp
+                )
+            }
         }
     }
 }
@@ -202,33 +263,35 @@ private fun CardButton(
     context : Context,
     item : ConceptItem.Single,
     elevation : Dp
-) = ElevatedCard(
-    modifier = Modifier
-        .fillMaxWidth()
-        .padding(horizontal = 20.dp)
-        .clickable {
-            context.startActivity(
-                Intent(context, item.activityClass)
-            )
-        },
-    elevation = CardDefaults.elevatedCardElevation(elevation)
 ) {
-    Row(
+    ElevatedCard(
         modifier = Modifier
-            .fillMaxHeight()
-            .padding(20.dp),
-        verticalAlignment = Alignment.CenterVertically
+            .fillMaxWidth()
+            .padding(horizontal = 4.dp)
+            .clickable {
+                context.startActivity(
+                    Intent(context, item.activityClass)
+                )
+            },
+        elevation = CardDefaults.elevatedCardElevation(elevation)
     ) {
-        Icon(
-            modifier = Modifier.weight(0.1F),
-            imageVector = item.icon,
-            contentDescription = item.icon.name
-        )
-        Spacer(modifier = Modifier.weight(0.025F))
-        Text(
-            modifier = Modifier.weight(0.8F),
-            text = stringResource(item.nameID),
-            style = MaterialTheme.typography.titleMedium
-        )
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Icon(
+                modifier = Modifier.weight(0.1F),
+                imageVector = item.icon,
+                contentDescription = item.icon.name
+            )
+            Spacer(modifier = Modifier.weight(0.025F))
+            Text(
+                modifier = Modifier.weight(0.8F),
+                text = stringResource(item.nameID),
+                style = MaterialTheme.typography.titleMedium
+            )
+        }
     }
 }

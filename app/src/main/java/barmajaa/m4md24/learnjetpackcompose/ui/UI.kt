@@ -3,24 +3,16 @@ package barmajaa.m4md24.learnjetpackcompose.ui
 import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
-import androidx.compose.foundation.clickable
+import android.widget.Toast
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.Article
-import androidx.compose.material.icons.automirrored.filled.Chat
-import androidx.compose.material.icons.automirrored.filled.Label
-import androidx.compose.material.icons.automirrored.filled.List
-import androidx.compose.material.icons.automirrored.filled.ViewQuilt
+import androidx.compose.material.icons.automirrored.filled.*
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
@@ -72,7 +64,6 @@ sealed class ConceptItem {
         val items : List<ConceptItem>
     ) : ConceptItem()
 }
-@Composable
 @Preview(
     name = "Dark Mode",
     showSystemUi = true,
@@ -83,8 +74,9 @@ sealed class ConceptItem {
     showSystemUi = true,
     uiMode = Configuration.UI_MODE_NIGHT_NO
 )
+@Composable
 fun PreviewUI() {
-    val subConceptItems = listOf(
+    val learnConceptItems = listOf(
         ConceptItem.Single(R.string.title_activity_first_app, Icons.Default.Home, FirstApp::class.java),
         ConceptItem.Single(R.string.title_activity_resource_access, Icons.Default.Folder, ResourceAccess::class.java),
         ConceptItem.Single(R.string.title_activity_text_and_typography, Icons.Default.TextFields, TextAndTypography::class.java),
@@ -113,11 +105,17 @@ fun PreviewUI() {
         ConceptItem.Single(R.string.title_activity_progress_indicators, Icons.Default.Refresh, ProgressIndicators::class.java),
         ConceptItem.Single(R.string.title_activity_pull_to_refresh_boxes, Icons.Default.ArrowDownward, PullToRefreshBoxes::class.java)
     )
+    val developConceptItems : List<ConceptItem> = listOf()
     val conceptItems = listOf(
         ConceptItem.GroupGroup(
             nameID = R.string.title_concept_learn,
             icon = Icons.Default.Biotech,
-            items = subConceptItems
+            items = learnConceptItems
+        ),
+        ConceptItem.GroupGroup(
+            nameID = R.string.title_concept_develop,
+            icon = Icons.Default.DeveloperMode,
+            items = developConceptItems
         )
     )
     val context = LocalContext.current
@@ -150,6 +148,12 @@ fun PreviewUI() {
         }
     }
 }
+
+private fun SoonToast(context : Context) = Toast.makeText(
+    context,
+    "Soon",
+    Toast.LENGTH_SHORT
+).show()
 @Composable
 private fun CardGroupGroup(
     context : Context,
@@ -171,8 +175,15 @@ private fun CardGroupGroup(
             TitleLine(
                 item.nameID,
                 item.icon,
+                item.items.isEmpty(),
                 expanded,
-                { expanded = it }
+                {
+                    if (item.items.isNotEmpty())
+                        expanded = it
+                    else
+                        SoonToast(context)
+                },
+                padding = 20.dp
             )
 
             if (expanded) {
@@ -207,34 +218,43 @@ private fun CardGroupGroup(
 private fun TitleLine(
     nameID : Int,
     icon : ImageVector,
+    isNullItems : Boolean,
     expanded : Boolean,
     onExpandedChange : (Boolean) -> Unit,
-    textStyle : androidx.compose.ui.text.TextStyle = MaterialTheme.typography.titleLarge
+    textStyle : androidx.compose.ui.text.TextStyle = MaterialTheme.typography.titleLarge,
+    padding : Dp
 ) {
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .clickable { onExpandedChange(!expanded) },
-        verticalAlignment = Alignment.CenterVertically
+    Card(
+        onClick = {
+            onExpandedChange(!expanded)
+        }
     ) {
-        Icon(
-            modifier = Modifier.weight(0.1F),
-            imageVector = icon,
-            contentDescription = icon.name
-        )
-        Spacer(modifier = Modifier.weight(0.025F))
-        Text(
-            modifier = Modifier.weight(0.8F),
-            text = stringResource(nameID),
-            style = textStyle
-        )
-        Icon(
+        Row(
             modifier = Modifier
-                .weight(0.1F)
-                .rotate(if (expanded) 180f else 0f),
-            imageVector = Icons.Default.KeyboardArrowDown,
-            contentDescription = if (expanded) "Close" else "Open"
-        )
+                .fillMaxWidth()
+                .padding(padding),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Icon(
+                modifier = Modifier.weight(0.1F),
+                imageVector = icon,
+                contentDescription = icon.name
+            )
+            Spacer(modifier = Modifier.weight(0.025F))
+            Text(
+                modifier = Modifier.weight(0.8F),
+                text = stringResource(nameID),
+                style = textStyle
+            )
+            if (!isNullItems)
+                Icon(
+                    modifier = Modifier
+                        .weight(0.1F)
+                        .rotate(if (expanded) 180f else 0f),
+                    imageVector = Icons.Default.KeyboardArrowDown,
+                    contentDescription = if (expanded) "Close" else "Open"
+                )
+        }
     }
 }
 @Composable
@@ -258,8 +278,15 @@ private fun CardGroup(
             TitleLine(
                 item.nameID,
                 item.icon,
+                item.items.isEmpty(),
                 expanded,
-                {expanded = it}
+                {
+                    if (item.items.isNotEmpty())
+                        expanded = it
+                    else
+                        SoonToast(context)
+                },
+                padding = 16.dp
             )
 
             if (expanded) {
@@ -281,35 +308,33 @@ private fun CardButton(
     context : Context,
     item : ConceptItem.Single,
     elevation : Dp
+) = ElevatedCard(
+    modifier = Modifier
+        .fillMaxWidth()
+        .padding(horizontal = 4.dp),
+    elevation = CardDefaults.elevatedCardElevation(elevation),
+    onClick = {
+        context.startActivity(
+            Intent(context, item.activityClass)
+        )
+    }
 ) {
-    ElevatedCard(
+    Row(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(horizontal = 4.dp),
-        elevation = CardDefaults.elevatedCardElevation(elevation),
-        onClick = {
-            context.startActivity(
-                Intent(context, item.activityClass)
-            )
-        }
+            .padding(16.dp),
+        verticalAlignment = Alignment.CenterVertically
     ) {
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(16.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Icon(
-                modifier = Modifier.weight(0.1F),
-                imageVector = item.icon,
-                contentDescription = item.icon.name
-            )
-            Spacer(modifier = Modifier.weight(0.025F))
-            Text(
-                modifier = Modifier.weight(0.8F),
-                text = stringResource(item.nameID),
-                style = MaterialTheme.typography.titleMedium
-            )
-        }
+        Icon(
+            modifier = Modifier.weight(0.1F),
+            imageVector = item.icon,
+            contentDescription = item.icon.name
+        )
+        Spacer(modifier = Modifier.weight(0.025F))
+        Text(
+            modifier = Modifier.weight(0.8F),
+            text = stringResource(item.nameID),
+            style = MaterialTheme.typography.titleMedium
+        )
     }
 }

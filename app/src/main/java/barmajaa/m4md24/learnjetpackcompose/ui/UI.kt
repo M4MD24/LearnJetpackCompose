@@ -17,8 +17,13 @@ import androidx.compose.material.icons.automirrored.filled.ViewQuilt
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
@@ -77,21 +82,6 @@ sealed class ConceptItem {
     name = "Light Mode",
     showSystemUi = true,
     uiMode = Configuration.UI_MODE_NIGHT_NO
-)
-@Preview(
-    name = "Dark Mode",
-    showSystemUi = true,
-    uiMode = Configuration.UI_MODE_NIGHT_YES, device = "spec:parent=pixel_5,orientation=landscape"
-)
-@Preview(
-    name = "Light Mode",
-    showSystemUi = true,
-    uiMode = Configuration.UI_MODE_NIGHT_NO, device = "spec:parent=pixel_5,orientation=landscape"
-)
-@Preview(
-    name = "Light Mode",
-    showSystemUi = true,
-    uiMode = Configuration.UI_MODE_NIGHT_NO, device = "spec:width=7680px,height=4320px,dpi=1760,orientation=landscape"
 )
 fun PreviewUI() {
     val subConceptItems = listOf(
@@ -166,6 +156,8 @@ private fun CardGroupGroup(
     item : ConceptItem.GroupGroup,
     elevation : Dp
 ) {
+    var expanded by remember { mutableStateOf(false) }
+
     ElevatedCard(
         modifier = Modifier
             .fillMaxWidth()
@@ -176,44 +168,73 @@ private fun CardGroupGroup(
             modifier = Modifier.padding(20.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
-            Row(
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Icon(
-                    imageVector = item.icon,
-                    contentDescription = item.icon.name
-                )
-                Spacer(modifier = Modifier.width(12.dp))
-                Text(
-                    text = stringResource(item.nameID),
-                    style = MaterialTheme.typography.titleLarge
-                )
-            }
+            TitleLine(
+                item.nameID,
+                item.icon,
+                expanded,
+                { expanded = it }
+            )
 
-            HorizontalDivider()
+            if (expanded) {
+                HorizontalDivider()
 
-            item.items.forEach { subItem ->
-                when (subItem) {
-                    is ConceptItem.Single     -> CardButton(
-                        context,
-                        subItem,
-                        elevation - 2.dp
-                    )
+                item.items.forEach { subItem ->
+                    when (subItem) {
+                        is ConceptItem.Single -> CardButton(
+                            context,
+                            subItem,
+                            elevation - 2.dp
+                        )
 
-                    is ConceptItem.Group      -> CardGroup(
-                        context,
-                        subItem,
-                        elevation - 2.dp
-                    )
+                        is ConceptItem.Group -> CardGroup(
+                            context,
+                            subItem,
+                            elevation - 2.dp
+                        )
 
-                    is ConceptItem.GroupGroup -> CardGroupGroup(
-                        context,
-                        subItem,
-                        elevation - 2.dp
-                    )
+                        is ConceptItem.GroupGroup -> CardGroupGroup(
+                            context,
+                            subItem,
+                            elevation - 2.dp
+                        )
+                    }
                 }
             }
         }
+    }
+}
+@Composable
+private fun TitleLine(
+    nameID : Int,
+    icon : ImageVector,
+    expanded : Boolean,
+    onExpandedChange : (Boolean) -> Unit,
+    textStyle : androidx.compose.ui.text.TextStyle = MaterialTheme.typography.titleLarge
+) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .clickable { onExpandedChange(!expanded) },
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Icon(
+            modifier = Modifier.weight(0.1F),
+            imageVector = icon,
+            contentDescription = icon.name
+        )
+        Spacer(modifier = Modifier.weight(0.025F))
+        Text(
+            modifier = Modifier.weight(0.8F),
+            text = stringResource(nameID),
+            style = textStyle
+        )
+        Icon(
+            modifier = Modifier
+                .weight(0.1F)
+                .rotate(if (expanded) 180f else 0f),
+            imageVector = Icons.Default.KeyboardArrowDown,
+            contentDescription = if (expanded) "Close" else "Open"
+        )
     }
 }
 @Composable
@@ -222,6 +243,8 @@ private fun CardGroup(
     item : ConceptItem.Group,
     elevation : Dp
 ) {
+    var expanded by remember { mutableStateOf(false) }
+
     ElevatedCard(
         modifier = Modifier
             .fillMaxWidth()
@@ -232,28 +255,23 @@ private fun CardGroup(
             modifier = Modifier.padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
-            Row(
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Icon(
-                    imageVector = item.icon,
-                    contentDescription = item.icon.name
-                )
-                Spacer(modifier = Modifier.width(12.dp))
-                Text(
-                    text = stringResource(item.nameID),
-                    style = MaterialTheme.typography.titleMedium
-                )
-            }
+            TitleLine(
+                item.nameID,
+                item.icon,
+                expanded,
+                {expanded = it}
+            )
 
-            HorizontalDivider()
+            if (expanded) {
+                HorizontalDivider()
 
-            item.items.forEach { subItem ->
-                CardButton(
-                    context,
-                    subItem,
-                    elevation - 2.dp
-                )
+                item.items.forEach { subItem ->
+                    CardButton(
+                        context,
+                        subItem,
+                        elevation - 2.dp
+                    )
+                }
             }
         }
     }
@@ -267,13 +285,13 @@ private fun CardButton(
     ElevatedCard(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(horizontal = 4.dp)
-            .clickable {
-                context.startActivity(
-                    Intent(context, item.activityClass)
-                )
-            },
-        elevation = CardDefaults.elevatedCardElevation(elevation)
+            .padding(horizontal = 4.dp),
+        elevation = CardDefaults.elevatedCardElevation(elevation),
+        onClick = {
+            context.startActivity(
+                Intent(context, item.activityClass)
+            )
+        }
     ) {
         Row(
             modifier = Modifier

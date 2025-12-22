@@ -14,7 +14,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
-import barmajaa.m4md24.learnjetpackcompose.learn.components.buttons.DURATION_TOAST
 import barmajaa.m4md24.learnjetpackcompose.learn.components.floating_action_buttons.ui.PreviewUI
 
 class FloatingActionButtons : ComponentActivity() {
@@ -34,7 +33,7 @@ fun Small() {
             Toast.makeText(
                 context,
                 "Email",
-                DURATION_TOAST
+                Toast.LENGTH_SHORT
             ).show()
         }
     ) {
@@ -52,7 +51,7 @@ fun Normal() {
             Toast.makeText(
                 context,
                 "Email",
-                DURATION_TOAST
+                Toast.LENGTH_SHORT
             ).show()
         }
     ) {
@@ -70,7 +69,7 @@ fun Large() {
             Toast.makeText(
                 context,
                 "Email",
-                DURATION_TOAST
+                Toast.LENGTH_SHORT
             ).show()
         }
     ) {
@@ -88,7 +87,7 @@ fun Extended() {
             Toast.makeText(
                 context,
                 "Email",
-                DURATION_TOAST
+                Toast.LENGTH_SHORT
             ).show()
         }
     ) {

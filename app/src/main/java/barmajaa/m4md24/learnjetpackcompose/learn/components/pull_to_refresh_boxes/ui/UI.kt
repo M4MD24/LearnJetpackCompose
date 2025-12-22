@@ -9,7 +9,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
-import barmajaa.m4md24.learnjetpackcompose.learn.components.buttons.DURATION_TOAST
 import barmajaa.m4md24.learnjetpackcompose.learn.components.pull_to_refresh_boxes.Normal
 
 @Composable
@@ -40,7 +39,7 @@ fun PreviewUI() {
                     Toast.makeText(
                         context,
                         "Refreshing",
-                        DURATION_TOAST
+                        Toast.LENGTH_SHORT
                     ).show()
                 }
             )

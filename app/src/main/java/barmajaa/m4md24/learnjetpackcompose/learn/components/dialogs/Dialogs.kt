@@ -20,7 +20,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
-import barmajaa.m4md24.learnjetpackcompose.learn.components.buttons.DURATION_TOAST
 import barmajaa.m4md24.learnjetpackcompose.learn.components.dialogs.ui.PreviewUI
 
 class Dialogs : ComponentActivity() {
@@ -83,7 +82,7 @@ fun Normal(
                             Toast.makeText(
                                 context,
                                 "Sure",
-                                DURATION_TOAST
+                                Toast.LENGTH_SHORT
                             ).show()
                         }
                     ) {
@@ -104,7 +103,7 @@ fun Normal(
                             Toast.makeText(
                                 context,
                                 "No Problem",
-                                DURATION_TOAST
+                                Toast.LENGTH_SHORT
                             ).show()
                         }
                     ) {

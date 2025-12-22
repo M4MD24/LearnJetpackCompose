@@ -11,6 +11,11 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.LearnJetpackCompose">
         <activity
+                android:name=".learn.components.search_bars.SearchBars"
+                android:exported="false"
+                android:label="@string/title_activity_search_bars"
+                android:theme="@style/Theme.LearnJetpackCompose"/>
+        <activity
                 android:name=".learn.components.pull_to_refresh_boxes.PullToRefreshBoxes"
                 android:exported="false"
                 android:label="@string/title_activity_pull_to_refresh_boxes"

@@ -102,6 +102,8 @@
         - Determinate
 - [<span style="color: #4285f4;">Pull to Refresh Box</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/pull_to_refresh_boxes)
     - Normal
+- [<span style="color: #4285f4;">SearchBars</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/search_bars)
+    - Normal
 
 ---
 

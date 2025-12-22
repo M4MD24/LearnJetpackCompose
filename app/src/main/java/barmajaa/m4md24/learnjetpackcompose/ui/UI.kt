@@ -23,11 +23,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import barmajaa.m4md24.learnjetpackcompose.R
+import barmajaa.m4md24.learnjetpackcompose.learn.components.search_bars.SearchBars
 import barmajaa.m4md24.learnjetpackcompose.learn.components.buttons.Buttons
 import barmajaa.m4md24.learnjetpackcompose.learn.components.cards.Cards
 import barmajaa.m4md24.learnjetpackcompose.learn.components.checkboxes.Checkboxes
 import barmajaa.m4md24.learnjetpackcompose.learn.components.chips.Chips
-import barmajaa.m4md24.learnjetpackcompose.learn.components.column_and_row_types.lazy.Lazy
 import barmajaa.m4md24.learnjetpackcompose.learn.components.column_and_row_types.normal.Normal
 import barmajaa.m4md24.learnjetpackcompose.learn.components.dialogs.Dialogs
 import barmajaa.m4md24.learnjetpackcompose.learn.components.fields.Fields
@@ -103,7 +103,8 @@ fun PreviewUI() {
         ConceptItem.Single(R.string.title_activity_scaffolds, Icons.Default.Dashboard, Scaffolds::class.java),
         ConceptItem.Single(R.string.title_activity_navigation_drawers, Icons.Default.Menu, NavigationDrawers::class.java),
         ConceptItem.Single(R.string.title_activity_progress_indicators, Icons.Default.Refresh, ProgressIndicators::class.java),
-        ConceptItem.Single(R.string.title_activity_pull_to_refresh_boxes, Icons.Default.ArrowDownward, PullToRefreshBoxes::class.java)
+        ConceptItem.Single(R.string.title_activity_pull_to_refresh_boxes, Icons.Default.ArrowDownward, PullToRefreshBoxes::class.java),
+        ConceptItem.Single(R.string.title_activity_search_bars, Icons.Default.Search, SearchBars::class.java)
     )
     val developConceptItems : List<ConceptItem> = listOf()
     val conceptItems = listOf(

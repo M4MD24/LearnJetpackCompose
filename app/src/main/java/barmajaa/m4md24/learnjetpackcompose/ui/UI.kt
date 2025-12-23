@@ -315,7 +315,7 @@ private fun SearchBar(
     SearchBar(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(horizontal = if (active) 0.dp else 20.dp),
+            .padding(horizontal = if (active) 0.dp else 20.dp, vertical = 6.dp),
         inputField = {
             SearchBarDefaults.InputField(
                 query = query,

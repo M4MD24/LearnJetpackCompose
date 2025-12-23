@@ -112,6 +112,8 @@
 - [<span style="color: #4285f4;">Sliders</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/sliders)
     - Normal
     - Range
+- [<span style="color: #4285f4;">SnackBars</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/snack_bars)
+    - Normal
 
 ---
 

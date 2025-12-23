@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
 import android.widget.Toast
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -28,6 +29,7 @@ import barmajaa.m4md24.learnjetpackcompose.learn.components.buttons.Buttons
 import barmajaa.m4md24.learnjetpackcompose.learn.components.cards.Cards
 import barmajaa.m4md24.learnjetpackcompose.learn.components.checkboxes.Checkboxes
 import barmajaa.m4md24.learnjetpackcompose.learn.components.chips.Chips
+import barmajaa.m4md24.learnjetpackcompose.learn.components.column_and_row_types.lazy.Lazy
 import barmajaa.m4md24.learnjetpackcompose.learn.components.column_and_row_types.normal.Normal
 import barmajaa.m4md24.learnjetpackcompose.learn.components.dialogs.Dialogs
 import barmajaa.m4md24.learnjetpackcompose.learn.components.fields.Fields
@@ -44,6 +46,7 @@ import barmajaa.m4md24.learnjetpackcompose.learn.components.resource_access.Reso
 import barmajaa.m4md24.learnjetpackcompose.learn.components.scaffolds.Scaffolds
 import barmajaa.m4md24.learnjetpackcompose.learn.components.text_and_typography.TextAndTypography
 import barmajaa.m4md24.learnjetpackcompose.learn.components.texts.Texts
+import kotlin.text.contains
 
 sealed class ConceptItem {
     data class Single(
@@ -64,18 +67,8 @@ sealed class ConceptItem {
         val items : List<ConceptItem>
     ) : ConceptItem()
 }
-@Preview(
-    name = "Dark Mode",
-    showSystemUi = true,
-    uiMode = Configuration.UI_MODE_NIGHT_YES
-)
-@Preview(
-    name = "Light Mode",
-    showSystemUi = true,
-    uiMode = Configuration.UI_MODE_NIGHT_NO
-)
 @Composable
-fun PreviewUI() {
+private fun getConceptItems() : List<ConceptItem.GroupGroup> {
     val learnConceptItems = listOf(
         ConceptItem.Single(R.string.title_activity_first_app, Icons.Default.Home, FirstApp::class.java),
         ConceptItem.Single(R.string.title_activity_resource_access, Icons.Default.Folder, ResourceAccess::class.java),
@@ -86,9 +79,9 @@ fun PreviewUI() {
         ConceptItem.Single(R.string.title_activity_images, Icons.Default.Image, Images::class.java),
         ConceptItem.Single(R.string.title_activity_layouts, Icons.AutoMirrored.Filled.ViewQuilt, Layouts::class.java),
         ConceptItem.Group(
-            nameID = R.string.title_concept_column_and_row_types,
-            icon = Icons.Default.ViewColumn,
-            items = listOf(
+            R.string.title_concept_column_and_row_types,
+            Icons.Default.ViewColumn,
+            listOf(
                 ConceptItem.Single(R.string.title_activity_normal, Icons.Default.CropSquare, Normal::class.java),
                 ConceptItem.Single(R.string.title_activity_lazy, Icons.AutoMirrored.Filled.List, Lazy::class.java)
             )
@@ -106,8 +99,9 @@ fun PreviewUI() {
         ConceptItem.Single(R.string.title_activity_pull_to_refresh_boxes, Icons.Default.ArrowDownward, PullToRefreshBoxes::class.java),
         ConceptItem.Single(R.string.title_activity_search_bars, Icons.Default.Search, SearchBars::class.java)
     )
-    val developConceptItems : List<ConceptItem> = listOf()
-    val conceptItems = listOf(
+    val developConceptItems : List<ConceptItem> = emptyList()
+
+    return listOf(
         ConceptItem.GroupGroup(
             nameID = R.string.title_concept_learn,
             icon = Icons.Default.Biotech,
@@ -119,38 +113,268 @@ fun PreviewUI() {
             items = developConceptItems
         )
     )
+}
+@Preview(
+    name = "Dark Mode",
+    showSystemUi = true,
+    uiMode = Configuration.UI_MODE_NIGHT_YES
+)
+@Preview(
+    name = "Light Mode",
+    showSystemUi = true,
+    uiMode = Configuration.UI_MODE_NIGHT_NO
+)
+@Composable
+fun PreviewUI() {
     val context = LocalContext.current
-    MaterialTheme(
-        colorScheme = if (isSystemInDarkTheme())
-            darkColorScheme()
-        else
-            lightColorScheme()
+    var searchQuery by remember { mutableStateOf("") }
+    val originalConceptItems = getConceptItems()
+    val currentConceptItems = remember(
+        searchQuery,
+        originalConceptItems
     ) {
-        Surface(
-            modifier = Modifier
-                .fillMaxSize()
-                .systemBarsPadding(),
-            color = MaterialTheme.colorScheme.background
-        ) {
-            LazyColumn(
-                modifier = Modifier.fillMaxSize(),
-                verticalArrangement = Arrangement.spacedBy(16.dp),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                contentPadding = PaddingValues(vertical = 20.dp)
+        if (searchQuery.isEmpty())
+            originalConceptItems
+        else
+            FilterConceptItems(
+                context,
+                searchQuery,
+                originalConceptItems
+            )
+    }
+    val suggestions = remember(originalConceptItems) {
+        GetAllConceptNames(
+            context,
+            originalConceptItems
+        )
+    }
+
+    MaterialTheme(
+        colorScheme = if (isSystemInDarkTheme()) darkColorScheme() else lightColorScheme()
+    ) {
+        Scaffold(
+            modifier = Modifier.fillMaxSize()
+        ) { paddingValues ->
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(paddingValues)
             ) {
-                items(conceptItems) { item ->
-                    CardGroupGroup(
-                        context,
-                        item,
-                        10.dp
-                    )
+                SearchBar(
+                    query = searchQuery,
+                    onQueryChange = { searchQuery = it },
+                    onSearch = { searchQuery = it },
+                    suggestions = suggestions
+                )
+
+                LazyColumn(
+                    modifier = Modifier.fillMaxSize(),
+                    verticalArrangement = Arrangement.spacedBy(16.dp),
+                    contentPadding = PaddingValues(horizontal = 20.dp, vertical = 16.dp)
+                ) {
+                    items(currentConceptItems) { item ->
+                        CardGroupGroup(
+                            context = context,
+                            item = item,
+                            elevation = 10.dp
+                        )
+                    }
                 }
             }
         }
     }
 }
 
-private fun SoonToast(context : Context) = Toast.makeText(
+private fun FilterConceptItems(
+    context : Context,
+    query : String,
+    items : List<ConceptItem.GroupGroup>
+) : List<ConceptItem.GroupGroup> = items.mapNotNull { groupGroup ->
+    val groupGroupName = context.getString(groupGroup.nameID)
+    val matchesGroupGroupName = groupGroupName.contains(
+        query,
+        ignoreCase = true
+    )
+    val filteredItems = FilterItems(
+        context,
+        query,
+        groupGroup.items
+    )
+    if (matchesGroupGroupName)
+        groupGroup
+    else if (filteredItems.isNotEmpty())
+        groupGroup.copy(items = filteredItems)
+    else
+        null
+}
+
+private fun FilterItems(
+    context : Context,
+    query : String,
+    items : List<ConceptItem>
+) : List<ConceptItem> = items.mapNotNull { item ->
+    when (item) {
+        is ConceptItem.Single     -> {
+            if (context.getString(item.nameID).contains(query, ignoreCase = true))
+                item
+            else
+                null
+        }
+
+        is ConceptItem.Group      -> {
+            val filteredSubItems = item.items.filter {
+                context.getString(it.nameID).contains(query, ignoreCase = true)
+            }
+            if (filteredSubItems.isNotEmpty())
+                item.copy(items = filteredSubItems)
+            else if (context.getString(item.nameID).contains(query, ignoreCase = true))
+                item
+            else
+                null
+        }
+
+        is ConceptItem.GroupGroup -> {
+            val filteredSubItems = FilterItems(
+                context,
+                query,
+                item.items
+            )
+            if (filteredSubItems.isNotEmpty())
+                item.copy(items = filteredSubItems)
+            else if (
+                context
+                    .getString(item.nameID)
+                    .contains(
+                        query,
+                        ignoreCase = true
+                    )
+            )
+                item
+            else
+                null
+        }
+    }
+}
+
+private fun GetAllConceptNames(
+    context : Context,
+    items : List<ConceptItem.GroupGroup>
+) : List<String> {
+    val names = mutableListOf<String>()
+    items.forEach { groupGroup ->
+        names.add(context.getString(groupGroup.nameID))
+        CollectNames(groupGroup.items, context, names)
+    }
+    return names.distinct()
+}
+
+private fun CollectNames(
+    items : List<ConceptItem>,
+    context : Context,
+    names : MutableList<String>
+) {
+    items.forEach { item ->
+        when (item) {
+            is ConceptItem.Single     -> {
+                names.add(context.getString(item.nameID))
+            }
+
+            is ConceptItem.Group      -> {
+                names.add(context.getString(item.nameID))
+                item.items.forEach {
+                    names.add(context.getString(it.nameID))
+                }
+            }
+
+            is ConceptItem.GroupGroup -> {
+                names.add(context.getString(item.nameID))
+                CollectNames(item.items, context, names)
+            }
+        }
+    }
+}
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+private fun SearchBar(
+    query : String,
+    onQueryChange : (String) -> Unit,
+    onSearch : (String) -> Unit,
+    placeholder : String = "Search...",
+    suggestions : List<String>
+) {
+    var active by remember { mutableStateOf(false) }
+
+    SearchBar(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = if (active) 0.dp else 20.dp),
+        inputField = {
+            SearchBarDefaults.InputField(
+                query = query,
+                onQueryChange = onQueryChange,
+                onSearch = {
+                    active = false
+                    onSearch(it)
+                },
+                expanded = active,
+                onExpandedChange = { active = it },
+                placeholder = { Text(placeholder) },
+                leadingIcon = {
+                    Icon(
+                        Icons.Default.Search,
+                        contentDescription = Icons.Default.Search.name
+                    )
+                },
+                trailingIcon = {
+                    if (query.isNotEmpty()) {
+                        IconButton(onClick = { onQueryChange("") }) {
+                            Icon(
+                                Icons.Default.Clear,
+                                contentDescription = Icons.Default.Clear.name
+                            )
+                        }
+                    }
+                }
+            )
+        },
+        expanded = active,
+        onExpandedChange = { active = it }
+    ) {
+        LazyColumn(
+            modifier = Modifier.fillMaxWidth(),
+            contentPadding = PaddingValues(16.dp),
+            verticalArrangement = Arrangement.spacedBy(4.dp)
+        ) {
+            items(
+                suggestions.filter {
+                    it.contains(
+                        query,
+                        ignoreCase = true
+                    )
+                }
+            ) { suggestion ->
+                ListItem(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clickable {
+                            onQueryChange(suggestion)
+                            active = false
+                            onSearch(suggestion)
+                        },
+                    headlineContent = { Text(suggestion) },
+                    leadingContent = {
+                        Icon(
+                            Icons.Default.StarOutline,
+                            contentDescription = Icons.Default.StarOutline.name
+                        )
+                    }
+                )
+            }
+        }
+    }
+}
+
+private fun ShowSoonToast(context : Context) = Toast.makeText(
     context,
     "Soon",
     Toast.LENGTH_SHORT
@@ -164,9 +388,7 @@ private fun CardGroupGroup(
     var expanded by remember { mutableStateOf(false) }
 
     ElevatedCard(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(horizontal = 20.dp),
+        modifier = Modifier.fillMaxWidth(),
         elevation = CardDefaults.elevatedCardElevation(elevation)
     ) {
         Column(
@@ -174,40 +396,40 @@ private fun CardGroupGroup(
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
             TitleLine(
-                item.nameID,
-                item.icon,
-                item.items.isEmpty(),
-                expanded,
-                {
+                nameID = item.nameID,
+                icon = item.icon,
+                isNullItems = item.items.isEmpty(),
+                expanded = expanded,
+                onExpandedChange = {
                     if (item.items.isNotEmpty())
                         expanded = it
                     else
-                        SoonToast(context)
+                        ShowSoonToast(context)
                 },
                 padding = 20.dp
             )
 
-            if (expanded) {
+            if (expanded && item.items.isNotEmpty()) {
                 HorizontalDivider()
 
                 item.items.forEach { subItem ->
                     when (subItem) {
-                        is ConceptItem.Single -> CardButton(
-                            context,
-                            subItem,
-                            elevation - 2.dp
+                        is ConceptItem.Single     -> CardButton(
+                            context = context,
+                            item = subItem,
+                            elevation = elevation - 2.dp
                         )
 
-                        is ConceptItem.Group -> CardGroup(
-                            context,
-                            subItem,
-                            elevation - 2.dp
+                        is ConceptItem.Group      -> CardGroup(
+                            context = context,
+                            item = subItem,
+                            elevation = elevation - 2.dp
                         )
 
                         is ConceptItem.GroupGroup -> CardGroupGroup(
-                            context,
-                            subItem,
-                            elevation - 2.dp
+                            context = context,
+                            item = subItem,
+                            elevation = elevation - 2.dp
                         )
                     }
                 }
@@ -226,9 +448,7 @@ private fun TitleLine(
     padding : Dp
 ) {
     Card(
-        onClick = {
-            onExpandedChange(!expanded)
-        }
+        onClick = { onExpandedChange(!expanded) }
     ) {
         Row(
             modifier = Modifier
@@ -237,24 +457,25 @@ private fun TitleLine(
             verticalAlignment = Alignment.CenterVertically
         ) {
             Icon(
-                modifier = Modifier.weight(0.1F),
+                modifier = Modifier.size(24.dp),
                 imageVector = icon,
-                contentDescription = icon.name
+                contentDescription = stringResource(nameID)
             )
-            Spacer(modifier = Modifier.weight(0.025F))
+            Spacer(modifier = Modifier.width(12.dp))
             Text(
-                modifier = Modifier.weight(0.8F),
+                modifier = Modifier.weight(1f),
                 text = stringResource(nameID),
                 style = textStyle
             )
-            if (!isNullItems)
+            if (!isNullItems) {
                 Icon(
                     modifier = Modifier
-                        .weight(0.1F)
+                        .size(24.dp)
                         .rotate(if (expanded) 180f else 0f),
                     imageVector = Icons.Default.KeyboardArrowDown,
-                    contentDescription = if (expanded) "Close" else "Open"
+                    contentDescription = if (expanded) "Collapse" else "Expand"
                 )
+            }
         }
     }
 }
@@ -277,27 +498,27 @@ private fun CardGroup(
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
             TitleLine(
-                item.nameID,
-                item.icon,
-                item.items.isEmpty(),
-                expanded,
-                {
+                nameID = item.nameID,
+                icon = item.icon,
+                isNullItems = item.items.isEmpty(),
+                expanded = expanded,
+                onExpandedChange = {
                     if (item.items.isNotEmpty())
                         expanded = it
                     else
-                        SoonToast(context)
+                        ShowSoonToast(context)
                 },
                 padding = 16.dp
             )
 
-            if (expanded) {
+            if (expanded && item.items.isNotEmpty()) {
                 HorizontalDivider()
 
                 item.items.forEach { subItem ->
                     CardButton(
-                        context,
-                        subItem,
-                        elevation - 2.dp
+                        context = context,
+                        item = subItem,
+                        elevation = elevation - 2.dp
                     )
                 }
             }
@@ -309,33 +530,33 @@ private fun CardButton(
     context : Context,
     item : ConceptItem.Single,
     elevation : Dp
-) = ElevatedCard(
-    modifier = Modifier
-        .fillMaxWidth()
-        .padding(horizontal = 4.dp),
-    elevation = CardDefaults.elevatedCardElevation(elevation),
-    onClick = {
-        context.startActivity(
-            Intent(context, item.activityClass)
-        )
-    }
 ) {
-    Row(
+    ElevatedCard(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(16.dp),
-        verticalAlignment = Alignment.CenterVertically
+            .padding(horizontal = 4.dp),
+        elevation = CardDefaults.elevatedCardElevation(elevation),
+        onClick = {
+            context.startActivity(Intent(context, item.activityClass))
+        }
     ) {
-        Icon(
-            modifier = Modifier.weight(0.1F),
-            imageVector = item.icon,
-            contentDescription = item.icon.name
-        )
-        Spacer(modifier = Modifier.weight(0.025F))
-        Text(
-            modifier = Modifier.weight(0.8F),
-            text = stringResource(item.nameID),
-            style = MaterialTheme.typography.titleMedium
-        )
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Icon(
+                modifier = Modifier.size(24.dp),
+                imageVector = item.icon,
+                contentDescription = stringResource(item.nameID)
+            )
+            Spacer(modifier = Modifier.width(12.dp))
+            Text(
+                modifier = Modifier.weight(1f),
+                text = stringResource(item.nameID),
+                style = MaterialTheme.typography.titleMedium
+            )
+        }
     }
 }

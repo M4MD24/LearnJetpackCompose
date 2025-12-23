@@ -33,6 +33,7 @@ import barmajaa.m4md24.learnjetpackcompose.learn.components.dialogs.Dialogs
 import barmajaa.m4md24.learnjetpackcompose.learn.components.fields.Fields
 import barmajaa.m4md24.learnjetpackcompose.learn.components.first_app.FirstApp
 import barmajaa.m4md24.learnjetpackcompose.learn.components.buttons.floating_action_buttons.FloatingActionButtons
+import barmajaa.m4md24.learnjetpackcompose.learn.components.buttons.segments.Segments
 import barmajaa.m4md24.learnjetpackcompose.learn.components.images.Images
 import barmajaa.m4md24.learnjetpackcompose.learn.components.layouts.Layouts
 import barmajaa.m4md24.learnjetpackcompose.learn.components.menus.Menus
@@ -78,7 +79,8 @@ private fun getConceptItems() : List<ConceptItem.GroupGroup> {
             Icons.Default.TouchApp,
             listOf(
                 ConceptItem.Single(R.string.title_activity_normal, Icons.Default.TouchApp, barmajaa.m4md24.learnjetpackcompose.learn.components.buttons.normal.Normal::class.java),
-                ConceptItem.Single(R.string.title_activity_floating_action_buttons, Icons.Default.TouchApp, FloatingActionButtons::class.java)
+                ConceptItem.Single(R.string.title_activity_floating_action_buttons, Icons.Default.TouchApp, FloatingActionButtons::class.java),
+                ConceptItem.Single(R.string.title_activity_segments, Icons.Default.TouchApp, Segments::class.java)
             )
         ),
         ConceptItem.Single(R.string.title_activity_images, Icons.Default.Image, Images::class.java),

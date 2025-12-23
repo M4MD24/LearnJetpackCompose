@@ -44,6 +44,7 @@ import barmajaa.m4md24.learnjetpackcompose.learn.components.pull_to_refresh_boxe
 import barmajaa.m4md24.learnjetpackcompose.learn.components.resource_access.ResourceAccess
 import barmajaa.m4md24.learnjetpackcompose.learn.components.scaffolds.Scaffolds
 import barmajaa.m4md24.learnjetpackcompose.learn.components.sliders.Sliders
+import barmajaa.m4md24.learnjetpackcompose.learn.components.snack_bars.SnackBars
 import barmajaa.m4md24.learnjetpackcompose.learn.components.text_and_typography.TextAndTypography
 import barmajaa.m4md24.learnjetpackcompose.learn.components.texts.Texts
 import kotlin.text.contains
@@ -105,7 +106,8 @@ private fun getConceptItems() : List<ConceptItem.GroupGroup> {
         ConceptItem.Single(R.string.title_activity_progress_indicators, Icons.Default.Refresh, ProgressIndicators::class.java),
         ConceptItem.Single(R.string.title_activity_pull_to_refresh_boxes, Icons.Default.ArrowDownward, PullToRefreshBoxes::class.java),
         ConceptItem.Single(R.string.title_activity_search_bars, Icons.Default.Search, SearchBars::class.java),
-        ConceptItem.Single(R.string.title_activity_sliders, Icons.Default.LinearScale, Sliders::class.java)
+        ConceptItem.Single(R.string.title_activity_sliders, Icons.Default.LinearScale, Sliders::class.java),
+        ConceptItem.Single(R.string.title_activity_snack_bars, Icons.Default.HorizontalRule, SnackBars::class.java)
     )
     val developConceptItems : List<ConceptItem> = emptyList()
 

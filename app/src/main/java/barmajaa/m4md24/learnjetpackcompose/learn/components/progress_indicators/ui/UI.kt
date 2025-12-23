@@ -2,11 +2,6 @@ package barmajaa.m4md24.learnjetpackcompose.learn.components.progress_indicators
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.HorizontalDivider
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -17,6 +12,7 @@ import barmajaa.m4md24.learnjetpackcompose.learn.components.progress_indicators.
 import barmajaa.m4md24.learnjetpackcompose.learn.components.progress_indicators.CircularIndeterminate
 import barmajaa.m4md24.learnjetpackcompose.learn.components.progress_indicators.LinearDeterminate
 import barmajaa.m4md24.learnjetpackcompose.learn.components.progress_indicators.LinearIndeterminate
+import barmajaa.m4md24.learnjetpackcompose.ui.Section
 
 @Composable
 @Preview(showSystemUi = true)
@@ -50,31 +46,5 @@ fun PreviewUI() {
 
             Section(title = "Linear Determinate") { LinearDeterminate() }
         }
-    }
-}
-@Composable
-private fun Section(
-    title : String,
-    content : @Composable () -> Unit
-) = Card(
-    modifier = Modifier.fillMaxWidth(),
-    colors = CardDefaults.cardColors(containerColor = Color.LightGray)
-) {
-    Column(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(16.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.spacedBy(12.dp)
-    ) {
-        Text(
-            text = title,
-            style = MaterialTheme.typography.titleLarge
-        )
-        HorizontalDivider(
-            modifier = Modifier.height(5.dp),
-            color = Color.DarkGray
-        )
-        content()
     }
 }

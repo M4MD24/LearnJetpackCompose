@@ -53,3 +53,39 @@ fun SingleSelectSegment() {
         }
     }
 }
+@Composable
+fun MultiSelectSegment() {
+    var selectedIndices by remember { mutableStateOf(setOf<Int>()) }
+    val options = listOf(
+        Pair("Day", Icons.Default.CalendarViewDay),
+        Pair("Week", Icons.Default.CalendarViewWeek),
+        Pair("Month", Icons.Default.CalendarViewMonth)
+    )
+    MultiChoiceSegmentedButtonRow {
+        options.forEachIndexed { index, (label, icon) ->
+            val active = index in selectedIndices
+            SegmentedButton(
+                shape = SegmentedButtonDefaults.itemShape(
+                    index,
+                    options.size
+                ),
+                checked = active,
+                onCheckedChange = {
+                    selectedIndices = if (it)
+                        selectedIndices + index
+                    else
+                        selectedIndices - index
+                },
+                icon = {
+                    SegmentedButtonDefaults.Icon(active = active) {
+                        Icon(
+                            icon,
+                            contentDescription = icon.name
+                        )
+                    }
+                },
+                label = { Text(label) }
+            )
+        }
+    }
+}

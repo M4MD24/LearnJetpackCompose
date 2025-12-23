@@ -5,16 +5,10 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.Column
-import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.RangeSlider
 import androidx.compose.material3.Slider
-import androidx.compose.material3.SliderDefaults
 import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableFloatStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
-import androidx.compose.ui.graphics.Color
+import androidx.compose.runtime.*
 import barmajaa.m4md24.learnjetpackcompose.learn.components.sliders.ui.PreviewUI
 
 class Sliders : ComponentActivity() {
@@ -33,13 +27,6 @@ fun Normal() {
         Slider(
             value = sliderPosition,
             onValueChange = { sliderPosition = it },
-            colors = SliderDefaults.colors(
-                thumbColor = Color(0xFF00FF00),
-                activeTrackColor = Color(0xFFFF9800),
-                inactiveTrackColor = Color(0xFFE0E0E0),
-                activeTickColor = Color(0xFF2196F3),
-                inactiveTickColor = Color(0xFF000000)
-            ),
             steps = 9,
             valueRange = 0f .. 100f
         )
@@ -48,4 +35,15 @@ fun Normal() {
 }
 @Composable
 fun Range() {
+    var sliderPosition by remember { mutableStateOf(20f .. 80f) }
+    Column {
+        RangeSlider(
+            value = sliderPosition,
+            steps = 9,
+            onValueChange = { range -> sliderPosition = range },
+            valueRange = 0f .. 100f,
+            onValueChangeFinished = {},
+        )
+        Text(text = sliderPosition.toString())
+    }
 }

@@ -67,7 +67,7 @@
         - Extended
     - [<span style="color: #4285f4;">Segments</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/buttons/segments)
         - Single-Select
-        - ~~Multi-Select~~
+        - Multi-Select
 - [<span style="color: #4285f4;">Images</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/images)
     - Normal
 - [<span style="color: #4285f4;">Layouts</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/layouts)

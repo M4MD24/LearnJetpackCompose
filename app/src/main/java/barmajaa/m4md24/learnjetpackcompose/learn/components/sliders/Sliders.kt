@@ -34,10 +34,10 @@ fun Normal() {
             value = sliderPosition,
             onValueChange = { sliderPosition = it },
             colors = SliderDefaults.colors(
-                thumbColor = Color(0xFF2196F3),
-                activeTrackColor = Color(0xFF4CAF50),
+                thumbColor = Color(0xFF00FF00),
+                activeTrackColor = Color(0xFFFF9800),
                 inactiveTrackColor = Color(0xFFE0E0E0),
-                activeTickColor = Color(0xFFFF9800),
+                activeTickColor = Color(0xFF2196F3),
                 inactiveTickColor = Color(0xFF000000)
             ),
             steps = 9,

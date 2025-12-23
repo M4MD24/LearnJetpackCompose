@@ -109,6 +109,9 @@
 - [<span style="color: #4285f4;">SearchBars</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/search_bars)
     - Normal
         - Suggestions
+- [<span style="color: #4285f4;">Sliders</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/sliders)
+    - Normal
+    - Range
 
 ---
 

@@ -38,7 +38,7 @@ fun Normal() {
                 activeTrackColor = Color(0xFF4CAF50),
                 inactiveTrackColor = Color(0xFFE0E0E0),
                 activeTickColor = Color(0xFFFF9800),
-                inactiveTickColor = Color(0xFFBDBDBD)
+                inactiveTickColor = Color(0xFF000000)
             ),
             steps = 9,
             valueRange = 0f .. 100f

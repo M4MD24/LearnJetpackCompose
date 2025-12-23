@@ -1,4 +1,4 @@
-package barmajaa.m4md24.learnjetpackcompose.learn.components.floating_action_buttons
+package barmajaa.m4md24.learnjetpackcompose.learn.components.buttons.floating_action_buttons
 
 import android.os.Bundle
 import android.widget.Toast
@@ -14,7 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
-import barmajaa.m4md24.learnjetpackcompose.learn.components.floating_action_buttons.ui.PreviewUI
+import barmajaa.m4md24.learnjetpackcompose.learn.components.buttons.floating_action_buttons.ui.PreviewUI
 
 class FloatingActionButtons : ComponentActivity() {
     override fun onCreate(savedInstanceState : Bundle?) {

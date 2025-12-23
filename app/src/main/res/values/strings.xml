@@ -5,7 +5,7 @@
     <string name="title_activity_text_and_typography">TextAndTypography</string>
     <string name="title_activity_fields">Fields</string>
     <string name="title_activity_texts">Texts</string>
-    <string name="title_activity_buttons">Buttons</string>
+    <string name="title_concept_buttons">Buttons</string>
     <string name="title_activity_images">Images</string>
     <string name="title_activity_layouts">Layouts</string>
     <string name="title_activity_lazy">Lazy</string>

@@ -25,16 +25,14 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import barmajaa.m4md24.learnjetpackcompose.R
 import barmajaa.m4md24.learnjetpackcompose.learn.components.search_bars.SearchBars
-import barmajaa.m4md24.learnjetpackcompose.learn.components.buttons.Buttons
 import barmajaa.m4md24.learnjetpackcompose.learn.components.cards.Cards
 import barmajaa.m4md24.learnjetpackcompose.learn.components.checkboxes.Checkboxes
 import barmajaa.m4md24.learnjetpackcompose.learn.components.chips.Chips
 import barmajaa.m4md24.learnjetpackcompose.learn.components.column_and_row_types.lazy.Lazy
-import barmajaa.m4md24.learnjetpackcompose.learn.components.column_and_row_types.normal.Normal
 import barmajaa.m4md24.learnjetpackcompose.learn.components.dialogs.Dialogs
 import barmajaa.m4md24.learnjetpackcompose.learn.components.fields.Fields
 import barmajaa.m4md24.learnjetpackcompose.learn.components.first_app.FirstApp
-import barmajaa.m4md24.learnjetpackcompose.learn.components.floating_action_buttons.FloatingActionButtons
+import barmajaa.m4md24.learnjetpackcompose.learn.components.buttons.floating_action_buttons.FloatingActionButtons
 import barmajaa.m4md24.learnjetpackcompose.learn.components.images.Images
 import barmajaa.m4md24.learnjetpackcompose.learn.components.layouts.Layouts
 import barmajaa.m4md24.learnjetpackcompose.learn.components.menus.Menus
@@ -75,14 +73,21 @@ private fun getConceptItems() : List<ConceptItem.GroupGroup> {
         ConceptItem.Single(R.string.title_activity_text_and_typography, Icons.Default.TextFields, TextAndTypography::class.java),
         ConceptItem.Single(R.string.title_activity_fields, Icons.Default.Edit, Fields::class.java),
         ConceptItem.Single(R.string.title_activity_texts, Icons.AutoMirrored.Filled.Article, Texts::class.java),
-        ConceptItem.Single(R.string.title_activity_buttons, Icons.Default.TouchApp, Buttons::class.java),
+        ConceptItem.Group(
+            R.string.title_concept_buttons,
+            Icons.Default.TouchApp,
+            listOf(
+                ConceptItem.Single(R.string.title_activity_normal, Icons.Default.TouchApp, barmajaa.m4md24.learnjetpackcompose.learn.components.buttons.normal.Normal::class.java),
+                ConceptItem.Single(R.string.title_activity_floating_action_buttons, Icons.Default.TouchApp, FloatingActionButtons::class.java)
+            )
+        ),
         ConceptItem.Single(R.string.title_activity_images, Icons.Default.Image, Images::class.java),
         ConceptItem.Single(R.string.title_activity_layouts, Icons.AutoMirrored.Filled.ViewQuilt, Layouts::class.java),
         ConceptItem.Group(
             R.string.title_concept_column_and_row_types,
             Icons.Default.ViewColumn,
             listOf(
-                ConceptItem.Single(R.string.title_activity_normal, Icons.Default.CropSquare, Normal::class.java),
+                ConceptItem.Single(R.string.title_activity_normal, Icons.Default.CropSquare, barmajaa.m4md24.learnjetpackcompose.learn.components.column_and_row_types.normal.Normal::class.java),
                 ConceptItem.Single(R.string.title_activity_lazy, Icons.AutoMirrored.Filled.List, Lazy::class.java)
             )
         ),
@@ -91,7 +96,6 @@ private fun getConceptItems() : List<ConceptItem.GroupGroup> {
         ConceptItem.Single(R.string.title_activity_checkboxes, Icons.Default.CheckBox, Checkboxes::class.java),
         ConceptItem.Single(R.string.title_activity_chips, Icons.AutoMirrored.Filled.Label, Chips::class.java),
         ConceptItem.Single(R.string.title_activity_dialogs, Icons.AutoMirrored.Filled.Chat, Dialogs::class.java),
-        ConceptItem.Single(R.string.title_activity_floating_action_buttons, Icons.Default.TouchApp, FloatingActionButtons::class.java),
         ConceptItem.Single(R.string.title_activity_menus, Icons.Default.MoreVert, Menus::class.java),
         ConceptItem.Single(R.string.title_activity_scaffolds, Icons.Default.Dashboard, Scaffolds::class.java),
         ConceptItem.Single(R.string.title_activity_navigation_drawers, Icons.Default.Menu, NavigationDrawers::class.java),

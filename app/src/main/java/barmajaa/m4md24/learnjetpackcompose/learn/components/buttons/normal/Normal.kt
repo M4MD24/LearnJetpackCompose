@@ -1,4 +1,4 @@
-package barmajaa.m4md24.learnjetpackcompose.learn.components.buttons
+package barmajaa.m4md24.learnjetpackcompose.learn.components.buttons.normal
 
 import android.os.Bundle
 import android.widget.Toast
@@ -10,9 +10,9 @@ import androidx.compose.material.icons.filled.Image
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
-import barmajaa.m4md24.learnjetpackcompose.learn.components.buttons.ui.PreviewUI
+import barmajaa.m4md24.learnjetpackcompose.learn.components.buttons.normal.ui.PreviewUI
 
-class Buttons : ComponentActivity() {
+class Normal : ComponentActivity() {
     override fun onCreate(savedInstanceState : Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()

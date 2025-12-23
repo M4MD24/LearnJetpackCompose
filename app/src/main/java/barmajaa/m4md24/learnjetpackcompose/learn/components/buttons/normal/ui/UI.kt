@@ -1,4 +1,4 @@
-package barmajaa.m4md24.learnjetpackcompose.learn.components.buttons.ui
+package barmajaa.m4md24.learnjetpackcompose.learn.components.buttons.normal.ui
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.Composable
@@ -6,12 +6,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import barmajaa.m4md24.learnjetpackcompose.learn.components.buttons.Elevated
-import barmajaa.m4md24.learnjetpackcompose.learn.components.buttons.Filled
-import barmajaa.m4md24.learnjetpackcompose.learn.components.buttons.FilledTonal
-import barmajaa.m4md24.learnjetpackcompose.learn.components.buttons.Icon
-import barmajaa.m4md24.learnjetpackcompose.learn.components.buttons.Outlined
-import barmajaa.m4md24.learnjetpackcompose.learn.components.buttons.Text
+import barmajaa.m4md24.learnjetpackcompose.learn.components.buttons.normal.Elevated
+import barmajaa.m4md24.learnjetpackcompose.learn.components.buttons.normal.Filled
+import barmajaa.m4md24.learnjetpackcompose.learn.components.buttons.normal.FilledTonal
+import barmajaa.m4md24.learnjetpackcompose.learn.components.buttons.normal.Icon
+import barmajaa.m4md24.learnjetpackcompose.learn.components.buttons.normal.Outlined
+import barmajaa.m4md24.learnjetpackcompose.learn.components.buttons.normal.Text
 
 @Composable
 @Preview(showSystemUi = true)

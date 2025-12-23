@@ -53,12 +53,18 @@
     - SelectionContainer
     - AnnotatedString
 - [<span style="color: #4285f4;">Buttons</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/buttons)
-    - Filled
-    - FilledTonal
-    - Outlined
-    - Elevated
-    - Text
-    - Icon
+    - [<span style="color: #4285f4;">Normal</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/buttons/normal)
+        - Filled
+        - FilledTonal
+        - Outlined
+        - Elevated
+        - Text
+        - Icon
+    - [<span style="color: #4285f4;">FABs (FloatingActionButtons)</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/floating_action_buttons)
+        - Small
+        - Normal
+        - Large
+        - Extended
 - [<span style="color: #4285f4;">Images</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/images)
     - Normal
 - [<span style="color: #4285f4;">Layouts</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/layouts)
@@ -82,11 +88,6 @@
     - ~~Suggestion~~
 - [<span style="color: #4285f4;">Dialogs</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/dialogs)
     - Normal
-- [<span style="color: #4285f4;">FABs (FloatingActionButtons)</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/floating_action_buttons)
-    - Small
-    - Normal
-    - Large
-    - Extended
 - [<span style="color: #4285f4;">Menus</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/menus)
     - Normal
 - [<span style="color: #4285f4;">Scaffolds</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/scaffolds)

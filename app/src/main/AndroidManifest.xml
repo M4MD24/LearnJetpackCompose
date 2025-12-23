@@ -41,7 +41,7 @@
                 android:label="@string/title_activity_menus"
                 android:theme="@style/Theme.LearnJetpackCompose"/>
         <activity
-                android:name=".learn.components.floating_action_buttons.FloatingActionButtons"
+                android:name=".learn.components.buttons.floating_action_buttons.FloatingActionButtons"
                 android:exported="false"
                 android:label="@string/title_activity_floating_action_buttons"
                 android:theme="@style/Theme.LearnJetpackCompose"/>
@@ -91,9 +91,9 @@
                 android:label="@string/title_activity_images"
                 android:theme="@style/Theme.LearnJetpackCompose"/>
         <activity
-                android:name=".learn.components.buttons.Buttons"
+                android:name=".learn.components.buttons.normal.Normal"
                 android:exported="false"
-                android:label="@string/title_activity_buttons"
+                android:label="@string/title_activity_normal"
                 android:theme="@style/Theme.LearnJetpackCompose"/>
         <activity
                 android:name=".learn.components.texts.Texts"

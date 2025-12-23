@@ -1,4 +1,4 @@
-package barmajaa.m4md24.learnjetpackcompose.learn.components.floating_action_buttons.ui
+package barmajaa.m4md24.learnjetpackcompose.learn.components.buttons.floating_action_buttons.ui
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.Composable
@@ -6,10 +6,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import barmajaa.m4md24.learnjetpackcompose.learn.components.floating_action_buttons.Small
-import barmajaa.m4md24.learnjetpackcompose.learn.components.floating_action_buttons.Normal
-import barmajaa.m4md24.learnjetpackcompose.learn.components.floating_action_buttons.Large
-import barmajaa.m4md24.learnjetpackcompose.learn.components.floating_action_buttons.Extended
+import barmajaa.m4md24.learnjetpackcompose.learn.components.buttons.floating_action_buttons.Small
+import barmajaa.m4md24.learnjetpackcompose.learn.components.buttons.floating_action_buttons.Normal
+import barmajaa.m4md24.learnjetpackcompose.learn.components.buttons.floating_action_buttons.Large
+import barmajaa.m4md24.learnjetpackcompose.learn.components.buttons.floating_action_buttons.Extended
 
 @Composable
 @Preview(showSystemUi = true)

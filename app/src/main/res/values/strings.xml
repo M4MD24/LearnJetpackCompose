@@ -28,4 +28,5 @@
     <string name="title_activity_segments">Segments</string>
     <string name="title_activity_sliders">Sliders</string>
     <string name="title_activity_snack_bars">SnackBars</string>
+    <string name="title_activity_badges">Badges</string>
 </resources>

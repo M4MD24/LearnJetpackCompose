@@ -8,7 +8,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import barmajaa.m4md24.learnjetpackcompose.learn.components.badges.Detailed
 import barmajaa.m4md24.learnjetpackcompose.learn.components.badges.Normal
+import barmajaa.m4md24.learnjetpackcompose.ui.Section
 
 @Composable
 @Preview(showSystemUi = true)
@@ -22,15 +24,17 @@ fun PreviewUI() {
     ) {
         Column(
             modifier = Modifier
-                .fillMaxSize(),
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
+                .wrapContentSize()
+                .padding(20.dp),
+            verticalArrangement = Arrangement.Center
         ) {
             val height = 40.dp
 
-            Normal()
+            Section(title = "Normal") { Normal() }
 
             Spacer(modifier = Modifier.height(height))
+
+            Section(title = "Detailed") { Detailed() }
         }
     }
 }

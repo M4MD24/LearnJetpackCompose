@@ -46,7 +46,7 @@ fun Normal() = BadgedBox(
 }
 @Composable
 fun Detailed() {
-    var itemCount by remember { mutableIntStateOf(999999999) }
+    var itemCount by remember { mutableIntStateOf(999) }
 
     Column(
         verticalArrangement = Arrangement.spacedBy(
@@ -62,7 +62,7 @@ fun Detailed() {
                         containerColor = Color.Red,
                         contentColor = Color.White
                     ) {
-                        Text("$itemCount.")
+                        Text("$itemCount")
                     }
                 }
             }

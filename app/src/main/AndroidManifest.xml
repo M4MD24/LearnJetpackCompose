@@ -11,6 +11,11 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.LearnJetpackCompose">
         <activity
+                android:name=".learn.components.switches.Switches"
+                android:exported="false"
+                android:label="@string/title_activity_switches"
+                android:theme="@style/Theme.LearnJetpackCompose"/>
+        <activity
                 android:name=".learn.components.badges.Badges"
                 android:exported="false"
                 android:label="@string/title_activity_badges"

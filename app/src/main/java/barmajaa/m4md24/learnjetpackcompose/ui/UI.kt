@@ -35,6 +35,7 @@ import barmajaa.m4md24.learnjetpackcompose.learn.components.fields.Fields
 import barmajaa.m4md24.learnjetpackcompose.learn.components.first_app.FirstApp
 import barmajaa.m4md24.learnjetpackcompose.learn.components.buttons.floating_action_buttons.FloatingActionButtons
 import barmajaa.m4md24.learnjetpackcompose.learn.components.buttons.segments.Segments
+import barmajaa.m4md24.learnjetpackcompose.learn.components.date_pickers.DatePickers
 import barmajaa.m4md24.learnjetpackcompose.learn.components.images.Images
 import barmajaa.m4md24.learnjetpackcompose.learn.components.layouts.Layouts
 import barmajaa.m4md24.learnjetpackcompose.learn.components.menus.Menus
@@ -111,7 +112,8 @@ private fun getConceptItems() : List<ConceptItem.GroupGroup> {
         ConceptItem.Single(R.string.title_activity_sliders, Icons.Default.LinearScale, Sliders::class.java),
         ConceptItem.Single(R.string.title_activity_snack_bars, Icons.Default.HorizontalRule, SnackBars::class.java),
         ConceptItem.Single(R.string.title_activity_badges, Icons.Default.Circle, Badges::class.java),
-        ConceptItem.Single(R.string.title_activity_switches, Icons.Default.CheckCircle, Switches::class.java)
+        ConceptItem.Single(R.string.title_activity_switches, Icons.Default.CheckCircle, Switches::class.java),
+        ConceptItem.Single(R.string.title_activity_date_pickers, Icons.Default.EditCalendar, DatePickers::class.java)
     )
     val developConceptItems : List<ConceptItem> = emptyList()
 

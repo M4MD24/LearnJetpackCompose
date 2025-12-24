@@ -11,6 +11,11 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.LearnJetpackCompose">
         <activity
+                android:name=".learn.components.date_pickers.DatePickers"
+                android:exported="false"
+                android:label="@string/title_activity_date_pickers"
+                android:theme="@style/Theme.LearnJetpackCompose"/>
+        <activity
                 android:name=".learn.components.switches.Switches"
                 android:exported="false"
                 android:label="@string/title_activity_switches"

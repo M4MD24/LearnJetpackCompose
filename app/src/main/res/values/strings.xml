@@ -30,4 +30,5 @@
     <string name="title_activity_snack_bars">SnackBars</string>
     <string name="title_activity_badges">Badges</string>
     <string name="title_activity_switches">Switches</string>
+    <string name="title_activity_date_pickers">DatePickers</string>
 </resources>

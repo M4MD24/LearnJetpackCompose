@@ -24,6 +24,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import barmajaa.m4md24.learnjetpackcompose.R
+import barmajaa.m4md24.learnjetpackcompose.learn.components.badges.Badges
 import barmajaa.m4md24.learnjetpackcompose.learn.components.search_bars.SearchBars
 import barmajaa.m4md24.learnjetpackcompose.learn.components.cards.Cards
 import barmajaa.m4md24.learnjetpackcompose.learn.components.checkboxes.Checkboxes
@@ -107,7 +108,8 @@ private fun getConceptItems() : List<ConceptItem.GroupGroup> {
         ConceptItem.Single(R.string.title_activity_pull_to_refresh_boxes, Icons.Default.ArrowDownward, PullToRefreshBoxes::class.java),
         ConceptItem.Single(R.string.title_activity_search_bars, Icons.Default.Search, SearchBars::class.java),
         ConceptItem.Single(R.string.title_activity_sliders, Icons.Default.LinearScale, Sliders::class.java),
-        ConceptItem.Single(R.string.title_activity_snack_bars, Icons.Default.HorizontalRule, SnackBars::class.java)
+        ConceptItem.Single(R.string.title_activity_snack_bars, Icons.Default.HorizontalRule, SnackBars::class.java),
+        ConceptItem.Single(R.string.title_activity_badges, Icons.Default.Circle, Badges::class.java)
     )
     val developConceptItems : List<ConceptItem> = emptyList()
 

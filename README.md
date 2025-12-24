@@ -117,6 +117,9 @@
 - [<span style="color: #4285f4;">Badges</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/badges)
     - Normal
     - Detailed
+- [<span style="color: #4285f4;">Switches</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/switches)
+    - Normal
+    - ~~CustomThumb~~
 
 ---
 

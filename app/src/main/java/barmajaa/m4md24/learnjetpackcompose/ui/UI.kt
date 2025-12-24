@@ -46,6 +46,7 @@ import barmajaa.m4md24.learnjetpackcompose.learn.components.resource_access.Reso
 import barmajaa.m4md24.learnjetpackcompose.learn.components.scaffolds.Scaffolds
 import barmajaa.m4md24.learnjetpackcompose.learn.components.sliders.Sliders
 import barmajaa.m4md24.learnjetpackcompose.learn.components.snack_bars.SnackBars
+import barmajaa.m4md24.learnjetpackcompose.learn.components.switches.Switches
 import barmajaa.m4md24.learnjetpackcompose.learn.components.text_and_typography.TextAndTypography
 import barmajaa.m4md24.learnjetpackcompose.learn.components.texts.Texts
 import kotlin.text.contains
@@ -109,7 +110,8 @@ private fun getConceptItems() : List<ConceptItem.GroupGroup> {
         ConceptItem.Single(R.string.title_activity_search_bars, Icons.Default.Search, SearchBars::class.java),
         ConceptItem.Single(R.string.title_activity_sliders, Icons.Default.LinearScale, Sliders::class.java),
         ConceptItem.Single(R.string.title_activity_snack_bars, Icons.Default.HorizontalRule, SnackBars::class.java),
-        ConceptItem.Single(R.string.title_activity_badges, Icons.Default.Circle, Badges::class.java)
+        ConceptItem.Single(R.string.title_activity_badges, Icons.Default.Circle, Badges::class.java),
+        ConceptItem.Single(R.string.title_activity_switches, Icons.Default.CheckCircle, Switches::class.java)
     )
     val developConceptItems : List<ConceptItem> = emptyList()
 

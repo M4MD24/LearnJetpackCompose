@@ -123,6 +123,8 @@
 - [<span style="color: #4285f4;">DatePickers</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/date_pickers)
     - Normal
     - Range
+- [<span style="color: #4285f4;">TimePickers</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/time_pickers)
+    - Normal
 
 ---
 

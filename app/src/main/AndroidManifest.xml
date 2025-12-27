@@ -11,6 +11,11 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.LearnJetpackCompose">
         <activity
+                android:name=".learn.components.time_pickers.TimePickers"
+                android:exported="false"
+                android:label="@string/title_activity_time_pickers"
+                android:theme="@style/Theme.LearnJetpackCompose"/>
+        <activity
                 android:name=".learn.components.date_pickers.DatePickers"
                 android:exported="false"
                 android:label="@string/title_activity_date_pickers"

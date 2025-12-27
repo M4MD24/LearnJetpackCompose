@@ -50,6 +50,7 @@ import barmajaa.m4md24.learnjetpackcompose.learn.components.snack_bars.SnackBars
 import barmajaa.m4md24.learnjetpackcompose.learn.components.switches.Switches
 import barmajaa.m4md24.learnjetpackcompose.learn.components.text_and_typography.TextAndTypography
 import barmajaa.m4md24.learnjetpackcompose.learn.components.texts.Texts
+import barmajaa.m4md24.learnjetpackcompose.learn.components.time_pickers.TimePickers
 import kotlin.text.contains
 
 sealed class ConceptItem {
@@ -113,7 +114,8 @@ private fun getConceptItems() : List<ConceptItem.GroupGroup> {
         ConceptItem.Single(R.string.title_activity_snack_bars, Icons.Default.HorizontalRule, SnackBars::class.java),
         ConceptItem.Single(R.string.title_activity_badges, Icons.Default.Circle, Badges::class.java),
         ConceptItem.Single(R.string.title_activity_switches, Icons.Default.CheckCircle, Switches::class.java),
-        ConceptItem.Single(R.string.title_activity_date_pickers, Icons.Default.EditCalendar, DatePickers::class.java)
+        ConceptItem.Single(R.string.title_activity_date_pickers, Icons.Default.EditCalendar, DatePickers::class.java),
+        ConceptItem.Single(R.string.title_activity_time_pickers, Icons.Default.AccessTime, TimePickers::class.java)
     )
     val developConceptItems : List<ConceptItem> = emptyList()
 

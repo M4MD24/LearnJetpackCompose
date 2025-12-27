@@ -24,6 +24,7 @@
     <string name="title_concept_column_and_row_types">ColumnAndRowTypes</string>
     <string name="title_activity_search_bars">SearchBars</string>
     <string name="title_concept_learn">Learn</string>
+    <string name="title_concept_components">Components</string>
     <string name="title_concept_develop">Develop</string>
     <string name="title_activity_segments">Segments</string>
     <string name="title_activity_sliders">Sliders</string>

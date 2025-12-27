@@ -74,7 +74,7 @@ sealed class ConceptItem {
 }
 @Composable
 private fun getConceptItems() : List<ConceptItem.GroupGroup> {
-    val learnConceptItems = listOf(
+    val componentItems = listOf(
         ConceptItem.Single(R.string.title_activity_first_app, Icons.Default.Home, FirstApp::class.java),
         ConceptItem.Single(R.string.title_activity_resource_access, Icons.Default.Folder, ResourceAccess::class.java),
         ConceptItem.Single(R.string.title_activity_text_and_typography, Icons.Default.TextFields, TextAndTypography::class.java),
@@ -117,18 +117,25 @@ private fun getConceptItems() : List<ConceptItem.GroupGroup> {
         ConceptItem.Single(R.string.title_activity_date_pickers, Icons.Default.EditCalendar, DatePickers::class.java),
         ConceptItem.Single(R.string.title_activity_time_pickers, Icons.Default.AccessTime, TimePickers::class.java)
     )
-    val developConceptItems : List<ConceptItem> = emptyList()
+    val learnItems = listOf(
+        ConceptItem.GroupGroup(
+            nameID = R.string.title_concept_components,
+            icon = Icons.Default.FormatShapes,
+            items = componentItems
+        )
+    )
+    val developItems : List<ConceptItem> = emptyList()
 
     return listOf(
         ConceptItem.GroupGroup(
             nameID = R.string.title_concept_learn,
             icon = Icons.Default.Biotech,
-            items = learnConceptItems
+            items = learnItems
         ),
         ConceptItem.GroupGroup(
             nameID = R.string.title_concept_develop,
             icon = Icons.Default.DeveloperMode,
-            items = developConceptItems
+            items = developItems
         )
     )
 }

@@ -10,7 +10,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import barmajaa.m4md24.learnjetpackcompose.learn.components.date_pickers.Normal
+import barmajaa.m4md24.learnjetpackcompose.learn.components.date_pickers.NormalDatePicker
 import barmajaa.m4md24.learnjetpackcompose.learn.components.date_pickers.Range
 import barmajaa.m4md24.learnjetpackcompose.ui.Section
 import java.text.SimpleDateFormat
@@ -37,7 +37,7 @@ fun PreviewUI() {
             val height = 40.dp
 
             Section(title = "Normal") {
-                Normal(
+                NormalDatePicker(
                     {
                         Toast.makeText(
                             context,

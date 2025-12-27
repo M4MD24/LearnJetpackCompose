@@ -114,7 +114,7 @@ private fun getConceptItems() : List<ConceptItem.GroupGroup> {
         ConceptItem.Single(R.string.title_activity_snack_bars, Icons.Default.HorizontalRule, SnackBars::class.java),
         ConceptItem.Single(R.string.title_activity_badges, Icons.Default.Circle, Badges::class.java),
         ConceptItem.Single(R.string.title_activity_switches, Icons.Default.CheckCircle, Switches::class.java),
-        ConceptItem.Single(R.string.title_activity_date_pickers, Icons.Default.EditCalendar, DatePickers::class.java),
+        ConceptItem.Single(R.string.title_activity_date_pickers, Icons.Default.Today, DatePickers::class.java),
         ConceptItem.Single(R.string.title_activity_time_pickers, Icons.Default.AccessTime, TimePickers::class.java)
     )
     val learnItems = listOf(

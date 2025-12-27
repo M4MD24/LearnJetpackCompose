@@ -89,7 +89,7 @@ fun Range(
     }
 }
 @Composable
-fun Normal(
+fun NormalDatePicker(
     onDateSelected : (Long?) -> Unit,
     onDismiss : () -> Unit
 ) {

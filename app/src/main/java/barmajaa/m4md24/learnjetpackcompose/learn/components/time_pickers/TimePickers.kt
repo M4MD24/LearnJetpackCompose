@@ -5,11 +5,18 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.AccessTime
+import androidx.compose.material.icons.filled.Keyboard
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
@@ -29,9 +36,9 @@ class TimePickers : ComponentActivity() {
 }
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Normal(
+fun NormalTimePicker(
     onConfirm : (TimePickerState) -> Unit,
-    onDismiss : () -> Unit,
+    onDismiss : () -> Unit
 ) {
     var showDialog by remember {
         mutableStateOf(false)
@@ -46,6 +53,9 @@ fun Normal(
     }
 
     if (showDialog) {
+        var toggle by remember {
+            mutableStateOf(true)
+        }
         val currentTime = Calendar.getInstance()
         val timePickerState = rememberTimePickerState(
             initialHour = currentTime.get(Calendar.HOUR_OF_DAY),
@@ -58,7 +68,7 @@ fun Normal(
             ),
             onDismissRequest = {
                 showDialog = false
-                onDismiss
+                onDismiss()
             }
         ) {
             Column(
@@ -68,26 +78,47 @@ fun Normal(
                         color = Color.White,
                         shape = RoundedCornerShape(16.dp)
                     )
-                    .padding(32.dp)
+                    .padding(32.dp),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center
             ) {
-                TimePicker(
-                    state = timePickerState,
-                )
-                Button(
-                    onClick = {
-                        showDialog = false
-                        onDismiss()
-                    }
-                ) {
-                    Text("Cancel")
+                var toggleIcon = Icons.Default.AccessTime
+                if (toggle) {
+                    TimePicker(state = timePickerState)
+                    toggleIcon = Icons.Default.AccessTime
+                } else {
+                    TimeInput(state = timePickerState)
+                    toggleIcon = Icons.Default.Keyboard
                 }
-                Button(
-                    onClick = {
-                        showDialog = false
-                        onConfirm(timePickerState)
+                Row {
+                    IconButton(
+                        onClick = {
+                            toggle = !toggle
+                        }
+                    ) {
+                        Icon(
+                            imageVector = toggleIcon,
+                            contentDescription = toggleIcon.name,
+                        )
                     }
-                ) {
-                    Text("Confirm")
+                    Spacer(modifier = Modifier.weight(0.7F))
+                    Button(
+                        onClick = {
+                            showDialog = false
+                            onDismiss()
+                        }
+                    ) {
+                        Text("Cancel")
+                    }
+                    Spacer(modifier = Modifier.weight(0.1F))
+                    Button(
+                        onClick = {
+                            showDialog = false
+                            onConfirm(timePickerState)
+                        }
+                    ) {
+                        Text("Confirm")
+                    }
                 }
             }
         }

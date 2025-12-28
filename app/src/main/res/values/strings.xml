@@ -33,4 +33,6 @@
     <string name="title_activity_switches">Switches</string>
     <string name="title_activity_date_pickers">DatePickers</string>
     <string name="title_activity_time_pickers">TimePickers</string>
+    <string name="title_activity_app_bars">AppBars</string>
+    <string name="title_activity_navigation_bars">NavigationBars</string>
 </resources>

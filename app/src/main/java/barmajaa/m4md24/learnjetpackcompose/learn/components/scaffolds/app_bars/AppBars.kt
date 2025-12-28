@@ -1,4 +1,4 @@
-package barmajaa.m4md24.learnjetpackcompose.learn.components.scaffolds
+package barmajaa.m4md24.learnjetpackcompose.learn.components.scaffolds.app_bars
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -12,9 +12,9 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import barmajaa.m4md24.learnjetpackcompose.learn.components.scaffolds.ui.PreviewUI
+import barmajaa.m4md24.learnjetpackcompose.learn.components.scaffolds.app_bars.ui.PreviewUI
 
-class Scaffolds : ComponentActivity() {
+class AppBars : ComponentActivity() {
     override fun onCreate(savedInstanceState : Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()

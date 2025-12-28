@@ -1,4 +1,4 @@
-package barmajaa.m4md24.learnjetpackcompose.learn.components.scaffolds.ui
+package barmajaa.m4md24.learnjetpackcompose.learn.components.scaffolds.app_bars.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -7,7 +7,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
-import barmajaa.m4md24.learnjetpackcompose.learn.components.scaffolds.Normal
+import barmajaa.m4md24.learnjetpackcompose.learn.components.scaffolds.app_bars.Normal
 
 @Composable
 @Preview(showSystemUi = true)

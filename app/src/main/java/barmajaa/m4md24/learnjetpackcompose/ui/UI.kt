@@ -40,11 +40,12 @@ import barmajaa.m4md24.learnjetpackcompose.learn.components.images.Images
 import barmajaa.m4md24.learnjetpackcompose.learn.components.layouts.Layouts
 import barmajaa.m4md24.learnjetpackcompose.learn.components.menus.Menus
 import barmajaa.m4md24.learnjetpackcompose.learn.components.modal_bottom_sheets.ModalBottomSheets
+import barmajaa.m4md24.learnjetpackcompose.learn.components.scaffolds.navigation_bars.NavigationBars
 import barmajaa.m4md24.learnjetpackcompose.learn.components.navigation_drawers.NavigationDrawers
 import barmajaa.m4md24.learnjetpackcompose.learn.components.progress_indicators.ProgressIndicators
 import barmajaa.m4md24.learnjetpackcompose.learn.components.pull_to_refresh_boxes.PullToRefreshBoxes
 import barmajaa.m4md24.learnjetpackcompose.learn.components.resource_access.ResourceAccess
-import barmajaa.m4md24.learnjetpackcompose.learn.components.scaffolds.Scaffolds
+import barmajaa.m4md24.learnjetpackcompose.learn.components.scaffolds.app_bars.AppBars
 import barmajaa.m4md24.learnjetpackcompose.learn.components.sliders.Sliders
 import barmajaa.m4md24.learnjetpackcompose.learn.components.snack_bars.SnackBars
 import barmajaa.m4md24.learnjetpackcompose.learn.components.switches.Switches
@@ -105,7 +106,14 @@ private fun getConceptItems() : List<ConceptItem.GroupGroup> {
         ConceptItem.Single(R.string.title_activity_chips, Icons.AutoMirrored.Filled.Label, Chips::class.java),
         ConceptItem.Single(R.string.title_activity_dialogs, Icons.AutoMirrored.Filled.Chat, Dialogs::class.java),
         ConceptItem.Single(R.string.title_activity_menus, Icons.Default.MoreVert, Menus::class.java),
-        ConceptItem.Single(R.string.title_activity_scaffolds, Icons.Default.Dashboard, Scaffolds::class.java),
+        ConceptItem.Group(
+            R.string.title_activity_scaffolds,
+            Icons.Default.Dashboard,
+            listOf(
+                ConceptItem.Single(R.string.title_activity_app_bars, Icons.Default.Dashboard, AppBars::class.java),
+                ConceptItem.Single(R.string.title_activity_navigation_bars, Icons.Default.Navigation, NavigationBars::class.java)
+            )
+        ),
         ConceptItem.Single(R.string.title_activity_navigation_drawers, Icons.Default.Menu, NavigationDrawers::class.java),
         ConceptItem.Single(R.string.title_activity_progress_indicators, Icons.Default.Refresh, ProgressIndicators::class.java),
         ConceptItem.Single(R.string.title_activity_pull_to_refresh_boxes, Icons.Default.ArrowDownward, PullToRefreshBoxes::class.java),

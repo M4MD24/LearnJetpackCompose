@@ -94,7 +94,8 @@
 - [<span style="color: #4285f4;">Menus</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/menus)
     - Normal
 - [<span style="color: #4285f4;">Scaffolds</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/scaffolds)
-    - Normal
+    - [<span style="color: #4285f4;">AppBars</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/scaffolds/app_bars)
+    - [<span style="color: #4285f4;">NavigationBars</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/scaffolds/navigation_bars)
 - [<span style="color: #4285f4;">Navigation Drawers</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/navigation_drawers)
     - Normal
 - [<span style="color: #4285f4;">Progress Indicators</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/progress_indicators)

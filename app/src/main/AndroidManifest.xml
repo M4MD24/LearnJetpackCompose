@@ -11,6 +11,11 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.LearnJetpackCompose">
         <activity
+                android:name=".learn.components.scaffolds.navigation_bars.NavigationBars"
+                android:exported="false"
+                android:label="@string/title_activity_navigation_bars"
+                android:theme="@style/Theme.LearnJetpackCompose"/>
+        <activity
                 android:name=".learn.components.time_pickers.TimePickers"
                 android:exported="false"
                 android:label="@string/title_activity_time_pickers"
@@ -66,7 +71,7 @@
                 android:label="@string/title_activity_navigation_drawers"
                 android:theme="@style/Theme.LearnJetpackCompose"/>
         <activity
-                android:name=".learn.components.scaffolds.Scaffolds"
+                android:name=".learn.components.scaffolds.app_bars.AppBars"
                 android:exported="false"
                 android:label="@string/title_activity_scaffolds"
                 android:theme="@style/Theme.LearnJetpackCompose"/>

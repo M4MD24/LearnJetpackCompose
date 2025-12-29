@@ -35,4 +35,5 @@
     <string name="title_activity_time_pickers">TimePickers</string>
     <string name="title_activity_app_bars">AppBars</string>
     <string name="title_activity_navigation_bars">NavigationBars</string>
+    <string name="title_activity_navigations">Navigations</string>
 </resources>

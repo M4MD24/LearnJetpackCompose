@@ -38,7 +38,7 @@ class NavigationBars : ComponentActivity() {
 enum class Destination(
     val route : String,
     val icon : ImageVector,
-    val label : String = icon.name,
+    val label : String = route.replaceFirstChar { it.uppercase() },
     val contentDescription : String
 ) {
     HOME(

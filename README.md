@@ -126,6 +126,8 @@
     - Range
 - [<span style="color: #4285f4;">TimePickers</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/time_pickers)
     - Normal
+- [<span style="color: #4285f4;">Navigations</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/navigations)
+    - Normal
 
 ---
 

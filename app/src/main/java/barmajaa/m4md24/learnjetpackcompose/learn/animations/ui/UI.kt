@@ -9,6 +9,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import barmajaa.m4md24.learnjetpackcompose.learn.animations.InfiniteRepeatable
+import barmajaa.m4md24.learnjetpackcompose.learn.animations.Spring
 import barmajaa.m4md24.learnjetpackcompose.ui.Section
 
 @Composable
@@ -36,6 +37,12 @@ fun PreviewUI() {
             }
 
             Spacer(modifier = Modifier.height(height))
+
+            Section(title = "Spring") {
+                Box(modifier = Modifier.padding(20.dp)) {
+                    Spring()
+                }
+            }
         }
     }
 }

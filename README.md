@@ -33,7 +33,7 @@
 
 - <u style="text-decoration-color: #4285f4;">Learn Examples of Concepts</u><span style="color: #4285f4;">.</span>
 
-### 1. [<span style="color: #4285f4;">Components</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/first_app)
+### 1. [<span style="color: #4285f4;">Components</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components)
 
 - [<span style="color: #4285f4;">First App</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/first_app)
 - [<span style="color: #4285f4;">Resource Access</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/resource_access)
@@ -128,6 +128,11 @@
     - Normal
 - [<span style="color: #4285f4;">Navigations</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/navigations)
     - Normal
+
+### 2. [<span style="color: #4285f4;">Animations</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/animations)
+
+- InfiniteRepeatable
+- Spring
 
 ---
 

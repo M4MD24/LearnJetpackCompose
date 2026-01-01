@@ -24,6 +24,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import barmajaa.m4md24.learnjetpackcompose.R
+import barmajaa.m4md24.learnjetpackcompose.learn.animations.Animations
 import barmajaa.m4md24.learnjetpackcompose.learn.components.badges.Badges
 import barmajaa.m4md24.learnjetpackcompose.learn.components.search_bars.SearchBars
 import barmajaa.m4md24.learnjetpackcompose.learn.components.cards.Cards
@@ -132,6 +133,11 @@ private fun getConceptItems() : List<ConceptItem.GroupGroup> {
             nameID = R.string.title_concept_components,
             icon = Icons.Default.FormatShapes,
             items = componentItems
+        ),
+        ConceptItem.Single(
+            R.string.title_activity_animations,
+            Icons.Default.Animation,
+            Animations::class.java
         )
     )
     val developItems : List<ConceptItem> = emptyList()

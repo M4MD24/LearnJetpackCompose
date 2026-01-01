@@ -11,6 +11,11 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.LearnJetpackCompose">
         <activity
+                android:name=".learn.animations.Animations"
+                android:exported="false"
+                android:label="@string/title_activity_animations"
+                android:theme="@style/Theme.LearnJetpackCompose"/>
+        <activity
                 android:name=".learn.components.navigations.Navigations"
                 android:exported="false"
                 android:label="@string/title_activity_navigations"

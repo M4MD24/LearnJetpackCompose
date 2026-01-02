@@ -37,4 +37,5 @@
     <string name="title_activity_navigation_bars">NavigationBars</string>
     <string name="title_activity_navigations">Navigations</string>
     <string name="title_activity_animations">Animations</string>
+    <string name="title_activity_carousels">Carousels</string>
 </resources>

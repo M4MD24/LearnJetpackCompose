@@ -10,7 +10,13 @@ import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Event
-import androidx.compose.material3.*
+import androidx.compose.material3.AssistChip
+import androidx.compose.material3.FilterChip
+import androidx.compose.material3.Icon
+import androidx.compose.material3.InputChip
+import androidx.compose.material3.InputChipDefaults
+import androidx.compose.material3.SuggestionChip
+import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import barmajaa.m4md24.learnjetpackcompose.learn.components.chips.ui.PreviewUI
@@ -89,5 +95,12 @@ fun Filter() {
                 contentDescription = "Selected Check"
             )
         },
+    )
+}
+@Composable
+fun Suggestion() {
+    SuggestionChip(
+        label = { Text(text = "Makkah") },
+        onClick = { }
     )
 }

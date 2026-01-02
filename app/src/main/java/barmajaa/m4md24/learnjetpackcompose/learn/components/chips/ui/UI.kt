@@ -11,6 +11,7 @@ import androidx.compose.ui.unit.dp
 import barmajaa.m4md24.learnjetpackcompose.learn.components.chips.Assist
 import barmajaa.m4md24.learnjetpackcompose.learn.components.chips.Filter
 import barmajaa.m4md24.learnjetpackcompose.learn.components.chips.Input
+import barmajaa.m4md24.learnjetpackcompose.learn.components.chips.Suggestion
 import barmajaa.m4md24.learnjetpackcompose.ui.Section
 
 @Composable
@@ -43,6 +44,12 @@ fun PreviewUI() {
 
             Section(title = "Filter") {
                 Filter()
+            }
+
+            Spacer(modifier = Modifier.height(height))
+
+            Section(title = "Suggestion") {
+                Suggestion()
             }
         }
     }

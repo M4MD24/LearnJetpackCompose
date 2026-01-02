@@ -128,6 +128,8 @@
     - Normal
 - [<span style="color: #4285f4;">Navigations</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/navigations)
     - Normal
+- [<span style="color: #4285f4;">Carousels</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/carousels)
+    - HorizontalMultiBrowse
 
 ### 2. [<span style="color: #4285f4;">Animations</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/animations)
 

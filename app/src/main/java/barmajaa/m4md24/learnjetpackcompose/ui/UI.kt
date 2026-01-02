@@ -36,6 +36,7 @@ import barmajaa.m4md24.learnjetpackcompose.learn.components.fields.Fields
 import barmajaa.m4md24.learnjetpackcompose.learn.components.first_app.FirstApp
 import barmajaa.m4md24.learnjetpackcompose.learn.components.buttons.floating_action_buttons.FloatingActionButtons
 import barmajaa.m4md24.learnjetpackcompose.learn.components.buttons.segments.Segments
+import barmajaa.m4md24.learnjetpackcompose.learn.components.carousels.Carousels
 import barmajaa.m4md24.learnjetpackcompose.learn.components.date_pickers.DatePickers
 import barmajaa.m4md24.learnjetpackcompose.learn.components.images.Images
 import barmajaa.m4md24.learnjetpackcompose.learn.components.layouts.Layouts
@@ -126,7 +127,8 @@ private fun getConceptItems() : List<ConceptItem.GroupGroup> {
         ConceptItem.Single(R.string.title_activity_switches, Icons.Default.CheckCircle, Switches::class.java),
         ConceptItem.Single(R.string.title_activity_date_pickers, Icons.Default.Today, DatePickers::class.java),
         ConceptItem.Single(R.string.title_activity_time_pickers, Icons.Default.AccessTime, TimePickers::class.java),
-        ConceptItem.Single(R.string.title_activity_navigations, Icons.Default.FmdGood, Navigations::class.java)
+        ConceptItem.Single(R.string.title_activity_navigations, Icons.Default.FmdGood, Navigations::class.java),
+        ConceptItem.Single(R.string.title_activity_carousels, Icons.Default.ViewCarousel, Carousels::class.java),
     )
     val learnItems = listOf(
         ConceptItem.GroupGroup(

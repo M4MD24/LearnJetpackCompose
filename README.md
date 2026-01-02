@@ -85,7 +85,7 @@
     - TriStateCheckbox
     - Checkbox
 - [<span style="color: #4285f4;">Chips</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/chips)
-    - ~~Assist~~
+    - Assist
     - ~~Filter~~
     - Input
     - ~~Suggestion~~

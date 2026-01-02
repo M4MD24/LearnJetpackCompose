@@ -9,6 +9,8 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Email
+import androidx.compose.material.icons.filled.Event
+import androidx.compose.material3.AssistChip
 import androidx.compose.material3.Icon
 import androidx.compose.material3.InputChip
 import androidx.compose.material3.InputChipDefaults
@@ -55,6 +57,20 @@ fun Input() {
         selected = enable,
         onClick = {
             enable = !enable
+        }
+    )
+}
+@Composable
+fun Assist() {
+    AssistChip(
+        label = { Text("Add to calendar") },
+        onClick = { },
+        leadingIcon = {
+            Icon(
+                modifier = Modifier.size(InputChipDefaults.AvatarSize),
+                imageVector = Icons.Filled.Event,
+                contentDescription = null
+            )
         }
     )
 }

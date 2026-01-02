@@ -86,7 +86,7 @@
     - Checkbox
 - [<span style="color: #4285f4;">Chips</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/chips)
     - Assist
-    - ~~Filter~~
+    - Filter
     - Input
     - ~~Suggestion~~
 - [<span style="color: #4285f4;">Dialogs</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/dialogs)

@@ -1,12 +1,18 @@
 package barmajaa.m4md24.learnjetpackcompose.learn.components.chips.ui
 
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import barmajaa.m4md24.learnjetpackcompose.learn.components.chips.Assist
+import barmajaa.m4md24.learnjetpackcompose.learn.components.chips.Filter
 import barmajaa.m4md24.learnjetpackcompose.learn.components.chips.Input
+import barmajaa.m4md24.learnjetpackcompose.learn.components.chips.Suggestion
+import barmajaa.m4md24.learnjetpackcompose.ui.Section
 
 @Composable
 @Preview(showSystemUi = true)
@@ -18,10 +24,33 @@ fun PreviewUI() {
         Column(
             modifier = Modifier
                 .wrapContentSize()
-                .padding(20.dp),
+                .padding(20.dp)
+                .verticalScroll(rememberScrollState()),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Input()
+            val height = 40.dp
+
+            Section(title = "Input") {
+                Input()
+            }
+
+            Spacer(modifier = Modifier.height(height))
+
+            Section(title = "Assist") {
+                Assist()
+            }
+
+            Spacer(modifier = Modifier.height(height))
+
+            Section(title = "Filter") {
+                Filter()
+            }
+
+            Spacer(modifier = Modifier.height(height))
+
+            Section(title = "Suggestion") {
+                Suggestion()
+            }
         }
-     }
+    }
 }

@@ -85,10 +85,10 @@
     - TriStateCheckbox
     - Checkbox
 - [<span style="color: #4285f4;">Chips</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/chips)
-    - ~~Assist~~
-    - ~~Filter~~
     - Input
-    - ~~Suggestion~~
+    - Assist
+    - Filter
+    - Suggestion
 - [<span style="color: #4285f4;">Dialogs</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/dialogs)
     - Normal
 - [<span style="color: #4285f4;">Menus</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/menus)

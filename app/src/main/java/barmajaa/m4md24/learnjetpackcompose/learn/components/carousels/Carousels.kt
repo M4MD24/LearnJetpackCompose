@@ -51,14 +51,14 @@ fun HorizontalMultiBrowse() {
             .fillMaxWidth()
             .wrapContentHeight()
             .padding(vertical = 16.dp),
-        preferredItemWidth = 186.dp,
+        preferredItemWidth = 180.dp,
         itemSpacing = 8.dp,
         contentPadding = PaddingValues(horizontal = 16.dp)
     ) { index ->
         val item = items[index]
         Image(
             modifier = Modifier
-                .height(205.dp)
+                .height(180.dp)
                 .maskClip(MaterialTheme.shapes.extraLarge),
             imageVector = item,
             contentDescription = item.name,
@@ -79,14 +79,14 @@ fun HorizontalUncontained() {
             .fillMaxWidth()
             .wrapContentHeight()
             .padding(vertical = 16.dp),
-        itemWidth = 186.dp,
+        itemWidth = 180.dp,
         itemSpacing = 8.dp,
         contentPadding = PaddingValues(horizontal = 16.dp)
     ) { index ->
         val item = items[index]
         Image(
             modifier = Modifier
-                .height(205.dp)
+                .height(180.dp)
                 .maskClip(MaterialTheme.shapes.extraLarge),
             imageVector = item,
             contentDescription = item.name,

@@ -45,6 +45,7 @@ import barmajaa.m4md24.learnjetpackcompose.learn.components.modal_bottom_sheets.
 import barmajaa.m4md24.learnjetpackcompose.learn.components.scaffolds.navigation_bars.NavigationBars
 import barmajaa.m4md24.learnjetpackcompose.learn.components.navigation_drawers.NavigationDrawers
 import barmajaa.m4md24.learnjetpackcompose.learn.components.navigations.Navigations
+import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.Pagers
 import barmajaa.m4md24.learnjetpackcompose.learn.components.progress_indicators.ProgressIndicators
 import barmajaa.m4md24.learnjetpackcompose.learn.components.pull_to_refresh_boxes.PullToRefreshBoxes
 import barmajaa.m4md24.learnjetpackcompose.learn.components.resource_access.ResourceAccess
@@ -129,6 +130,7 @@ private fun getConceptItems() : List<ConceptItem.GroupGroup> {
         ConceptItem.Single(R.string.title_activity_time_pickers, Icons.Default.AccessTime, TimePickers::class.java),
         ConceptItem.Single(R.string.title_activity_navigations, Icons.Default.FmdGood, Navigations::class.java),
         ConceptItem.Single(R.string.title_activity_carousels, Icons.Default.ViewCarousel, Carousels::class.java),
+        ConceptItem.Single(R.string.title_activity_pagers, Icons.Default.Pages, Pagers::class.java),
     )
     val learnItems = listOf(
         ConceptItem.GroupGroup(

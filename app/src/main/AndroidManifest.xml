@@ -11,6 +11,11 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.LearnJetpackCompose">
         <activity
+                android:name=".learn.components.pagers.Pagers"
+                android:exported="false"
+                android:label="@string/title_activity_pagers"
+                android:theme="@style/Theme.LearnJetpackCompose"/>
+        <activity
                 android:name=".learn.components.carousels.Carousels"
                 android:exported="false"
                 android:label="@string/title_activity_carousels"

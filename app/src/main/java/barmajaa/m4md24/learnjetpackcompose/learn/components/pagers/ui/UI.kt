@@ -20,6 +20,7 @@ import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.Peek
 import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.Rotation
 import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.Scaled
 import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.Stacked
+import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.Vertical
 import barmajaa.m4md24.learnjetpackcompose.ui.Section
 import barmajaa.m4md24.learnjetpackcompose.ui.Title
 
@@ -43,6 +44,12 @@ fun PreviewUI() {
 
             Section(title = "Horizontal") {
                 Horizontal()
+            }
+
+            Spacer(modifier = Modifier.height(height))
+
+            Section(title = "Vertical") {
+                Vertical()
             }
 
             Spacer(modifier = Modifier.height(height))

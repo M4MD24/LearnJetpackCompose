@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.PageSize
+import androidx.compose.foundation.pager.VerticalPager
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -42,6 +43,38 @@ fun Horizontal() {
 
     HorizontalPager(
         modifier = Modifier.fillMaxWidth(),
+        state = pagerState
+    ) { page ->
+        Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(200.dp)
+                .padding(16.dp),
+            elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
+        ) {
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .background(MaterialTheme.colorScheme.primaryContainer),
+                contentAlignment = Alignment.Center
+            ) {
+                Text(
+                    text = "Page $page",
+                    style = MaterialTheme.typography.headlineMedium
+                )
+            }
+        }
+    }
+}
+@OptIn(ExperimentalFoundationApi::class)
+@Composable
+fun Vertical() {
+    val pagerState = rememberPagerState(pageCount = { 5 })
+
+    VerticalPager (
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(200.dp),
         state = pagerState
     ) { page ->
         Card(
@@ -428,32 +461,30 @@ fun Cube() {
     val pagerState = rememberPagerState(pageCount = { 5 })
 
     HorizontalPager(
-        state = pagerState,
-        modifier = Modifier.fillMaxWidth()
+        modifier = Modifier.fillMaxWidth(),
+        state = pagerState
     ) { page ->
-        val pageOffset = (
-                (pagerState.currentPage - page) + pagerState.currentPageOffsetFraction
-                )
-
         Card(
             modifier = Modifier
                 .fillMaxWidth()
                 .height(250.dp)
                 .padding(16.dp)
                 .graphicsLayer {
+                    val pageOffset = (
+                            (pagerState.currentPage - page) + pagerState.currentPageOffsetFraction
+                            )
                     val rotation = pageOffset * 90f
                     rotationY = rotation
                     cameraDistance = 8f * density
-                    // Adjust translation for cube effect
                     translationX = -pageOffset * size.width
                 },
             elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
         ) {
             Box(
-                contentAlignment = Alignment.Center,
                 modifier = Modifier
                     .fillMaxSize()
-                    .background(MaterialTheme.colorScheme.primaryContainer)
+                    .background(MaterialTheme.colorScheme.primaryContainer),
+                contentAlignment = Alignment.Center
             ) {
                 Text(
                     text = "Page $page",

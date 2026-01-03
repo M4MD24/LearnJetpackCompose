@@ -134,7 +134,7 @@
 - [<span style="color: #4285f4;">Pagers</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/pagers)
     - Normal
         - Horizontal
-        - ~~Vertical~~
+        - Vertical
     - Advanced
         - Infinite
         - Peek

@@ -47,6 +47,8 @@ fun PreviewUI() {
 
             Title("Normal")
 
+            Spacer(modifier = Modifier.height(height))
+
             Section(title = "Horizontal") {
                 Horizontal()
             }

@@ -144,7 +144,6 @@ fun Scaled() {
                     val pageOffset = (
                             (pagerState.currentPage - page) + pagerState.currentPageOffsetFraction
                             ).absoluteValue
-
                     val scale = lerp(
                         start = 0.85f,
                         stop = 1f,
@@ -175,7 +174,7 @@ fun Scaled() {
 fun AutoScroll() {
     val pagerState = rememberPagerState(pageCount = { 5 })
 
-    LaunchedEffect (Unit) {
+    LaunchedEffect(Unit) {
         while (true) {
             delay(2000)
             val nextPage = (pagerState.currentPage + 1) % 5
@@ -231,6 +230,44 @@ fun MultiItem() {
                 Text(
                     text = "Item\n$page",
                     style = MaterialTheme.typography.titleLarge
+                )
+            }
+        }
+    }
+}
+@OptIn(ExperimentalFoundationApi::class)
+@Composable
+fun Fade() {
+    val pagerState = rememberPagerState(pageCount = { 5 })
+
+    HorizontalPager(state = pagerState) { page ->
+        Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(200.dp)
+                .padding(16.dp)
+                .graphicsLayer {
+                    val pageOffset = (
+                            (pagerState.currentPage - page) + pagerState.currentPageOffsetFraction
+                            ).absoluteValue
+                    val alpha = lerp(
+                        start = 0.3f,
+                        stop = 1f,
+                        fraction = 1f - pageOffset.coerceIn(0f, 1f)
+                    )
+                    this.alpha = alpha
+                },
+            elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
+        ) {
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .background(MaterialTheme.colorScheme.secondaryContainer),
+                contentAlignment = Alignment.Center
+            ) {
+                Text(
+                    text = "Page $page",
+                    style = MaterialTheme.typography.headlineMedium
                 )
             }
         }

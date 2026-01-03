@@ -9,6 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.AutoScroll
+import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.Fade
 import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.Horizontal
 import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.Infinite
 import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.MultiItem
@@ -71,6 +72,12 @@ fun PreviewUI() {
 
             Section(title = "MultiItem") {
                 MultiItem()
+            }
+
+            Spacer(modifier = Modifier.height(height))
+
+            Section(title = "Fade") {
+                Fade()
             }
 
             Spacer(modifier = Modifier.height(height))

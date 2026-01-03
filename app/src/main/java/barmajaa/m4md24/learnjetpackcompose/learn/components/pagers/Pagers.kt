@@ -90,3 +90,33 @@ fun Infinite() {
         }
     }
 }
+@OptIn(ExperimentalFoundationApi::class)
+@Composable
+fun Peek() {
+    val pagerState = rememberPagerState(pageCount = { 5 })
+
+    HorizontalPager(
+        state = pagerState,
+        contentPadding = PaddingValues(horizontal = 64.dp),
+        pageSpacing = 16.dp
+    ) { page ->
+        Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(250.dp),
+            elevation = CardDefaults.cardElevation(defaultElevation = 6.dp)
+        ) {
+            Box(
+                contentAlignment = Alignment.Center,
+                modifier = Modifier
+                    .fillMaxSize()
+                    .background(MaterialTheme.colorScheme.primaryContainer)
+            ) {
+                Text(
+                    text = "Page $page",
+                    style = MaterialTheme.typography.headlineLarge
+                )
+            }
+        }
+    }
+}

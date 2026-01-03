@@ -11,7 +11,9 @@ import androidx.compose.ui.unit.dp
 import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.Horizontal
 import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.Infinite
 import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.Peek
+import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.Scaled
 import barmajaa.m4md24.learnjetpackcompose.ui.Section
+import barmajaa.m4md24.learnjetpackcompose.ui.Title
 
 @Composable
 @Preview(showSystemUi = true)
@@ -29,9 +31,15 @@ fun PreviewUI() {
         ) {
             val height = 40.dp
 
+            Title("Normal")
+
             Section(title = "Horizontal") {
                 Horizontal()
             }
+
+            Spacer(modifier = Modifier.height(height))
+
+            Title("Advanced")
 
             Spacer(modifier = Modifier.height(height))
 
@@ -43,6 +51,12 @@ fun PreviewUI() {
 
             Section(title = "Peek") {
                 Peek()
+            }
+
+            Spacer(modifier = Modifier.height(height))
+
+            Section(title = "Scaled") {
+                Scaled()
             }
 
             Spacer(modifier = Modifier.height(height))

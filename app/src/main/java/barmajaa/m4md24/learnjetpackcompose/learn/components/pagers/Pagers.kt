@@ -16,8 +16,11 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.util.lerp
 import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.ui.PreviewUI
+import kotlin.math.absoluteValue
 
 class Pagers : ComponentActivity() {
     override fun onCreate(savedInstanceState : Bundle?) {
@@ -115,6 +118,50 @@ fun Peek() {
                 Text(
                     text = "Page $page",
                     style = MaterialTheme.typography.headlineLarge
+                )
+            }
+        }
+    }
+}
+@OptIn(ExperimentalFoundationApi::class)
+@Composable
+fun Scaled() {
+    val pagerState = rememberPagerState(pageCount = { 5 })
+
+    HorizontalPager(
+        state = pagerState,
+        contentPadding = PaddingValues(horizontal = 64.dp),
+        pageSpacing = 16.dp
+    ) { page ->
+        Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(200.dp)
+                .graphicsLayer {
+                    val pageOffset = (
+                            (pagerState.currentPage - page) + pagerState.currentPageOffsetFraction
+                            ).absoluteValue
+
+                    val scale = lerp(
+                        start = 0.85f,
+                        stop = 1f,
+                        fraction = 1f - pageOffset.coerceIn(0f, 1f)
+                    )
+
+                    scaleX = scale
+                    scaleY = scale
+                },
+            elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
+        ) {
+            Box(
+                contentAlignment = Alignment.Center,
+                modifier = Modifier
+                    .fillMaxSize()
+                    .background(MaterialTheme.colorScheme.secondaryContainer)
+            ) {
+                Text(
+                    text = "Page $page",
+                    style = MaterialTheme.typography.headlineMedium
                 )
             }
         }

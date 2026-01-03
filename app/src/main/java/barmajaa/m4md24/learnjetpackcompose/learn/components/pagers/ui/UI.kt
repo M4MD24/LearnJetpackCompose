@@ -11,6 +11,7 @@ import androidx.compose.ui.unit.dp
 import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.AutoScroll
 import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.Horizontal
 import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.Infinite
+import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.MultiItem
 import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.Peek
 import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.Scaled
 import barmajaa.m4md24.learnjetpackcompose.ui.Section
@@ -64,6 +65,12 @@ fun PreviewUI() {
 
             Section(title = "AutoScroll") {
                 AutoScroll()
+            }
+
+            Spacer(modifier = Modifier.height(height))
+
+            Section(title = "MultiItem") {
+                MultiItem()
             }
 
             Spacer(modifier = Modifier.height(height))

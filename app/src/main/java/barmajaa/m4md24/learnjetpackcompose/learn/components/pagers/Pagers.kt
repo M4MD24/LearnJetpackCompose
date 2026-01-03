@@ -8,6 +8,7 @@ import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.pager.HorizontalPager
+import androidx.compose.foundation.pager.PageSize
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -199,6 +200,37 @@ fun AutoScroll() {
                 Text(
                     text = "Page $page (Auto)",
                     style = MaterialTheme.typography.headlineMedium
+                )
+            }
+        }
+    }
+}
+@OptIn(ExperimentalFoundationApi::class)
+@Composable
+fun MultiItem() {
+    val pagerState = rememberPagerState(pageCount = { 10 })
+
+    HorizontalPager(
+        state = pagerState,
+        pageSize = PageSize.Fixed(120.dp),
+        pageSpacing = 8.dp,
+        contentPadding = PaddingValues(horizontal = 16.dp)
+    ) { page ->
+        Card(
+            modifier = Modifier
+                .width(120.dp)
+                .height(160.dp),
+            elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
+        ) {
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .background(MaterialTheme.colorScheme.primaryContainer),
+                contentAlignment = Alignment.Center
+            ) {
+                Text(
+                    text = "Item\n$page",
+                    style = MaterialTheme.typography.titleLarge
                 )
             }
         }

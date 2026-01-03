@@ -128,6 +128,25 @@
     - Normal
 - [<span style="color: #4285f4;">Navigations</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/navigations)
     - Normal
+- [<span style="color: #4285f4;">Carousels</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/carousels)
+    - HorizontalMultiBrowse
+    - HorizontalUncontained
+- [<span style="color: #4285f4;">Pagers</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/pagers)
+    - Normal
+        - Horizontal
+        - Vertical
+    - Advanced
+        - Infinite
+        - Peek
+        - Scaled
+        - AutoScroll
+        - MultiItem
+        - Fade
+        - Parallax
+        - LazyRow
+        - Stacked
+        - Rotation
+        - Cube
 
 ### 2. [<span style="color: #4285f4;">Animations</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/animations)
 

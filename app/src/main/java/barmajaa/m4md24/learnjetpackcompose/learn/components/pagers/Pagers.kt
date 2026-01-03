@@ -34,8 +34,8 @@ fun Horizontal() {
     val pagerState = rememberPagerState(pageCount = { 5 })
 
     HorizontalPager(
-        state = pagerState,
-        modifier = Modifier.fillMaxWidth()
+        modifier = Modifier.fillMaxWidth(),
+        state = pagerState
     ) { page ->
         Card(
             modifier = Modifier
@@ -45,13 +45,45 @@ fun Horizontal() {
             elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
         ) {
             Box(
-                contentAlignment = Alignment.Center,
                 modifier = Modifier
                     .fillMaxSize()
-                    .background(MaterialTheme.colorScheme.primaryContainer)
+                    .background(MaterialTheme.colorScheme.primaryContainer),
+                contentAlignment = Alignment.Center
             ) {
                 Text(
                     text = "Page $page",
+                    style = MaterialTheme.typography.headlineMedium
+                )
+            }
+        }
+    }
+}
+@OptIn(ExperimentalFoundationApi::class)
+@Composable
+fun Infinite() {
+    val items = listOf("Item 1", "Item 2", "Item 3", "Item 4", "Item 5")
+    val pagerState = rememberPagerState(
+        initialPage = Int.MAX_VALUE / 2,
+        pageCount = { Int.MAX_VALUE }
+    )
+
+    HorizontalPager(state = pagerState) { page ->
+        val actualPage = page % items.size
+        Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(200.dp)
+                .padding(16.dp),
+            elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
+        ) {
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .background(MaterialTheme.colorScheme.tertiaryContainer),
+                contentAlignment = Alignment.Center
+            ) {
+                Text(
+                    text = items[actualPage],
                     style = MaterialTheme.typography.headlineMedium
                 )
             }

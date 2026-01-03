@@ -134,6 +134,9 @@
 - [<span style="color: #4285f4;">Pagers</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/pagers)
     - Normal
         - Horizontal
+        - ~~Vertical~~
+    - Advanced
+        - Infinite
 
 ### 2. [<span style="color: #4285f4;">Animations</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/animations)
 

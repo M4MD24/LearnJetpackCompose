@@ -13,6 +13,7 @@ import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.Fade
 import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.Horizontal
 import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.Infinite
 import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.MultiItem
+import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.Parallax
 import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.Peek
 import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.Scaled
 import barmajaa.m4md24.learnjetpackcompose.ui.Section
@@ -78,6 +79,12 @@ fun PreviewUI() {
 
             Section(title = "Fade") {
                 Fade()
+            }
+
+            Spacer(modifier = Modifier.height(height))
+
+            Section(title = "Parallax") {
+                Parallax()
             }
 
             Spacer(modifier = Modifier.height(height))

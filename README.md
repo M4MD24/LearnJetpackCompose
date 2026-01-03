@@ -142,6 +142,7 @@
         - AutoScroll
         - MultiItem
         - Fade
+        - Parallax
 
 ### 2. [<span style="color: #4285f4;">Animations</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/animations)
 

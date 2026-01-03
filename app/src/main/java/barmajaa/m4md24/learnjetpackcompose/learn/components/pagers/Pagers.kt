@@ -273,3 +273,45 @@ fun Fade() {
         }
     }
 }
+@OptIn(ExperimentalFoundationApi::class)
+@Composable
+fun Parallax() {
+    val pagerState = rememberPagerState(pageCount = { 5 })
+
+    HorizontalPager(state = pagerState) { page ->
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(250.dp)
+        ) {
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .background(MaterialTheme.colorScheme.primaryContainer)
+                    .graphicsLayer {
+                        val pageOffset = (
+                                (pagerState.currentPage - page) + pagerState.currentPageOffsetFraction
+                                )
+                        translationX = pageOffset * 200f
+                    }
+            )
+            Card(
+                modifier = Modifier
+                    .align(Alignment.Center)
+                    .padding(32.dp)
+                    .size(200.dp),
+                elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
+            ) {
+                Box(
+                    modifier = Modifier.fillMaxSize(),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text(
+                        text = "Page $page",
+                        style = MaterialTheme.typography.headlineMedium
+                    )
+                }
+            }
+        }
+    }
+}

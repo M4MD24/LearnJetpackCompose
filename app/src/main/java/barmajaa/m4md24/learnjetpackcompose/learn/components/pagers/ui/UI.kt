@@ -1,11 +1,13 @@
 package barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.ui
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.AutoScroll
@@ -28,7 +30,10 @@ import barmajaa.m4md24.learnjetpackcompose.ui.Title
 @Preview(showSystemUi = true)
 fun PreviewUI() {
     Box(
-        modifier = Modifier.fillMaxSize(),
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color.Gray)
+            .systemBarsPadding(),
         contentAlignment = Alignment.Center
     ) {
         Column(

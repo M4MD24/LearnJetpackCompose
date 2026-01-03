@@ -14,6 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 
@@ -26,8 +27,9 @@ fun Title(
 ) {
     Text(
         text = title,
-        style = MaterialTheme.typography.headlineLarge,
-        textAlign = TextAlign.Center
+        textAlign = TextAlign.Center,
+        fontWeight = FontWeight.Black,
+        style = MaterialTheme.typography.headlineLarge
     )
 
     HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))

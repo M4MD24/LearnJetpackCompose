@@ -17,6 +17,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Text
@@ -83,6 +84,7 @@ fun Spring() {
             .size(100.dp)
             .scale(bounceScale)
             .background(Color(0xFF03DAC5), CircleShape)
+            .padding(10.dp)
             .clickable(
                 indication = null,
                 interactionSource = remember { MutableInteractionSource() },

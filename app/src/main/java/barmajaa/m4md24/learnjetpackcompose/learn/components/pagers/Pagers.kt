@@ -14,12 +14,14 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.util.lerp
 import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.ui.PreviewUI
+import kotlinx.coroutines.delay
 import kotlin.math.absoluteValue
 
 class Pagers : ComponentActivity() {
@@ -130,8 +132,8 @@ fun Scaled() {
 
     HorizontalPager(
         state = pagerState,
-        contentPadding = PaddingValues(horizontal = 64.dp),
-        pageSpacing = 16.dp
+        pageSpacing = 16.dp,
+        contentPadding = PaddingValues(horizontal = 64.dp)
     ) { page ->
         Card(
             modifier = Modifier
@@ -154,13 +156,48 @@ fun Scaled() {
             elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
         ) {
             Box(
-                contentAlignment = Alignment.Center,
                 modifier = Modifier
                     .fillMaxSize()
-                    .background(MaterialTheme.colorScheme.secondaryContainer)
+                    .background(MaterialTheme.colorScheme.secondaryContainer),
+                contentAlignment = Alignment.Center
             ) {
                 Text(
                     text = "Page $page",
+                    style = MaterialTheme.typography.headlineMedium
+                )
+            }
+        }
+    }
+}
+@OptIn(ExperimentalFoundationApi::class)
+@Composable
+fun AutoScroll() {
+    val pagerState = rememberPagerState(pageCount = { 5 })
+
+    LaunchedEffect (Unit) {
+        while (true) {
+            delay(2000)
+            val nextPage = (pagerState.currentPage + 1) % 5
+            pagerState.animateScrollToPage(nextPage)
+        }
+    }
+
+    HorizontalPager(state = pagerState) { page ->
+        Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(200.dp)
+                .padding(16.dp),
+            elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
+        ) {
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .background(MaterialTheme.colorScheme.tertiaryContainer),
+                contentAlignment = Alignment.Center
+            ) {
+                Text(
+                    text = "Page $page (Auto)",
                     style = MaterialTheme.typography.headlineMedium
                 )
             }

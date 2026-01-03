@@ -16,6 +16,7 @@ import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.LazyRow
 import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.MultiItem
 import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.Parallax
 import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.Peek
+import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.Rotation
 import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.Scaled
 import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.Stacked
 import barmajaa.m4md24.learnjetpackcompose.ui.Section
@@ -99,6 +100,12 @@ fun PreviewUI() {
 
             Section(title = "Stacked") {
                 Stacked()
+            }
+
+            Spacer(modifier = Modifier.height(height))
+
+            Section(title = "Rotation") {
+                Rotation()
             }
 
             Spacer(modifier = Modifier.height(height))

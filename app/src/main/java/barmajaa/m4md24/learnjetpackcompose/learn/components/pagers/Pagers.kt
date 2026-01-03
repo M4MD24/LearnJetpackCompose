@@ -114,10 +114,10 @@ fun Peek() {
             elevation = CardDefaults.cardElevation(defaultElevation = 6.dp)
         ) {
             Box(
-                contentAlignment = Alignment.Center,
                 modifier = Modifier
                     .fillMaxSize()
-                    .background(MaterialTheme.colorScheme.primaryContainer)
+                    .background(MaterialTheme.colorScheme.primaryContainer),
+                contentAlignment = Alignment.Center
             ) {
                 Text(
                     text = "Page $page",
@@ -150,7 +150,6 @@ fun Scaled() {
                         stop = 1f,
                         fraction = 1f - pageOffset.coerceIn(0f, 1f)
                     )
-
                     scaleX = scale
                     scaleY = scale
                 },
@@ -382,6 +381,43 @@ fun Stacked() {
                         style = MaterialTheme.typography.headlineLarge
                     )
                 }
+            }
+        }
+    }
+}
+@OptIn(ExperimentalFoundationApi::class)
+@Composable
+fun Rotation() {
+    val pagerState = rememberPagerState(pageCount = { 5 })
+
+    HorizontalPager(
+        state = pagerState,
+        contentPadding = PaddingValues(horizontal = 64.dp),
+        pageSpacing = 16.dp
+    ) { page ->
+        Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(200.dp)
+                .graphicsLayer {
+                    val pageOffset = (
+                            (pagerState.currentPage - page) + pagerState.currentPageOffsetFraction
+                            )
+                    rotationY = pageOffset * 30f
+                    cameraDistance = 12f * density
+                },
+            elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
+        ) {
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .background(MaterialTheme.colorScheme.tertiaryContainer),
+                contentAlignment = Alignment.Center
+            ) {
+                Text(
+                    text = "Page $page",
+                    style = MaterialTheme.typography.headlineMedium
+                )
             }
         }
     }

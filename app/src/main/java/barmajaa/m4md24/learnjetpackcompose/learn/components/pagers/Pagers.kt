@@ -342,3 +342,47 @@ fun LazyRow() = LazyRow(
         }
     }
 }
+@OptIn(ExperimentalFoundationApi::class)
+@Composable
+fun Stacked() {
+    val pagerState = rememberPagerState(pageCount = { 5 })
+
+    Box(modifier = Modifier.fillMaxSize()) {
+        HorizontalPager(
+            state = pagerState,
+            modifier = Modifier.fillMaxSize()
+        ) { page ->
+            Card(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(300.dp)
+                    .padding(32.dp)
+                    .graphicsLayer {
+                        val pageOffset = (
+                                (pagerState.currentPage - page) + pagerState.currentPageOffsetFraction
+                                ).absoluteValue
+                        val scale = lerp(0.8f, 1f, 1f - pageOffset.coerceIn(0f, 1f))
+                        val translationY = pageOffset * 50f
+                        val alpha = lerp(0.5f, 1f, 1f - pageOffset.coerceIn(0f, 1f))
+                        scaleX = scale
+                        scaleY = scale
+                        this.translationY = translationY
+                        this.alpha = alpha
+                    },
+                elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
+            ) {
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .background(MaterialTheme.colorScheme.secondaryContainer),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text(
+                        text = "Card $page",
+                        style = MaterialTheme.typography.headlineLarge
+                    )
+                }
+            }
+        }
+    }
+}

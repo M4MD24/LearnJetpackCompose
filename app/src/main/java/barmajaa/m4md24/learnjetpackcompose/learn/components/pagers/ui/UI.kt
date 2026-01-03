@@ -17,6 +17,7 @@ import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.MultiItem
 import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.Parallax
 import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.Peek
 import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.Scaled
+import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.Stacked
 import barmajaa.m4md24.learnjetpackcompose.ui.Section
 import barmajaa.m4md24.learnjetpackcompose.ui.Title
 
@@ -92,6 +93,12 @@ fun PreviewUI() {
 
             Section(title = "LazyRow") {
                 LazyRow()
+            }
+
+            Spacer(modifier = Modifier.height(height))
+
+            Section(title = "Stacked") {
+                Stacked()
             }
 
             Spacer(modifier = Modifier.height(height))

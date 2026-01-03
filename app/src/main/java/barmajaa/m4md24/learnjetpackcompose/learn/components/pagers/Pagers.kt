@@ -422,3 +422,44 @@ fun Rotation() {
         }
     }
 }
+@OptIn(ExperimentalFoundationApi::class)
+@Composable
+fun Cube() {
+    val pagerState = rememberPagerState(pageCount = { 5 })
+
+    HorizontalPager(
+        state = pagerState,
+        modifier = Modifier.fillMaxWidth()
+    ) { page ->
+        val pageOffset = (
+                (pagerState.currentPage - page) + pagerState.currentPageOffsetFraction
+                )
+
+        Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(250.dp)
+                .padding(16.dp)
+                .graphicsLayer {
+                    val rotation = pageOffset * 90f
+                    rotationY = rotation
+                    cameraDistance = 8f * density
+                    // Adjust translation for cube effect
+                    translationX = -pageOffset * size.width
+                },
+            elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
+        ) {
+            Box(
+                contentAlignment = Alignment.Center,
+                modifier = Modifier
+                    .fillMaxSize()
+                    .background(MaterialTheme.colorScheme.primaryContainer)
+            ) {
+                Text(
+                    text = "Page $page",
+                    style = MaterialTheme.typography.headlineLarge
+                )
+            }
+        }
+    }
+}

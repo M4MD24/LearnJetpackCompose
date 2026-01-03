@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.PageSize
 import androidx.compose.foundation.pager.rememberPagerState
@@ -311,6 +312,32 @@ fun Parallax() {
                         style = MaterialTheme.typography.headlineMedium
                     )
                 }
+            }
+        }
+    }
+}
+@Composable
+fun LazyRow() = LazyRow(
+    contentPadding = PaddingValues(horizontal = 16.dp),
+    horizontalArrangement = Arrangement.spacedBy(12.dp)
+) {
+    items(10) { index ->
+        Card(
+            modifier = Modifier
+                .width(300.dp)
+                .height(200.dp),
+            elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
+        ) {
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .background(MaterialTheme.colorScheme.primaryContainer),
+                contentAlignment = Alignment.Center
+            ) {
+                Text(
+                    text = "Item $index",
+                    style = MaterialTheme.typography.headlineMedium
+                )
             }
         }
     }

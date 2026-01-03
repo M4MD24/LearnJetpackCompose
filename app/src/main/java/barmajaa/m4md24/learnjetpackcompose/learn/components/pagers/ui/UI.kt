@@ -12,6 +12,7 @@ import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.AutoScroll
 import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.Fade
 import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.Horizontal
 import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.Infinite
+import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.LazyRow
 import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.MultiItem
 import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.Parallax
 import barmajaa.m4md24.learnjetpackcompose.learn.components.pagers.Peek
@@ -85,6 +86,12 @@ fun PreviewUI() {
 
             Section(title = "Parallax") {
                 Parallax()
+            }
+
+            Spacer(modifier = Modifier.height(height))
+
+            Section(title = "LazyRow") {
+                LazyRow()
             }
 
             Spacer(modifier = Modifier.height(height))

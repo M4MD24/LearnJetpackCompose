@@ -16,7 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import barmajaa.m4md24.learnjetpackcompose.learn.components.grids.lazy.normal.ui.PreviewUI
+import barmajaa.m4md24.learnjetpackcompose.learn.components.grids.lazy.staggered.ui.PreviewUI
 
 class Staggered : ComponentActivity() {
     override fun onCreate(savedInstanceState : Bundle?) {

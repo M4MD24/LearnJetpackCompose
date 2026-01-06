@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyHorizontalGrid
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -32,6 +33,26 @@ class Normal : ComponentActivity() {
 fun LazyVerticalGrid() = LazyVerticalGrid(
     modifier = Modifier,
     columns = GridCells.Fixed(count = 6)
+) {
+    items(60) { index ->
+        Box(
+            modifier = Modifier
+                .aspectRatio(1f)
+                .padding(4.dp)
+                .background(Color.Gray),
+            contentAlignment = Alignment.Center
+        ) {
+            Text(
+                text = "${index + 1}",
+                textAlign = TextAlign.Center
+            )
+        }
+    }
+}
+@Composable
+fun LazyHorizontalGrid() = LazyHorizontalGrid(
+    modifier = Modifier,
+    rows = GridCells.Fixed(count = 6)
 ) {
     items(60) { index ->
         Box(

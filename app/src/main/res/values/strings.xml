@@ -41,4 +41,5 @@
     <string name="title_activity_pagers">Pagers</string>
     <string name="title_concept_grids">Grids</string>
     <string name="title_concept_lazy">Lazy</string>
+    <string name="title_activity_staggered">Staggered</string>
 </resources>

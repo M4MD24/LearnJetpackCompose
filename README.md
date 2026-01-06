@@ -79,6 +79,7 @@
 - [<span style="color: #4285f4;">Grids</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/grids)
     - Lazy
         - [<span style="color: #4285f4;">Normal</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/grids/lazy/normal)
+        - [<span style="color: #4285f4;">Staggered</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/grids/lazy/staggered)
 - [<span style="color: #4285f4;">Modal Bottom Sheets</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/modal_bottom_sheets)
     - Normal
 - [<span style="color: #4285f4;">Cards</span>](app/src/main/java/barmajaa/m4md24/learnjetpackcompose/learn/components/cards)

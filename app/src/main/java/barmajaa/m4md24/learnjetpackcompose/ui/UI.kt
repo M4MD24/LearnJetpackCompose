@@ -39,6 +39,7 @@ import barmajaa.m4md24.learnjetpackcompose.learn.components.buttons.segments.Seg
 import barmajaa.m4md24.learnjetpackcompose.learn.components.carousels.Carousels
 import barmajaa.m4md24.learnjetpackcompose.learn.components.date_pickers.DatePickers
 import barmajaa.m4md24.learnjetpackcompose.learn.components.grids.lazy.normal.Normal
+import barmajaa.m4md24.learnjetpackcompose.learn.components.grids.lazy.staggered.Staggered
 import barmajaa.m4md24.learnjetpackcompose.learn.components.images.Images
 import barmajaa.m4md24.learnjetpackcompose.learn.components.layouts.Layouts
 import barmajaa.m4md24.learnjetpackcompose.learn.components.menus.Menus
@@ -114,6 +115,7 @@ private fun getConceptItems() : List<ConceptItem.GroupGroup> {
                     Icons.Default.GridView,
                     listOf(
                         ConceptItem.Single(R.string.title_activity_normal, Icons.Default.GridOn, Normal::class.java),
+                        ConceptItem.Single(R.string.title_activity_staggered, Icons.Default.GridOff, Staggered::class.java)
                     )
                 )
             )

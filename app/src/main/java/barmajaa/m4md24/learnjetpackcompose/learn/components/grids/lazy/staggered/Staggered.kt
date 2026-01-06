@@ -5,10 +5,8 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.staggeredgrid.LazyHorizontalStaggeredGrid
 import androidx.compose.foundation.lazy.staggeredgrid.LazyVerticalStaggeredGrid
 import androidx.compose.foundation.lazy.staggeredgrid.StaggeredGridCells
 import androidx.compose.material3.Text
@@ -39,6 +37,27 @@ fun LazyVerticalStaggeredGrid() = LazyVerticalStaggeredGrid(
             modifier = Modifier
                 .fillMaxWidth()
                 .height((60 .. 180).random().dp)
+                .padding(4.dp)
+                .background(Color.Gray),
+            contentAlignment = Alignment.Center
+        ) {
+            Text(
+                text = "${index + 1}",
+                textAlign = TextAlign.Center
+            )
+        }
+    }
+}
+@Composable
+fun LazyHorizontalStaggeredGrid() = LazyHorizontalStaggeredGrid(
+    modifier = Modifier,
+    rows = StaggeredGridCells.Fixed(count = 5)
+) {
+    items(40) { index ->
+        Box(
+            modifier = Modifier
+                .width((60 .. 180).random().dp)
+                .fillMaxHeight()
                 .padding(4.dp)
                 .background(Color.Gray),
             contentAlignment = Alignment.Center

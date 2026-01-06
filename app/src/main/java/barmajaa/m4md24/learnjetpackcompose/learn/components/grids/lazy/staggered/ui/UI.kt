@@ -6,6 +6,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import barmajaa.m4md24.learnjetpackcompose.learn.components.grids.lazy.staggered.LazyHorizontalStaggeredGrid
 import barmajaa.m4md24.learnjetpackcompose.learn.components.grids.lazy.staggered.LazyVerticalStaggeredGrid
 
 @Composable
@@ -35,6 +36,15 @@ fun PreviewUI() {
             }
 
             Spacer(modifier = Modifier.height(height))
+
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .weight(1f),
+                contentAlignment = Alignment.Center
+            ) {
+                LazyHorizontalStaggeredGrid()
+            }
         }
     }
 }

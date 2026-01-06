@@ -58,26 +58,11 @@ import barmajaa.m4md24.learnjetpackcompose.learn.components.switches.Switches
 import barmajaa.m4md24.learnjetpackcompose.learn.components.text_and_typography.TextAndTypography
 import barmajaa.m4md24.learnjetpackcompose.learn.components.texts.Texts
 import barmajaa.m4md24.learnjetpackcompose.learn.components.time_pickers.TimePickers
-import kotlin.text.contains
 
 sealed class ConceptItem {
-    data class Single(
-        val nameID : Int,
-        val icon : ImageVector,
-        val activityClass : Class<*>
-    ) : ConceptItem()
-
-    data class Group(
-        val nameID : Int,
-        val icon : ImageVector,
-        val items : List<Single>
-    ) : ConceptItem()
-
-    data class GroupGroup(
-        val nameID : Int,
-        val icon : ImageVector,
-        val items : List<ConceptItem>
-    ) : ConceptItem()
+    data class Single(val nameID : Int, val icon : ImageVector, val activityClass : Class<*>) : ConceptItem()
+    data class Group(val nameID : Int, val icon : ImageVector, val items : List<Single>) : ConceptItem()
+    data class GroupGroup(val nameID : Int, val icon : ImageVector, val items : List<ConceptItem>) : ConceptItem()
 }
 @Composable
 private fun getConceptItems() : List<ConceptItem.GroupGroup> {
@@ -88,9 +73,7 @@ private fun getConceptItems() : List<ConceptItem.GroupGroup> {
         ConceptItem.Single(R.string.title_activity_fields, Icons.Default.Edit, Fields::class.java),
         ConceptItem.Single(R.string.title_activity_texts, Icons.AutoMirrored.Filled.Article, Texts::class.java),
         ConceptItem.Group(
-            R.string.title_concept_buttons,
-            Icons.Default.TouchApp,
-            listOf(
+            R.string.title_concept_buttons, Icons.Default.TouchApp, listOf(
                 ConceptItem.Single(R.string.title_activity_normal, Icons.Default.TouchApp, barmajaa.m4md24.learnjetpackcompose.learn.components.buttons.normal.Normal::class.java),
                 ConceptItem.Single(R.string.title_activity_floating_action_buttons, Icons.Default.TouchApp, FloatingActionButtons::class.java),
                 ConceptItem.Single(R.string.title_activity_segments, Icons.Default.TouchApp, Segments::class.java)
@@ -99,21 +82,15 @@ private fun getConceptItems() : List<ConceptItem.GroupGroup> {
         ConceptItem.Single(R.string.title_activity_images, Icons.Default.Image, Images::class.java),
         ConceptItem.Single(R.string.title_activity_layouts, Icons.AutoMirrored.Filled.ViewQuilt, Layouts::class.java),
         ConceptItem.Group(
-            R.string.title_concept_column_and_row_types,
-            Icons.Default.ViewColumn,
-            listOf(
+            R.string.title_concept_column_and_row_types, Icons.Default.ViewColumn, listOf(
                 ConceptItem.Single(R.string.title_activity_normal, Icons.Default.CropSquare, barmajaa.m4md24.learnjetpackcompose.learn.components.column_and_row_types.normal.Normal::class.java),
                 ConceptItem.Single(R.string.title_activity_lazy, Icons.AutoMirrored.Filled.List, Lazy::class.java)
             )
         ),
         ConceptItem.GroupGroup(
-            R.string.title_concept_grids,
-            Icons.Default.GridView,
-            listOf(
+            R.string.title_concept_grids, Icons.Default.GridView, listOf(
                 ConceptItem.Group(
-                    R.string.title_concept_lazy,
-                    Icons.Default.GridView,
-                    listOf(
+                    R.string.title_concept_lazy, Icons.Default.GridView, listOf(
                         ConceptItem.Single(R.string.title_activity_normal, Icons.Default.GridOn, Normal::class.java),
                         ConceptItem.Single(R.string.title_activity_staggered, Icons.Default.GridOff, Staggered::class.java)
                     )
@@ -127,9 +104,7 @@ private fun getConceptItems() : List<ConceptItem.GroupGroup> {
         ConceptItem.Single(R.string.title_activity_dialogs, Icons.AutoMirrored.Filled.Chat, Dialogs::class.java),
         ConceptItem.Single(R.string.title_activity_menus, Icons.Default.MoreVert, Menus::class.java),
         ConceptItem.Group(
-            R.string.title_activity_scaffolds,
-            Icons.Default.Dashboard,
-            listOf(
+            R.string.title_activity_scaffolds, Icons.Default.Dashboard, listOf(
                 ConceptItem.Single(R.string.title_activity_app_bars, Icons.Default.Dashboard, AppBars::class.java),
                 ConceptItem.Single(R.string.title_activity_navigation_bars, Icons.Default.Navigation, NavigationBars::class.java)
             )
@@ -146,99 +121,49 @@ private fun getConceptItems() : List<ConceptItem.GroupGroup> {
         ConceptItem.Single(R.string.title_activity_time_pickers, Icons.Default.AccessTime, TimePickers::class.java),
         ConceptItem.Single(R.string.title_activity_navigations, Icons.Default.FmdGood, Navigations::class.java),
         ConceptItem.Single(R.string.title_activity_carousels, Icons.Default.ViewCarousel, Carousels::class.java),
-        ConceptItem.Single(R.string.title_activity_pagers, Icons.Default.Pages, Pagers::class.java),
+        ConceptItem.Single(R.string.title_activity_pagers, Icons.Default.Pages, Pagers::class.java)
     )
-    val learnItems = listOf(
-        ConceptItem.GroupGroup(
-            nameID = R.string.title_concept_components,
-            icon = Icons.Default.FormatShapes,
-            items = componentItems
-        ),
-        ConceptItem.Single(
-            R.string.title_activity_animations,
-            Icons.Default.Animation,
-            Animations::class.java
-        )
-    )
-    val developItems : List<ConceptItem> = emptyList()
 
     return listOf(
         ConceptItem.GroupGroup(
-            nameID = R.string.title_concept_learn,
-            icon = Icons.Default.Biotech,
-            items = learnItems
+            R.string.title_concept_learn, Icons.Default.Biotech, listOf(
+                ConceptItem.GroupGroup(R.string.title_concept_components, Icons.Default.FormatShapes, componentItems),
+                ConceptItem.Single(R.string.title_activity_animations, Icons.Default.Animation, Animations::class.java)
+            )
         ),
-        ConceptItem.GroupGroup(
-            nameID = R.string.title_concept_develop,
-            icon = Icons.Default.DeveloperMode,
-            items = developItems
-        )
+        ConceptItem.GroupGroup(R.string.title_concept_develop, Icons.Default.DeveloperMode, emptyList())
     )
 }
-@Preview(
-    name = "Dark Mode",
-    showSystemUi = true,
-    uiMode = Configuration.UI_MODE_NIGHT_YES
-)
-@Preview(
-    name = "Light Mode",
-    showSystemUi = true,
-    uiMode = Configuration.UI_MODE_NIGHT_NO
-)
+@Preview(name = "Dark Mode", showSystemUi = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Preview(name = "Light Mode", showSystemUi = true, uiMode = Configuration.UI_MODE_NIGHT_NO)
 @Composable
 fun PreviewUI() {
     val context = LocalContext.current
     var searchQuery by remember { mutableStateOf("") }
     val originalConceptItems = getConceptItems()
-    val currentConceptItems = remember(
-        searchQuery,
-        originalConceptItems
-    ) {
-        if (searchQuery.isEmpty())
-            originalConceptItems
-        else
-            FilterConceptItems(
-                context,
-                searchQuery,
-                originalConceptItems
-            )
+    val currentConceptItems = remember(searchQuery, originalConceptItems) {
+        if (searchQuery.isEmpty()) originalConceptItems
+        else FilterConceptItems(context, searchQuery, originalConceptItems)
     }
     val suggestions = remember(originalConceptItems) {
-        GetAllConceptNames(
-            context,
-            originalConceptItems
-        )
+        GetAllConceptNames(context, originalConceptItems)
     }
 
-    MaterialTheme(
-        colorScheme = if (isSystemInDarkTheme()) darkColorScheme() else lightColorScheme()
-    ) {
-        Scaffold(
-            modifier = Modifier.fillMaxSize()
-        ) { paddingValues ->
+    MaterialTheme(colorScheme = if (isSystemInDarkTheme()) darkColorScheme() else lightColorScheme()) {
+        Scaffold(modifier = Modifier.fillMaxSize()) { paddingValues ->
             Column(
                 modifier = Modifier
                     .fillMaxSize()
                     .padding(paddingValues)
             ) {
-                SearchBar(
-                    query = searchQuery,
-                    onQueryChange = { searchQuery = it },
-                    onSearch = { searchQuery = it },
-                    suggestions = suggestions
-                )
-
+                SearchBar(searchQuery, { searchQuery = it }, { searchQuery = it }, suggestions)
                 LazyColumn(
                     modifier = Modifier.fillMaxSize(),
                     verticalArrangement = Arrangement.spacedBy(16.dp),
                     contentPadding = PaddingValues(horizontal = 20.dp, vertical = 16.dp)
                 ) {
                     items(currentConceptItems) { item ->
-                        CardGroupGroup(
-                            context = context,
-                            item = item,
-                            elevation = 10.dp
-                        )
+                        CardGroupGroup(context, item, 10.dp)
                     }
                 }
             }
@@ -246,81 +171,32 @@ fun PreviewUI() {
     }
 }
 
-private fun FilterConceptItems(
-    context : Context,
-    query : String,
-    items : List<ConceptItem.GroupGroup>
-) : List<ConceptItem.GroupGroup> = items.mapNotNull { groupGroup ->
-    val groupGroupName = context.getString(groupGroup.nameID)
-    val matchesGroupGroupName = groupGroupName.contains(
-        query,
-        ignoreCase = true
-    )
-    val filteredItems = FilterItems(
-        context,
-        query,
-        groupGroup.items
-    )
-    if (matchesGroupGroupName)
-        groupGroup
-    else if (filteredItems.isNotEmpty())
-        groupGroup.copy(items = filteredItems)
-    else
-        null
-}
+private fun FilterConceptItems(context : Context, query : String, items : List<ConceptItem.GroupGroup>) =
+    items.mapNotNull { groupGroup ->
+        if (context.getString(groupGroup.nameID).contains(query, ignoreCase = true)) return@mapNotNull groupGroup
+        val filteredItems = FilterItems(context, query, groupGroup.items)
+        if (filteredItems.isNotEmpty()) groupGroup.copy(items = filteredItems) else null
+    }
 
-private fun FilterItems(
-    context : Context,
-    query : String,
-    items : List<ConceptItem>
-) : List<ConceptItem> = items.mapNotNull { item ->
-    when (item) {
-        is ConceptItem.Single     -> {
-            if (context.getString(item.nameID).contains(query, ignoreCase = true))
-                item
-            else
-                null
-        }
-
-        is ConceptItem.Group      -> {
-            val filteredSubItems = item.items.filter {
-                context.getString(it.nameID).contains(query, ignoreCase = true)
+private fun FilterItems(context : Context, query : String, items : List<ConceptItem>) : List<ConceptItem> =
+    items.mapNotNull { item ->
+        when (item) {
+            is ConceptItem.Single     -> if (context.getString(item.nameID).contains(query, ignoreCase = true)) item else null
+            is ConceptItem.Group      -> {
+                if (context.getString(item.nameID).contains(query, ignoreCase = true)) return@mapNotNull item
+                val filteredSubItems = item.items.filter { context.getString(it.nameID).contains(query, ignoreCase = true) }
+                if (filteredSubItems.isNotEmpty()) item.copy(items = filteredSubItems) else null
             }
-            if (filteredSubItems.isNotEmpty())
-                item.copy(items = filteredSubItems)
-            else if (context.getString(item.nameID).contains(query, ignoreCase = true))
-                item
-            else
-                null
-        }
 
-        is ConceptItem.GroupGroup -> {
-            val filteredSubItems = FilterItems(
-                context,
-                query,
-                item.items
-            )
-            if (filteredSubItems.isNotEmpty())
-                item.copy(items = filteredSubItems)
-            else if (
-                context
-                    .getString(item.nameID)
-                    .contains(
-                        query,
-                        ignoreCase = true
-                    )
-            )
-                item
-            else
-                null
+            is ConceptItem.GroupGroup -> {
+                if (context.getString(item.nameID).contains(query, ignoreCase = true)) return@mapNotNull item
+                val filteredSubItems = FilterItems(context, query, item.items)
+                if (filteredSubItems.isNotEmpty()) item.copy(items = filteredSubItems) else null
+            }
         }
     }
-}
 
-private fun GetAllConceptNames(
-    context : Context,
-    items : List<ConceptItem.GroupGroup>
-) : List<String> {
+private fun GetAllConceptNames(context : Context, items : List<ConceptItem.GroupGroup>) : List<String> {
     val names = mutableListOf<String>()
     items.forEach { groupGroup ->
         names.add(context.getString(groupGroup.nameID))
@@ -329,22 +205,13 @@ private fun GetAllConceptNames(
     return names.distinct()
 }
 
-private fun CollectNames(
-    items : List<ConceptItem>,
-    context : Context,
-    names : MutableList<String>
-) {
+private fun CollectNames(items : List<ConceptItem>, context : Context, names : MutableList<String>) {
     items.forEach { item ->
         when (item) {
-            is ConceptItem.Single     -> {
-                names.add(context.getString(item.nameID))
-            }
-
+            is ConceptItem.Single     -> names.add(context.getString(item.nameID))
             is ConceptItem.Group      -> {
                 names.add(context.getString(item.nameID))
-                item.items.forEach {
-                    names.add(context.getString(it.nameID))
-                }
+                item.items.forEach { names.add(context.getString(it.nameID)) }
             }
 
             is ConceptItem.GroupGroup -> {
@@ -356,15 +223,8 @@ private fun CollectNames(
 }
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-private fun SearchBar(
-    query : String,
-    onQueryChange : (String) -> Unit,
-    onSearch : (String) -> Unit,
-    placeholder : String = "Search...",
-    suggestions : List<String>
-) {
+private fun SearchBar(query : String, onQueryChange : (String) -> Unit, onSearch : (String) -> Unit, suggestions : List<String>) {
     var active by remember { mutableStateOf(false) }
-
     SearchBar(
         modifier = Modifier
             .fillMaxWidth()
@@ -373,26 +233,15 @@ private fun SearchBar(
             SearchBarDefaults.InputField(
                 query = query,
                 onQueryChange = onQueryChange,
-                onSearch = {
-                    active = false
-                    onSearch(it)
-                },
+                onSearch = { active = false; onSearch(it) },
                 expanded = active,
                 onExpandedChange = { active = it },
-                placeholder = { Text(placeholder) },
-                leadingIcon = {
-                    Icon(
-                        Icons.Default.Search,
-                        contentDescription = Icons.Default.Search.name
-                    )
-                },
+                placeholder = { Text("Search...") },
+                leadingIcon = { Icon(Icons.Default.Search, Icons.Default.Search.name) },
                 trailingIcon = {
                     if (query.isNotEmpty()) {
                         IconButton(onClick = { onQueryChange("") }) {
-                            Icon(
-                                Icons.Default.Clear,
-                                contentDescription = Icons.Default.Clear.name
-                            )
+                            Icon(Icons.Default.Clear, Icons.Default.Clear.name)
                         }
                     }
                 }
@@ -406,14 +255,7 @@ private fun SearchBar(
             contentPadding = PaddingValues(16.dp),
             verticalArrangement = Arrangement.spacedBy(4.dp)
         ) {
-            items(
-                suggestions.filter {
-                    it.contains(
-                        query,
-                        ignoreCase = true
-                    )
-                }
-            ) { suggestion ->
+            items(suggestions.filter { it.contains(query, ignoreCase = true) }) { suggestion ->
                 ListItem(
                     modifier = Modifier
                         .fillMaxWidth()
@@ -423,75 +265,33 @@ private fun SearchBar(
                             onSearch(suggestion)
                         },
                     headlineContent = { Text(suggestion) },
-                    leadingContent = {
-                        Icon(
-                            Icons.Default.StarOutline,
-                            contentDescription = Icons.Default.StarOutline.name
-                        )
-                    }
+                    leadingContent = { Icon(Icons.Default.StarOutline, Icons.Default.StarOutline.name) }
                 )
             }
         }
     }
 }
 
-private fun ShowSoonToast(context : Context) = Toast.makeText(
-    context,
-    "Soon",
-    Toast.LENGTH_SHORT
-).show()
+private fun ShowSoonToast(context : Context) = Toast.makeText(context, "Soon", Toast.LENGTH_SHORT).show()
 @Composable
-private fun CardGroupGroup(
-    context : Context,
-    item : ConceptItem.GroupGroup,
-    elevation : Dp
-) {
+private fun CardGroupGroup(context : Context, item : ConceptItem.GroupGroup, elevation : Dp) {
     var expanded by remember { mutableStateOf(false) }
-
     ElevatedCard(
         modifier = Modifier.fillMaxWidth(),
         elevation = CardDefaults.elevatedCardElevation(elevation)
     ) {
-        Column(
-            modifier = Modifier.padding(20.dp),
-            verticalArrangement = Arrangement.spacedBy(16.dp)
-        ) {
+        Column(modifier = Modifier.padding(20.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
             TitleLine(
-                nameID = item.nameID,
-                icon = item.icon,
-                isNullItems = item.items.isEmpty(),
-                expanded = expanded,
-                onExpandedChange = {
-                    if (item.items.isNotEmpty())
-                        expanded = it
-                    else
-                        ShowSoonToast(context)
-                },
-                padding = 20.dp
+                item.nameID, item.icon, item.items.isEmpty(), expanded,
+                { if (item.items.isNotEmpty()) expanded = it else ShowSoonToast(context) }, 20.dp
             )
-
             if (expanded && item.items.isNotEmpty()) {
                 HorizontalDivider()
-
                 item.items.forEach { subItem ->
                     when (subItem) {
-                        is ConceptItem.Single     -> CardButton(
-                            context = context,
-                            item = subItem,
-                            elevation = elevation - 2.dp
-                        )
-
-                        is ConceptItem.Group      -> CardGroup(
-                            context = context,
-                            item = subItem,
-                            elevation = elevation - 2.dp
-                        )
-
-                        is ConceptItem.GroupGroup -> CardGroupGroup(
-                            context = context,
-                            item = subItem,
-                            elevation = elevation - 2.dp
-                        )
+                        is ConceptItem.Single     -> CardButton(context, subItem, elevation - 2.dp)
+                        is ConceptItem.Group      -> CardGroup(context, subItem, elevation - 2.dp)
+                        is ConceptItem.GroupGroup -> CardGroupGroup(context, subItem, elevation - 2.dp)
                     }
                 }
             }
@@ -500,34 +300,19 @@ private fun CardGroupGroup(
 }
 @Composable
 private fun TitleLine(
-    nameID : Int,
-    icon : ImageVector,
-    isNullItems : Boolean,
-    expanded : Boolean,
-    onExpandedChange : (Boolean) -> Unit,
-    textStyle : androidx.compose.ui.text.TextStyle = MaterialTheme.typography.titleLarge,
-    padding : Dp
+    nameID : Int, icon : ImageVector, isNullItems : Boolean, expanded : Boolean,
+    onExpandedChange : (Boolean) -> Unit, padding : Dp,
+    textStyle : androidx.compose.ui.text.TextStyle = MaterialTheme.typography.titleLarge
 ) {
-    Card(
-        onClick = { onExpandedChange(!expanded) }
-    ) {
+    Card(onClick = { onExpandedChange(!expanded) }) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(padding),
-            verticalAlignment = Alignment.CenterVertically
+                .padding(padding), verticalAlignment = Alignment.CenterVertically
         ) {
-            Icon(
-                modifier = Modifier.size(24.dp),
-                imageVector = icon,
-                contentDescription = stringResource(nameID)
-            )
+            Icon(modifier = Modifier.size(24.dp), imageVector = icon, contentDescription = stringResource(nameID))
             Spacer(modifier = Modifier.width(12.dp))
-            Text(
-                modifier = Modifier.weight(1f),
-                text = stringResource(nameID),
-                style = textStyle
-            )
+            Text(modifier = Modifier.weight(1f), text = stringResource(nameID), style = textStyle)
             if (!isNullItems) {
                 Icon(
                     modifier = Modifier
@@ -541,83 +326,43 @@ private fun TitleLine(
     }
 }
 @Composable
-private fun CardGroup(
-    context : Context,
-    item : ConceptItem.Group,
-    elevation : Dp
-) {
+private fun CardGroup(context : Context, item : ConceptItem.Group, elevation : Dp) {
     var expanded by remember { mutableStateOf(false) }
-
     ElevatedCard(
         modifier = Modifier
             .fillMaxWidth()
             .padding(horizontal = 8.dp),
         elevation = CardDefaults.elevatedCardElevation(elevation)
     ) {
-        Column(
-            modifier = Modifier.padding(16.dp),
-            verticalArrangement = Arrangement.spacedBy(12.dp)
-        ) {
+        Column(modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
             TitleLine(
-                nameID = item.nameID,
-                icon = item.icon,
-                isNullItems = item.items.isEmpty(),
-                expanded = expanded,
-                onExpandedChange = {
-                    if (item.items.isNotEmpty())
-                        expanded = it
-                    else
-                        ShowSoonToast(context)
-                },
-                padding = 16.dp
+                item.nameID, item.icon, item.items.isEmpty(), expanded,
+                { if (item.items.isNotEmpty()) expanded = it else ShowSoonToast(context) }, 16.dp
             )
-
             if (expanded && item.items.isNotEmpty()) {
                 HorizontalDivider()
-
-                item.items.forEach { subItem ->
-                    CardButton(
-                        context = context,
-                        item = subItem,
-                        elevation = elevation - 2.dp
-                    )
-                }
+                item.items.forEach { subItem -> CardButton(context, subItem, elevation - 2.dp) }
             }
         }
     }
 }
 @Composable
-private fun CardButton(
-    context : Context,
-    item : ConceptItem.Single,
-    elevation : Dp
-) {
+private fun CardButton(context : Context, item : ConceptItem.Single, elevation : Dp) {
     ElevatedCard(
         modifier = Modifier
             .fillMaxWidth()
             .padding(horizontal = 4.dp),
         elevation = CardDefaults.elevatedCardElevation(elevation),
-        onClick = {
-            context.startActivity(Intent(context, item.activityClass))
-        }
+        onClick = { context.startActivity(Intent(context, item.activityClass)) }
     ) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(16.dp),
-            verticalAlignment = Alignment.CenterVertically
+                .padding(16.dp), verticalAlignment = Alignment.CenterVertically
         ) {
-            Icon(
-                modifier = Modifier.size(24.dp),
-                imageVector = item.icon,
-                contentDescription = stringResource(item.nameID)
-            )
+            Icon(modifier = Modifier.size(24.dp), imageVector = item.icon, contentDescription = stringResource(item.nameID))
             Spacer(modifier = Modifier.width(12.dp))
-            Text(
-                modifier = Modifier.weight(1f),
-                text = stringResource(item.nameID),
-                style = MaterialTheme.typography.titleMedium
-            )
+            Text(modifier = Modifier.weight(1f), text = stringResource(item.nameID), style = MaterialTheme.typography.titleMedium)
         }
     }
 }

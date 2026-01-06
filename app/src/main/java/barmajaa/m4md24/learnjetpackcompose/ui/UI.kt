@@ -38,6 +38,8 @@ import barmajaa.m4md24.learnjetpackcompose.learn.components.buttons.floating_act
 import barmajaa.m4md24.learnjetpackcompose.learn.components.buttons.segments.Segments
 import barmajaa.m4md24.learnjetpackcompose.learn.components.carousels.Carousels
 import barmajaa.m4md24.learnjetpackcompose.learn.components.date_pickers.DatePickers
+import barmajaa.m4md24.learnjetpackcompose.learn.components.grids.lazy.normal.Normal
+import barmajaa.m4md24.learnjetpackcompose.learn.components.grids.lazy.staggered.Staggered
 import barmajaa.m4md24.learnjetpackcompose.learn.components.images.Images
 import barmajaa.m4md24.learnjetpackcompose.learn.components.layouts.Layouts
 import barmajaa.m4md24.learnjetpackcompose.learn.components.menus.Menus
@@ -102,6 +104,20 @@ private fun getConceptItems() : List<ConceptItem.GroupGroup> {
             listOf(
                 ConceptItem.Single(R.string.title_activity_normal, Icons.Default.CropSquare, barmajaa.m4md24.learnjetpackcompose.learn.components.column_and_row_types.normal.Normal::class.java),
                 ConceptItem.Single(R.string.title_activity_lazy, Icons.AutoMirrored.Filled.List, Lazy::class.java)
+            )
+        ),
+        ConceptItem.GroupGroup(
+            R.string.title_concept_grids,
+            Icons.Default.GridView,
+            listOf(
+                ConceptItem.Group(
+                    R.string.title_concept_lazy,
+                    Icons.Default.GridView,
+                    listOf(
+                        ConceptItem.Single(R.string.title_activity_normal, Icons.Default.GridOn, Normal::class.java),
+                        ConceptItem.Single(R.string.title_activity_staggered, Icons.Default.GridOff, Staggered::class.java)
+                    )
+                )
             )
         ),
         ConceptItem.Single(R.string.title_activity_modal_bottom_sheets, Icons.Default.SwipeUp, ModalBottomSheets::class.java),

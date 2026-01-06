@@ -11,6 +11,16 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.LearnJetpackCompose">
         <activity
+                android:name=".learn.components.grids.lazy.staggered.Staggered"
+                android:exported="false"
+                android:label="@string/title_activity_normal"
+                android:theme="@style/Theme.LearnJetpackCompose"/>
+        <activity
+                android:name=".learn.components.grids.lazy.normal.Normal"
+                android:exported="false"
+                android:label="@string/title_activity_normal"
+                android:theme="@style/Theme.LearnJetpackCompose"/>
+        <activity
                 android:name=".learn.components.pagers.Pagers"
                 android:exported="false"
                 android:label="@string/title_activity_pagers"
